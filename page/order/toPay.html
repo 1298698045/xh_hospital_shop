@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交订单</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+        }
+        .container .g-orderToPayHd{
+            margin-top: 49px;
+            margin-bottom: 20px;
+        }
+        .container .g-orderToPayHd h2{
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .container .g-orderToPayHd .f-lh{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container .g-orderToPayHd .f-lh .f_l{
+            color: #999;
+            font-size: 16px;
+        }
+        .container .g-orderToPayHd .f-lh .f_r{
+            font-size: 18px;
+        }
+        .container .g-orderToPayHd .f-lh .f_r span{
+            color: #d4282d;
+        }
+        .container .f-panel{
+            margin-bottom: 40px;
+            background-color: #fff;
+            border: 1px solid #efefef;
+        }
+        .container .f-panel .hd{
+            height: 42px;
+            padding-left: 21px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #efefef;
+            line-height: 41px;
+            color: #999;
+            font-size: 14px;
+        }
+        .container .f-panel .bd{
+            padding: 10px 0 19px 36px;
+        }
+        .container .f-panel .bd .m-payMethods{
+            display: flex;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod{
+            width: 190px;
+            height: 90px;
+            line-height: 87px;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .w-radio{
+            margin-right: 10px;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .w-radio .radio{
+            height: 15px;
+            width: 15px;
+            background: url('../../img/hxm_yanxuan-cashier_p_20161201_style_img_pc_x1_widgetGold-s85e7dfd3f5-2b1832474f.png');
+            background-position: 0 -187px;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .w-radio .radio.active{
+
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .w-icon-payMethod{
+            height: 47px;
+            width: 134px;
+            vertical-align: middle;
+            background: url('../../img/pay_img.png') no-repeat;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .payMethod-weixin{
+            background-position: 0 -478px;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .payMethod-alipay{
+            background-position: 0 0;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .payMethod-savings{
+            background-position: 0 -303px;
+        }
+        .container .f-panel .bd .m-payMethods .j-payMethod .payMethod-credit{
+            background-position: 0 -147px;
+        }
+        .container .m-goPay{
+            text-align: right;
+        }
+        .container .m-goPay #j-goPay{
+            margin-left: auto;
+            width: 168px;
+            height: 49px;
+            line-height: 47px;
+            font-size: 18px;
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            outline: 0;
+            border:none;
+            cursor: pointer;
+        }
+        .container #j-orderPayForm{
+            text-align: right;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .container #j-orderPayForm .timer{
+            color: #d4282d;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="container">
+            <div class="g-orderToPayHd">
+                <h2>选择付款方式</h2>
+                <div class="f-lh">
+                    <p class="f_l">
+                        交易号：20210322104332YXMPDD1706138793
+                    </p>
+                    <p class="f_r">
+                        实付：<span>¥108.00</span>
+                    </p>
+                </div>
+            </div>
+            <div class="f-panel">
+                <div class="hd">支付方式</div>
+                <div class="bd">
+                    <div class="m-payMethods">
+                        <div class="j-payMethod">
+                            <div class="w-radio">
+                                <input type="radio" id="radioOne" name="radioOne" value="one" class="radio">
+                            </div>
+                            <label for="radioOne">
+                                <div class="w-icon-payMethod payMethod-weixin"></div>
+                            </label>
+                        </div>
+                        <div class="j-payMethod">
+                            <div class="w-radio">
+                                <input type="radio"  id="radiotwo" name="radioOne" value="two" class="radio">
+                            </div>
+                            <label for="radiotwo">
+                                <div class="w-icon-payMethod payMethod-alipay"></div>
+                            </label>
+                        </div>
+                        <div class="j-payMethod">
+                            <div class="w-radio">
+                                <input type="radio" id="radiothree" name="radioOne" value="three" class="radio">
+                            </div>
+                            <label for="radiothree">
+                                <div class="w-icon-payMethod payMethod-savings"></div>
+                            </label>
+                        </div>
+                        <div class="j-payMethod">
+                            <div class="w-radio">
+                                <input type="radio" id="radiofour" name="radioOne" value="four" class="radio">
+                            </div>
+                            <label for="radiofour">
+                                <div class="w-icon-payMethod payMethod-credit"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-goPay">
+                <button id="j-goPay">立即付款</button>
+            </div>
+            <div id="j-orderPayForm">
+                剩余付款时间 : &nbsp;&nbsp;&nbsp;   
+                <span class="timer"></span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="yx-cp-m-foot">
+                <div class="footer_top">
+                    <div class="yx-cp-row">
+                        <div class="yx-cp-item">
+                            <div>
+                                <h4 class="hd">客户服务</h4>
+                                <div class="box">
+                                    <div class="box_item">
+                                        <div class="icon icon_l"></div>
+                                        <p class="name">在线客服</p>
+                                    </div>
+                                    <div class="box_item">
+                                        <div class="icon icon_r"></div>
+                                        <p class="name">在线客服</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yx-cp-item">
+                            <div>
+                                <h4 class="hd">何为严选</h4>
+                                <div class="desc">
+                                    网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，
+                                    从源头全程严格把控商品生产环节，
+                                    力求帮消费者甄选到优质的商品
+                                </div>
+                                <div class="yx-cp-m-followUs">
+                                    <p class="cp-title">关注我们</p>
+                                    <div class="yx-cp-followWayList">
+                                        <div class="j-yx-cp-lazyImg l"></div>
+                                        <div class="j-yx-cp-lazyImg c"></div>
+                                        <div class="j-yx-cp-lazyImg r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yx-cp-item">
+                            <div>
+                                <h4 class="hd">扫码下载严选APP</h4>
+                                <div class="qrcode">
+
+                                </div>
+                                <a href="javascript:;">下载领大额新人红包</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="yx-cp-row">
+                        <div class="yx-cp-m-siteEnsure">
+                            <div class="yx-cp-item">
+                                <div class="limg imgOne"></div>
+                                <p class="name">协和自营电商</p>
+                            </div>
+                            <div class="yx-cp-item">
+                                <div class="limg imgTwo"></div>
+                                <p class="name">30天无忧退换货</p>
+                            </div>
+                            <div class="yx-cp-item">
+                                <div class="limg imgThree"></div>
+                                <p class="name">满99元免邮费</p>
+                            </div>
+                            <div class="yx-cp-item">
+                                <div class="limg imgFour"></div>
+                                <p class="name">品质保证</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yx-cp-hr"></div>
+
+                    <div class="yx-cp-m-siteInfo">
+                        <div class="yx-cp-nav">
+                            <a href="javascript:;" class="yx-cp-text">关于我们</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">帮助中心</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">售后服务</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">配送与验收</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">商务合作</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">企业采购</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">开放平台</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">搜索推荐</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">友情链接</a>
+                            <b class="yx-cp-split">|</b>
+                            <a href="javascript:;" class="yx-cp-text">廉正举报</a>
+                        </div>
+                        <div class="yx-cp-copyright">
+                            <a href="javascript:;">食品经营许可证：JY13301080111719</a>
+                            <a href="javascript:;">出版物经营许可证：新出发滨字第0132号</a>
+                            <span>妙得ICP证号：ICP 证浙B2-20160106</span>
+                            <a href="javascript:;">浙杭食药监械经营备20171029号</a>
+                            <a href="javascript:;">营业执照</a>
+                            <span>网易公司版权所有 © 1997-2021</span>
+                        </div>
+                        <div class="yx-cp-copyright">
+                            <a href="javascript:;">无线电发射设备销售备案：42202011096855</a>
+                            <a href="javascript:;">（浙杭）网械企备字[2019]第00119号</a>
+                            <span>（粤）网械平台备字（2019）第00004号</span>
+                            <span>（粤）-非经营性-2016-0023</span>
+                            <a href="javascript:;">进口冷链食品管理承诺书</a>
+                        </div>
+                        <div class="yx-cp-copyright">
+                            <a href="javascript:;">食品经营许可证：JY14207050007694</a>
+                            <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010009</span>
+                            <a href="javascript:;">单用途商业预付卡备案证：330100AAC0024</a>
+                            <a href="javascript:;" class="icon">
+                                <img src="../../img/86f32b668af6e537389a77480fb5c74d.gif" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script>
+        $(function(){
+            let radio = document.querySelectorAll('.radio');
+            $('#j-goPay').click(function(){
+                console.log($("input[name='radioOne']:checked").val())
+            })
+
+            let timer;
+            var maxtime = 60*60 //一个小时，按秒计算
+            timer = setInterval(CountDown,1000); 
+            function CountDown(){ 
+                if(maxtime>=0){ 
+                    let msg;
+                    minutes = Math.floor(maxtime/60); 
+                    seconds = Math.floor(maxtime%60); 
+                    msg = minutes+"分"+seconds+"秒"; 
+                    $('.timer').html(msg);   
+                    --maxtime; 
+                } 
+                else{ 
+                    clearInterval(timer); 
+                    alert("时间到，结束!"); 
+                } 
+            }
+        })
+    </script>
+</body>
+</html>

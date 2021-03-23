@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动旅行 - 协和商城</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .user-member{
+            border: 1px solid #ddd;
+            padding-top: 40px;
+            height: 260px;
+            background: url(https://yanxuan.nosdn.127.net/74349c4a78edd25ef03b6aac1db45a8e.png?imageView&type=webp) no-repeat;
+        }
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+        .main-content{
+            background-color: white;
+            overflow: hidden;
+        }
+        .leftnav{
+            margin-left: 50px;
+        }
+        .user-member-left{
+            float: left;
+            border-right: 1px dashed rgba(180,160,120,.38);
+            height: 215px;
+            padding: 30px 50px;
+            width: 350px;
+        }
+        .user-member-right{
+            float: left;
+            padding:0 55px;
+            width: 520px;
+            line-height: 50px;
+        }
+        .user-member-right li{
+            float: left;
+        }
+        .user-member-left{
+            font-size: 14px;
+            color: #333;
+        }
+        .username{
+            margin-left: 20px;
+            float: left;
+            margin-top: 10px;
+        }
+        .userphoto{
+            float: left;
+        }
+        .growWrap{
+            padding-top: 30px;
+            clear: both;
+        }
+        .growWrap-right{
+            float: right;
+        }
+        .process{
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        .user-member-right li{
+            font-size: 14px;
+            color: #333;
+        }
+        .user-member-right .msg-label{
+            width: 100px;
+            float: left;
+        }
+        .user-member-right .msg-value{
+            width: 100px;
+            float: left;
+        }
+        .user-OrderList{
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding-bottom: 20px;
+            font-size: 14px;
+        }
+        .user-OrderList-head{
+            line-height: 40px;
+            line-height: 40px;
+            color: #333;
+            padding-left: 20px;
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #ddd;
+        }
+        .user-OrderList-body li{
+            height: 120px;
+            width: 100%;
+            padding: 20px;
+        }
+        .user-OrderList-body li>div{
+            float: left;
+        }
+        .user-OrderList-body .img{
+            background-color: #f2f2f2;
+        }
+        .user-OrderList-body .name{
+            text-align: center;
+            width: 400px;
+            color: #666;
+            line-height: 100px;
+        }
+        .user-OrderList-body .status{
+            text-align: center;
+            width: 100px;
+            color:#f33;
+            line-height: 100px;
+        }
+        .user-OrderList-body .price{
+            text-align: center;
+            width: 120px;
+            color: #333;
+            line-height: 100px;
+        }
+        .user-OrderList-body .edit{
+            text-align: center;
+            width: 120px;
+            color: #333;
+            line-height: 20px;
+        }
+        .user-OrderList-body .edit a{
+            color: #69c;
+        }
+        .user-OrderList-body .pay{
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            text-align: center;
+            height: 28px;
+            line-height: 28px;
+            width: 80px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 8px 0;
+            margin-left: 20px;
+
+        }
+        .user-OrderList-body .pay:hover {
+            color: #fff;
+            border: 1px solid #c0ae8a;
+            background-color: #c0ae8a;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li class="active">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="orderAdmin">订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                 <div class="user-member">
+                    <div class="user-member-left">
+                        <div>
+                            <img class="userphoto" src="https://yanxuan.nosdn.127.net/c3a03895c73694d922310c76e4915cdb.png?type=webp&amp;imageView&amp;thumbnail=76x76&amp;quality=95" alt="头像" width="66" height="66" data-reactid=".4.0.0.0.0.0.0">
+                            <span class="username">用户66161961</span>
+                        </div>
+                        <div class="growWrap">
+                            <span class="growWrap-left">成长值 > ></span>
+                            <span class="growWrap-right">0/100</span>
+                        </div>
+                        <div class="process"></div>
+                    </div>
+                    <div class="user-member-right">
+                        <ul>
+                            <li>
+                                <div class="msg-label">我的红包</div>
+                                <div class="msg-value">¥30.00</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">津贴</div>
+                                <div class="msg-value">¥30.00</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">余额</div>
+                                <div class="msg-value">¥30.00</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">可兑返利</div>
+                                <div class="msg-value">¥30.00</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">优惠券</div>
+                                <div class="msg-value">0张</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">我的积分</div>
+                                <div class="msg-value">0</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">礼品卡</div>
+                                <div class="msg-value">¥30.00</div>
+                            </li>
+                            <li>
+                                <div class="msg-label">待领礼拜</div>
+                                <div class="msg-value">0个</div>
+                            </li>
+                        </ul>
+                    </div>
+                 </div>
+                 <div class="user-OrderList">
+                    <div class="user-OrderList-head">
+                        <div class="user-OrderList-head-left">未完成订单(1)</div>                       
+                    </div>
+                    <div class="user-OrderList-body">
+                        <ul>
+                            <li>
+                                <div class="img">
+                                    <img src="https://yanxuan-item.nosdn.127.net/b89412f867a88fe25eb921e20a4f3c10.png?type=webp&imageView&thumbnail=100x100&quality=95" alt="">
+                                </div>
+                                <div class="name">包裹1</div>
+                                <div class="status">待付款</div>
+                                <div class="price">¥21.90</div>
+                                <div class="edit">
+                                    <div class="pay">付款</div>
+                                    <div class="detail">
+                                        <a href="">查看详情</a>
+                                    </div>
+                                    <div class="quitepay">
+                                        <a href="">取消订单</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img src="https://yanxuan-item.nosdn.127.net/b89412f867a88fe25eb921e20a4f3c10.png?type=webp&imageView&thumbnail=100x100&quality=95" alt="">
+                                </div>
+                                <div class="name">包裹1</div>
+                                <div class="status">待付款</div>
+                                <div class="price">¥21.90</div>
+                                <div class="edit">
+                                    <div class="pay">付款</div>
+                                    <div class="detail">
+                                        <a href="">查看详情</a>
+                                    </div>
+                                    <div class="quitepay">
+                                        <a href="">取消订单</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+       $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#orderAdmin').click(function(){
+           window.location = '../order/orderDetail.html'
+       })
+    </script>
+</body>
+</html>

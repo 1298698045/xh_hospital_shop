@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动旅行 - 协和商城</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/cart/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="headsearch"></div>
+        <div class="main-content">
+            <div class="cart-content">
+                <div class="cart-head">
+                    <div style="width:100px;" class="checkall checkbox-content">
+                        <input type="checkbox">
+                    </div>
+                    <div style="width: 450px;text-align: left;">商品信息</div>
+                    <div style="width: 200px;">单价</div>
+                    <div style="width: 200px;">数量</div>
+                    <div style="width: 100px;">小计</div>
+                    <div style="width: 100px;">操作</div>
+                </div>
+                <div class="cart-body">
+                    <div class="commodity-list">
+                        <div class="checkbox-content">
+                            <input type="checkbox">
+                        </div>
+                        <div class="commodity-msg" style="width: 500px;text-align: left;">
+                            <div class="commodity-msg-img">
+                                <img src="https://yanxuan-item.nosdn.127.net/a696b45cfba25ca7de21ba5606e1be31.png?type=webp&quality=95&thumbnail=200x200&imageView" alt="">
+                            </div>
+                            <div class="commodity-msg-right">
+                                <div class="commodity-msg-title">严选·颐和园大红袍-东方草木大师精选</div>
+                                <div class="commodity-msg-spec">84克 (7克*12罐)</div>
+                            </div>
+                        </div>
+                        <div class="commodity-price" style="width: 200px;">¥349.00</div>
+                        <div class="commodity-number" style="width: 200px;">
+                            <div class="specs-number">
+                                <div class="less notpointevent">-</div>
+                                <div class=""><input type="text" value="1"></div>
+                                <div class="more">+</div>
+                            </div>
+                        </div>
+                        <div class="commodity-prices" style="width: 100px;">¥349.00</div>
+                        <div class="commodity-edit" style="width: 100px;">删除</div>
+                    </div>
+                </div>
+                <div class="cart-foot">
+                    <div class="checkbox-content">
+                        <input type="checkbox">
+                        已选(1)
+                    </div>
+                    <div class="cart-foot-delete">
+                        批量删除
+                    </div>
+                    <div class="cart-foot-PayMoney">
+                        <div>
+                            <span>应付总额：</span>
+                            <span class="PayMoney">¥ 349.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-foot-paybtn">
+                        下单
+                    </div>
+                </div>
+            </div>
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('.more').click(function(){
+            $('.less').removeClass('notpointevent')
+            $(this).prev().find('input').val(Number($(this).prev().find('input').val())+1)
+        })
+        $('.less').click(function(){
+            if(Number($(this).next().find('input').val())>1){
+                $(this).next().find('input').val(Number($(this).next().find('input').val())-1)
+            }
+            if(Number($(this).next().find('input').val())==1){
+                $(this).addClass('notpointevent')
+            }
+        })
+        $('.specs-number input').change(function(){
+            
+        })
+    </script>
+</body>
+</html>

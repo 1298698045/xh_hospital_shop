@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .j-orderDetailContainer .m-detailHead{
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .j-orderDetailContainer .m-detailHead .rowTop{
+            background: #f5f5f5;
+            height: 52px;
+            line-height: 52px;
+            padding: 0 20px;
+            font-size: 16px;
+            display: flex;
+        }
+        .j-orderDetailContainer .m-detailHead .rowTop .number{
+            margin-left: 40px;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel{
+            background: #fff;
+            padding: 23px 20px 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-leftCont{
+            
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-leftCont .cell .val{
+            color: #333;
+            line-height: 20px;
+            margin-bottom: 9px;
+            max-width: 596px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-leftCont .cell .label{
+            color: #999;
+            line-height: 20px;
+            margin-bottom: 9px;
+            max-width: 596px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .cell .val{
+            color: #333;
+            line-height: 20px;
+            margin-bottom: 9px;
+            max-width: 596px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont {
+            width: 280px;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .cell{
+            display: flex;
+            justify-content: space-between;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .cell .label{
+            color: #999;
+            line-height: 20px;
+            margin-bottom: 9px;
+            max-width: 596px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .f-margin-bottom-10{
+            font-size: 14px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .hr{
+            border-top: 1px dashed #ddd;
+            margin: 21px 0;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .cell_bottom{
+            margin-top: 20px;
+        }
+        .j-orderDetailContainer .m-detailHead .m-panel .m-rightCont .cell_bottom .color{
+            font-size: 18px;
+            color: #be4141;
+            font-weight: 800;
+        }
+        .j-orderDetailContainer .m-detailBody {
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #eaeaea;
+        }
+        .j-orderDetailContainer .m-detailBody .m-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 14px 20px;
+        }
+        .j-orderDetailContainer .m-detailBody .m-header .l_text span{
+            color: #333;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 800;
+        }
+        .j-orderDetailContainer .m-detailBody .m-header .btn{
+            width: 80px;
+            height: 24px;
+            line-height: 22px;
+            font-size: 14px;
+            margin-left: 6px;
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+            outline: 0;
+            cursor: pointer;
+        }
+        .j-orderDetailContainer .m-detailBody .content{
+            padding: 10px 20px 0;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            /* table-layout: fixed; */
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .tr_head{
+            border-bottom: 1px dashed #ddd;
+            height: 47px;
+            line-height: 47px;
+            box-sizing: border-box;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .tr_head th{
+            font-size: 14px;
+            font-family: "Microsoft Yahei","微软雅黑",verdana;
+            color: #333;
+            text-align: center;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img{
+            display: flex;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img .img_wrap{
+            width: 100px;
+            height: 100px;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img .img_wrap img{
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body td{
+            padding: 20px 0;
+            text-align: center;
+            vertical-align: top;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img {
+            margin-left: 10px;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img .text .name{
+            max-width: 210px;
+            line-height: 24px;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img .text .name:hover{
+            cursor: pointer;
+            color: #b4a078;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .l_img .text .color{
+            line-height: 22px;
+            font-size: 12px;
+            color: #999;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .price .counterPrice{
+            text-decoration: line-through;
+            color: #999;
+        }
+        .j-orderDetailContainer .m-detailBody .content .table .t_body .tag{
+            display: inline-block;
+            height: 16px;
+            line-height: 14px;
+            padding: 0 2px;
+            background: 0 0;
+            color: #E36844;
+            border: 1px solid #e36844;
+            border-radius: 2px;
+            font-size: 12px;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li class="active">订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="j-orderDetailContainer">
+                    <div class="m-detailHead">
+                        <div class="rowTop">
+                            <p class="code">
+                                订单号：229343177
+                            </p>
+                            <p class="number">
+                                下单时间：2021-03-18 10:03:01
+                            </p>
+                        </div>
+                        <div class="m-panel">
+                            <div class="m-leftCont">
+                                <p class="cell">
+                                    <span class="label">收 件 人：</span>
+                                    <span class="val">123</span>
+                                </p>
+                                <p class="cell">
+                                    <span class="label">联系方式：</span>
+                                    <span class="val">188****8888</span>
+                                </p>
+                                <p class="cell">
+                                    <span class="label">收货地址：</span>
+                                    <span class="val">北京市北京市朝阳区建外街道123</span>
+                                </p>
+                                <p class="f-margin-bottom-10">
+                                    <span style="color:#D52B33;">*</span>
+                                    确认收货得10积分
+                                </p>
+                            </div>
+                            <div class="m-rightCont">
+                                <p class="cell">
+                                    <span class="label">商品合计：</span>
+                                    <span class="val">¥129.00</span>
+                                </p>
+                                <p class="cell">
+                                    <span class="label">邮费：</span>
+                                    <span class="val">¥0.00</span>
+                                </p>
+                                <p class="cell">
+                                    <span class="label">活动优惠：</span>
+                                    <span class="val">-¥20.00</span>
+                                </p>
+                                <div class="hr"></div>
+                                <p class="cell cell_bottom">
+                                    <span class="label">应付：</span>
+                                    <span class="val color">¥109.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-detailBody">
+                        <div class="m-header">
+                            <p class="l_text">
+                               <span>包裹1</span>
+                                已取消
+                            </p>
+                            <button class="btn">再次购买</button>
+                        </div>
+                        <div class="content">
+                            <table class="table">
+                                <thead>
+                                    <tr class="tr_head">
+                                        <th width="326" style="text-align: left;">商品信息</th>
+                                        <th width="160">单价</th>
+                                        <th width="104">数量</th>
+                                        <th width="120">小计</th>
+                                        <th width="140">实付</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="t_body">
+                                    <tr>
+                                        <td class="l_img">
+                                            <div class="img_wrap">
+                                                <img src="../../img/28d22f6b3409f05481e450a6a585f763.webp" alt="">
+                                            </div>
+                                            <div class="text">
+                                                <p class="name">智能触控led高清便携化妆镜</p>
+                                                <p class="color">象牙白</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="price">
+                                                <span class="retailPrice">¥109.00</span>
+                                                <span class="counterPrice">¥129.00</span>
+                                            </p>
+                                            <p class="tag">特价</p>
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            ¥109.00
+                                        </td>
+                                        <td>
+                                            ¥109.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+    </script>
+</body>
+</html>

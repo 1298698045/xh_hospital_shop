@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动旅行 - 协和商城</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .container .box{
+            width: 402px;
+            margin: 65px auto 0;
+        }
+        .container .box .form .form-item .filed{
+            width: 389px;
+            height: 50px;
+            line-height: 50px;
+            text-align: left;
+            background: transparent;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            outline: 0;
+            border: none;
+            border: 1px solid #ddd;
+            padding: 15px 0 15px 15px;
+        }
+        .container .box .form .form-item-validate{
+            width: 389px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            background: #f3f3f3;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #999;
+            letter-spacing: -.25px;
+            margin: 30px 0;
+            cursor: pointer;
+        }
+        .container .box .form .form-button{
+            width: 389px;
+            height: 50px;
+            line-height: 50px;
+            background: #c81623;
+            border-color: #c81623;
+            opacity: .5;
+            cursor: not-allowed;
+            display: inline-block;
+            border: 1px solid #e2231a;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+            outline: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+
+
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <div class="form">
+                    <div class="form-item">
+                        <input class="filed" type="text" placeholder="请输入用户名/邮箱/已验证手机号">
+                    </div>
+                    <div class="form-item-validate">
+                        点击进行验证
+                    </div>
+                    <button class="form-button">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pageFooter"></div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+       $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#orderAdmin').click(function(){
+           window.location = '../order/orderDetail.html'
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动旅行 - 协和商城</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+            clear: both;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .rowTop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rightcontent .rowTop .title{
+            font-size: 14px;
+            font-family: "Microsoft Yahei","微软雅黑",verdana;
+            color: #333;
+        }
+        .rightcontent .rowTop .newAddress a{
+            font-size: 14px;
+            padding-right: 3px;
+            color: #69c;
+        }
+        .rightcontent .cont_wrap{
+            margin-top: 20px;
+        }
+        .rightcontent .cont_wrap .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: auto;
+            /* border-left: 1px solid #e8e8e8; */
+            border-spacing: 0;
+            cursor: pointer;
+        }
+        .rightcontent .cont_wrap .table thead tr th {
+            background: #f5f5f5;
+            color: #fff;
+            white-space: nowrap;
+            line-height: 43px;
+            border: 1px solid #e8e8e8;
+            text-align: center;
+            font-weight: 400;
+            height: 43px;
+            color: #999;
+        }
+        .rightcontent .cont_wrap .table .tbody {
+            border: 1px solid #e8e8e8;
+        }
+        .rightcontent .cont_wrap .table .tbody .dataRow{
+            line-height: 100px;
+        }
+        .rightcontent .cont_wrap .table .tbody .dataRow td{
+            text-align: center;
+            /* border: 1px solid #e8e8e8; */
+        }
+        .rightcontent .cont_wrap .table .tbody .dataRow .operation .btn{
+            color: #69c;
+        }
+        .rightcontent .cont_wrap .table .tbody .dataRow .operation .btn:hover{
+            display: inline-block;
+            bottom: 1px solid #69c;
+            cursor: pointer;
+        }
+        .rightcontent .cont_wrap .table .tbody .dataRow td .default{
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+            border-radius: 2px;
+            width: 96px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            display: inline-block;
+        }
+        .d-add{
+            display: none;
+        }
+        .d-modal{
+            position: fixed;
+            display: table;
+            z-index: 1190;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: rgba(0,0,0,.8);
+        }
+        .d-modal .contentWrap{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .d-modal .contentWrap .d-pop{
+            width: 697px;
+            height: 422px;
+            padding: 30px 40px 0;
+            position: relative;
+            min-height: 274px;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 9999;
+            transition: transform .3s ease-out .1s,opacity .3s ease-out .1s;
+            transform: scale(1);
+        }
+        .d-modal .contentWrap .d-pop .rowtop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            /* margin-bottom: 40px; */
+            line-height: 1;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .icon_del{
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            cursor: pointer;
+            background-image: url('../../img/close-s706cc4331c-af215c519a.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -331px;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .icon_del:hover{
+            background-position: 0 -297px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row{
+            display: flex;
+            margin-top: 20px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .label{
+            width: 75px;
+            margin-right: 20px;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: right;
+            margin-top: 15px;
+            vertical-align: top;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .label span{
+            display: inline-block;
+            vertical-align: sub;
+            color: #D52B33;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .rightVal{
+            width: 530px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .rightVal select{
+            width: 170px;
+            height: 28px;
+            color: #333;
+            font-size: 14px;
+            line-height: 14px;
+            background: #fff;
+            outline: 0;
+            font: 12px/1.5 "Microsoft Yahei","微软雅黑",verdana;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .rightVal  textarea{
+            height: 70px;
+            background-color: #fff;
+            padding: 9px;
+            width: 100%;
+            font-size: 14px;
+           line-height: 14px;
+           outline: 0;
+           border: 1px solid #ddd;
+           /*去掉textarea右下角三角符号*/
+            resize : none;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .shrInp input{
+            width: 200px;
+            height: 34px;
+            color: #333;
+            padding-left: 9px;
+            line-height: 28px;
+            border: 1px solid #ddd;
+            outline: 0;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .name .c_label{
+            font-size: 14px;
+            color: #333;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .name .require{
+            display: inline-block;
+            vertical-align: sub;
+            color: #D52B33;
+            font-size: 14px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .name input{
+            width: 200px;
+            height: 34px;
+            color: #333;
+            padding-left: 9px;
+            line-height: 28px;
+            border: 1px solid #ddd;
+            outline: 0;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .checkbox .j-checkbox{
+            background-position: 0 -28px;
+            height: 18px;
+            width: 18px;
+            vertical-align: middle!important;
+            -webkit-appearance: none;
+            border-radius: 0;
+            position: relative;
+            display: inline-block;
+            border: 0;
+            background-image: url('../../img/widget-s3bba68e5d5-eeb37afca8.webp');
+            outline: 0;
+            cursor: pointer;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .checkbox .j-checkbox.active{
+            background-position: 0 -56px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .checkbox span{
+            margin-left: 10px;
+            font-size: 14px;
+            line-height: 1;
+            color: #333;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .btnBox button{
+            width: 140px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+            outline: 0;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .btnBox .confirme{
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            margin-right: 10px;
+        }
+        .d-modal .contentWrap .d-pop .Form .row .right_flex .btnBox .cancel{
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+        }
+        .d-add.active{
+            display: block;
+        }
+        .d-delModal{
+            display: none;
+        }
+        .d-delModal.active{
+            display: block;
+        }
+        .d-delModal .d-modal .contentWrap .d-del-pop{
+            width: 590px;
+            height: 343px;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .icon_box{
+            overflow: hidden;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .icon_del{
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            cursor: pointer;
+            background-image: url('../../img/close-s706cc4331c-af215c519a.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -331px;
+            float: right;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .icon_del:hover{
+            background-position: 0 -297px;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .contentModal .title{
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .contentModal .filed{
+            display: flex;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .contentModal .filed .label{
+            color: #999;
+            font-size: 14px;
+            width: 70px;
+            text-align: center;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .contentModal .filed .val{
+            line-height: 24px;
+            font-size: 14px;
+            font-family: "Microsoft Yahei","微软雅黑",verdana;
+            color: #333;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .footBtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .footBtn button{
+            width: 140px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+            outline: 0;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .footBtn  .confirme{
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            margin-right: 10px;
+        }
+        .d-delModal .d-modal .contentWrap .d-pop .footBtn  .cancel{
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li class="active">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="orderAdmin">订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="rowTop">
+                    <p class="title">已保存收货地址(地址最多20条，还能保存19条)</p>
+                    <p class="newAddress">
+                        <a href="JavaScript:;">+新建地址</a>
+                    </p>
+                </div>
+                <div class="cont_wrap">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="119">收货人</th>
+                                <th width="320">地址</th>
+                                <th width="170">联系方式</th>
+                                <th widht="140">操作</th>
+                                <th width="140"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="dataRow">
+                                <td>123</td>
+                                <td>北京市北京市朝阳区建外街道123</td>
+                                <td>188****8888</td>
+                                <td class="operation">
+                                    <a class="btn" href="javascript:;">编辑</a>
+                                    <a class="btn" href="javascript:;" id="delRow">删除</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" class="default">默认地址</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            
+            <div id="cainixihuan" class="clearfix"></div>
+        </div>
+        <!-- 新建地址Modal -->
+        <div class="d-default d-add">
+            <div class="d-modal">
+                <div class="contentWrap">
+                    <div class="d-pop">
+                        <div class="rowtop">
+                            <p class="title">新建地址</p>
+                            <p class="icon_del delModal"></p>
+                        </div>
+                        <div class="Form">
+                            <div class="row">
+                                <p class="label">
+                                    <span>*</span>
+                                    所在地区:</p>
+                                <div class="rightVal">
+                                    <select name="" id="">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label">
+                                    <span>*</span>
+                                    详细地址:
+                                </p>
+                                <div class="rightVal">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="详细地址，街道、门牌号等"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label">
+                                    <span>*</span>
+                                    收货人:
+                                </p>
+                                <div class="rightVal right_flex">
+                                    <p class="shrInp">
+                                        <input type="text">
+                                    </p>
+                                    <p class="name">
+                                        <span class="require">*</span>
+                                        <span class="c_label">手机号码:</span>
+                                        <input type="text">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label">
+                                </p>
+                                <div class="rightVal right_flex">
+                                    <div class="checkbox">
+                                        <input type="checkbox" class="j-checkbox">
+                                        <span>设为默认</span>
+                                    </div>
+                                    <div class="btnBox">
+                                        <button class="confirme">确定</button>
+                                        <button class="cancel delModal">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-default d-delModal">
+            <div class="d-modal">
+                <div class="contentWrap">
+                    <div class="d-pop d-del-pop">
+                        <div class="icon_box">
+                            <p class="icon_del deleteModal"></p>
+                        </div>
+                        <div class="contentModal">
+                            <p class="title">要删除此地址吗？</p>
+                            <div class="filed">
+                                <p class="label">收&nbsp;&nbsp;货&nbsp;人 : </p>
+                                <p class="val">123</p>
+                            </div>
+                            <div class="filed">
+                                <p class="label">联系方式 :</p>
+                                <p class="val">185****8888</p>
+                            </div>
+                            <div class="filed">
+                                <p class="label">收货地址 : </p>
+                                <p class="val">北京市北京市东城区东华门街道123</p>
+                            </div>
+                        </div>
+                        <div class="footBtn">
+                            <button class="confirme">确定</button>
+                            <button class="cancel deleteModal">取消</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+       $(function(){
+            // 新建地址
+            $('.newAddress').click(function(){
+                $('.d-add').addClass('active');
+                load_script();
+            })
+            $('.delModal').click(function(){
+                $('.d-add').removeClass('active');
+            })
+            $('#delRow').click(function(){
+                $('.d-delModal').addClass('active');
+            })
+            $('.deleteModal').click(function(){
+                $('.d-delModal').removeClass('active');
+            })
+            $('.checkbox .j-checkbox').click(function(){
+                //$('.checkbox .j-checkbox').removeClass('active');
+                $(this).toggleClass('active')
+            })
+            $('#orderAdmin').click(function(){
+                window.location = '../order/orderDetail.html'
+            })
+            $('#myHome').click(function(){
+                window.location = '../user/index.html'
+            })
+            
+            function addressQuery(){
+                // let rel = '';
+                // $.ajax({
+                //     type:"get",
+                //     async:false,
+                //     xhrFields:{withCredentials:true}, //前端处理接口跨域的问题 这个要后端也要配合处理
+                //     url:'http://you.163.com/xhr/address/getProvince.json?csrf_token=bf01c04886531c32e2bd82903ee2bc17',
+                //     data:'',
+                //     dataType:'json',
+                //     success:function(res){
+                //         console.log(res);
+                //        rel = res;
+                //     },
+                //     error:function(err){
+
+                //     }
+                // })
+                // return rel;
+            }
+            function  load_script(){
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                //跨域 将callback函数名称传递给跨域服务器 服务端利用此函数名组建
+                script.src = "http://you.163.com/xhr/address/getProvince.json?csrf_token=bf01c04886531c32e2bd82903ee2bc17";
+                //将可跨域请求的script标签挂载到head标签上
+               let res= document.getElementsByTagName("head")[0].appendChild(script);
+               console.log(res);
+            }
+        })
+    </script>
+</body>
+</html>

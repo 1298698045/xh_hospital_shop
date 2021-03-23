@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  a, a:hover {
+      text-decoration: none;
+  }
+  ul,li{
+    list-style: none;
+  }
+#HomeApp{
+    background-color: #f2f2f2;
+  }
+  #banner-con{
+    position: relative;
+    width: 100%;
+  }
+  .main-nav-content{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -400px;
+  }
+  .main-nav-content a{
+    color: #333;
+    margin-left: 25px;
+    font-size: 16px;
+  }
+  .main-nav-content a:hover{
+    color:#FF0036 ;
+  }
+  .main-content{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  #category-type{
+    position: absolute;
+    top: -35px;
+    width: 200px;
+  }
+  #category-type header{
+    background-color: #FF0036;
+    padding:6px 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  #category-type header .anticon{
+    margin-right: 8px;
+    font-size: 22px;
+    float: left;
+    margin-top: 1px;
+  }
+  .headsearch{
+    background-color: white;
+  }
+  .wonderful-line{
+    border-bottom: 1px solid #dedede;
+    width: 400px;
+    margin: 0 auto;
+  }
+  .wonderful-text{
+    width: 100px;
+    margin: 0 auto;
+    position: relative;
+    top: -15px;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  .wonderful{
+    height: 40px;
+    margin-top: 40px;
+  }
+  .tm-end{
+    height: 100px;
+    background: url('https://img.alicdn.com/tps/TB1wQDAPXXXXXXgaFXXXXXXXXXX-62-35.png') no-repeat center top 20px;
+  }
+  .main-swiper-content{
+      width: 1200px;
+      margin: 0 auto;
+  }
+  .main-swiper-content,.swiper-container.swiper-container-horizontal{
+      height: 500px;
+  }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    #category-type{
+        z-index: 10;
+    }
+    .headsearch{
+        overflow: hidden;
+    }
+    .main-swiper-content img{
+        width: 1200px;
+    }
+    .newlist{
+        line-height: 110px;
+    }
+    #leftnav-container,#total-container{
+        z-index: 11;
+    }
+    .left-logo img {
+      width: 190px;
+      margin-left: 0;
+  }
+  .headsearch #header-search {
+    padding: 20px 0;
+}
+.head-sech-content{
+  margin-top: 10px;
+}
+#banner-con{
+  margin-top: 0px;
+}
+.headsearch{
+  padding-bottom: 50px;
+}
+.category-nav{
+  font-size: 14px;
+}

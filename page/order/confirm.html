@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交订单</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .confirmRoot{
+            width: 1200px;
+            margin: 50px auto 80px;
+        }
+        .m-confirmOrderNotice{
+            overflow: hidden;
+            height: 30px;
+            background: #f8f5f0;
+            border: 1px solid #efece4;
+            line-height: 34px;
+            padding-left: 20px;
+            margin: -20px 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        .m-confirmOrderNotice .notice{
+            padding-left: 26px;
+            height: 36px;
+            background: url('../../img/cc3bec9c35e0918247d0ebc02481438b.gif') center left no-repeat;;
+        }
+        .m-confirmOrderNotice .notice a{
+            color: #CC9756;
+            font-size: 12px;
+        }
+        .m-confirmOrderNotice .notice a:hover{
+            text-decoration: underline;
+        }
+        .confirmRoot .d-panel{
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #e8e8e8;
+        }
+        .confirmRoot .d-panel .hd{
+            width: 100%;
+            padding-left: 21px;
+            background-color: #f5f5f5;
+            height: 42px;
+            border-bottom: 1px solid #e8e8e8;
+            line-height: 42px;
+            color: #999;
+        }
+        .confirmRoot .d-panel .bd{
+            padding: 30px 0 30px 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line{
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line .icon{
+            width: 23px;
+            height: 23px;
+            background: url('../../img/icon-normal-sb5be29e752-290b858f9b.webp');
+            background-position: 0 -60px;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line .default_text{
+            letter-spacing: 5px;
+            display: inline-block;
+            height: 32px;
+            line-height: 34px;
+            padding-left: 10px;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line button{
+            width: 60px;
+            margin-left: 20px;border-radius: 2px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            outline: 0;
+            border: none;
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line button:hover{
+            color: #c0ae8a;
+            border: 1px solid #c0ae8a;
+            background-color: #fff;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line .label{
+            color: #999;
+            width: 70px;
+            line-height: 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .confirmRoot .d-panel .bd .leftCont .line .val{
+            max-width: 720px;
+            word-break: break-all;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location{
+            width: 253px;
+            height: 58px;
+            border-left: 1px solid #e8e8e8;
+            text-align: center;
+            margin-top: 44px;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location .address{
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location .address a{
+            color: #69c;
+            font-size: 12px;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location .address a:hover{
+            text-decoration: underline;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location .btn{
+            border-radius: 2px;
+            width: 96px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            vertical-align: middle;
+            cursor: pointer;
+            outline: 0;
+        }
+        .confirmRoot .d-panel .bd .rightCont .location .btn:hover{
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .g-itemInfo .info{
+            height: 42px;
+            line-height: 40px;
+            background: #F8F5F0;
+            border: 1px solid #E8E8E8;
+            margin: -1px 0;
+            padding: 0 20px;
+            color: #666;
+        }
+        .g-itemInfo .info .seqNo{
+            font-size: 14px;
+            margin-right: 20px;
+            font-weight: 400;
+        }
+        .g-itemInfo .info .postTimeDesc{
+            line-height: 40px;
+            color: #666;
+            font-size: 14px;
+        }
+        .g-itemInfo .d-table{
+            font-size: 14px;
+            width: 100%;
+            /* padding: 0 21px; */
+            background-color: #fff;
+            border: 1px solid #e8e8e8;
+        }
+        .g-itemInfo .d-table .table{
+            width: 100%;
+            border-collapse: collapse;
+            /* border-spacing: 0; */
+        }
+        .g-itemInfo .d-table .table .tr_head{
+            width: 100%;
+            line-height: 41px;
+            height: 42px;
+            color: #999;
+            background: #f5f5f5;
+        }
+        .g-itemInfo .d-table .table .tr_head th{
+            line-height: 41px;
+            height: 42px;
+            color: #999;
+        }
+        .g-itemInfo .d-table .table .t_body{
+            padding: 20px 0;
+        }
+        .g-itemInfo .d-table .table .t_body .m-itemInfoTd{
+            display: flex;
+        }
+        .g-itemInfo .d-table .table .t_body .m-itemInfoTd .imgs{
+            width: 100px;
+            height: 100px;
+        }
+        .g-itemInfo .d-table .table .t_body .m-itemInfoTd .imgs img{
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .g-itemInfo .d-table .table .t_body .m-itemInfoTd .r_text .name{
+            line-height: 24px;
+            max-width: 210px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .g-itemInfo .d-table .table .t_body .m-itemInfoTd .r_text .typeColor{
+            line-height: 22px;
+            font-size: 12px;
+            color: #999;
+        }
+        .g-itemInfo .d-table .table .t_body tr td{
+            vertical-align: top;
+            padding: 20px 0;
+        }
+        .g-itemInfo .d-table .table .t_body tr .price{
+            text-align: center;
+            font-size: 14px;
+        }
+        .m-itemInfoFt{
+            width: 100%;
+            background-color: #f5f5f5;
+            border-left: 1px solid #E8E8E8;
+            border-right: 1px solid #E8E8E8;
+            border-bottom: 1px solid #E8E8E8;
+        }
+        .m-itemInfoFt .row{
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 20px 0;
+            border-bottom: 1px solid #E8E8E8;
+            min-height: 103px;
+        }
+        .m-itemInfoFt .row .cel{
+            padding: 5px 20px;
+            flex: 1;
+            border-right: 1px dashed #ddd;
+
+        }
+        .m-itemInfoFt .row .cel .yhq{
+            font-size: 14px;
+            color: #666;
+            line-height: 1;
+        }
+        .m-itemInfoFt .row .cel .yhq .icon{
+            display: inline-block;
+            height: 14px;
+            width: 14px;
+            background: url('../../img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat 0 -308px;
+        }
+        .m-itemInfoFt .row .cel .check{
+            margin-top: 10px;
+        }
+        .m-itemInfoFt .row .cel .check input{
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background: url('../../img/widget-s3bba68e5d5-eeb37afca8.webp') no-repeat;
+            margin-right: 14px;
+            background-position: 0 -84px;
+            border: none;
+            outline: 0;
+        }
+        .m-itemInfoFt .row .cel .check span{
+            font-size: 14px;
+            color: #999;
+        }
+        .m-itemInfoFt .row .cel a{
+            color: #999;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .m-itemInfoFt .row .cel .btn{
+            min-width: 114px;
+            width: auto;
+            padding: 0 20px;
+            height: 40px;
+            line-height: 38px;
+            font-size: 14px;
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            margin: 12px 0;
+            outline: 0;
+        }
+        .m-itemInfoFt .row .cel .btn:hover{
+            color: #d4282d;
+            border: 1px solid #d4282d;
+            background-color: #fff;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm{
+            color: #69c!important;
+            display: block;
+            margin-bottom: 0;
+            cursor: pointer;
+            font-size: 12px!important;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm a{
+            display: inline-block;
+            color: #69c;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .icon_s{
+            display: inline-block;
+            margin-left: 10px;
+            height: 5px;
+            width: 10px;
+            background: url('../../img/arrow-s8f43eb714c-d446c53437.webp') no-repeat ;
+            background-position: 0 -603px; 
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .icon_s.active{
+            background-position: 0 -1171px;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .activeIptWrap{
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            margin-top: 25px;
+        }
+        .blockActive{
+            display: none;
+        }
+        .blockActive.active{
+            display: block;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .activeIptWrap input{
+            flex: 1;
+            border: 1px solid #ccc;
+            border-right: 0;
+            padding: 0 5px;
+            line-height: 33px;
+            height: 33px;
+            font-size: 14px;
+            color: #333;
+            outline: 0;
+            min-width: 58px;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .activeIptWrap button{
+            width: 57px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            outline: 0;
+        }
+        .m-itemInfoFt .row .cel .m-activeForm .activeIptWrap button:hover{
+            color: #d4282d;
+            border: 1px solid #d4282d;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .m-itemInfoFt .rowTwo{
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row nowrap;
+            padding: 20px 40px 40px 30px;
+            overflow: hidden;
+        }
+        .m-itemInfoFt .rowTwo .left .label{
+            line-height: 1;
+            font-size: 14px;
+            color: #666;
+        }
+        .m-itemInfoFt .rowTwo .left .label .icon{
+            width: 14px;
+            height: 14px;
+            background: url('../../img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat 0 -308px;
+            display: inline-block;
+        }
+        .m-itemInfoFt .rowTwo .left .checkbox{
+            margin-top: 10px;
+        }
+        .m-itemInfoFt .rowTwo .left .checkbox .check{
+            -webkit-appearance:none;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background: url('../../img/widget-s3bba68e5d5-eeb37afca8.webp') no-repeat ;
+            background-position: 0 -84px;
+            outline: 0;
+            border:none;
+            cursor: pointer;
+        }
+        .m-itemInfoFt .rowTwo .left .checkbox .check.active{
+            background-position: 0 -56px;
+        }
+        .m-itemInfoFt .rowTwo .left .checkbox span{
+            margin-left: 9px;
+            line-height: 1;
+            color: #666;
+            font-size: 14px;
+        }
+        .m-itemInfoFt .rowTwo .right{
+            width: 251px;
+        }
+        .m-itemInfoFt .rowTwo .right .m-confirmPayInfo .line{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .m-itemInfoFt .rowTwo .right .m-confirmPayInfo .lineThree{
+            width: 100%;
+            margin-bottom: 20px;
+            padding-top: 24px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 14px;
+        }
+        .m-itemInfoFt .rowTwo .right .m-confirmPayInfo .lineThree .priceTotal{
+            font-weight: 700;
+            color: #d4282d;
+            font-size: 20px;
+        }
+        .m-itemInfoFt .rowTwo .right .d-button{
+            width: 168px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            border-radius: 2px;
+            padding: 0;
+            letter-spacing: normal;
+            text-align: center;
+            cursor: pointer;
+            outline: 0;
+            float: right;
+        }
+        .m-itemInfoFt .rowTwo .right .d-button:hover{
+            color: #fff;
+            border: 1px solid #c0ae8a;
+            background-color: #c0ae8a;
+        }
+        .m-itemInfoFt .rowTwo .right .lineSix{
+            text-align: right;
+            line-height: 22px;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+        .m-itemInfoFt .rowTwo .right .lineSix .label .name{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .m-itemInfoFt .rowTwo .right .lineSix .address-detail{
+            max-width: 300px;
+            text-align: right;
+            direction: rtl;
+            white-space: nowrap;
+        }
+        .confirmRoot .m-agreement{
+            margin-top: 10px;
+            text-align: right;
+        }
+        .confirmRoot .m-agreement .checkboxs{
+            -webkit-appearance:none;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background: url('../../img/widget-s3bba68e5d5-eeb37afca8.webp') no-repeat ;
+            background-position: 0 -84px;
+            outline: 0;
+            border:none;
+            cursor: pointer;
+        }
+        .confirmRoot .m-agreement .checkboxs.active{
+            background-position: 0 -56px;
+        }
+        .confirmRoot .m-agreement a{
+            color: #69c;
+            font-size: 12px;
+        }
+        .confirmRoot .m-agreement a:hover{
+            text-decoration: underline;
+            
+        }
+        .d-add{
+            display: none;
+        }
+        .d-add.active{
+            display: block;
+        }
+        /* modal 弹出框 */
+        .d-modal{
+            position: fixed;
+            display: table;
+            z-index: 1190;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: rgba(0,0,0,.8);
+        }
+        .d-modal .contentWrap{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .d-modal .contentWrap .d-pop{
+            width: 697px;
+            min-height: 422px;
+            padding: 30px 40px 0;
+            position: relative;
+            min-height: 274px;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 9999;
+            transition: transform .3s ease-out .1s,opacity .3s ease-out .1s;
+            transform: scale(1);
+        }
+        .d-modal .contentWrap .d-pop .rowtop{
+            display: flex;
+            justify-content: space-between;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .title{
+            font-size: 18px;
+            margin-bottom: 43px;
+            line-height: 1;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .icon_del{
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            cursor: pointer;
+            background-image: url('../../img/close-s706cc4331c-af215c519a.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -331px;
+            margin-left: auto;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr{
+            height: 400px;
+            max-height: 400px;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr .w-addr-warp{
+            border: 1px solid #e8e8e8;
+            width: 525px;
+            /* margin-bottom: 10px; */
+            padding: 20px 25px;
+            cursor: pointer;
+            margin: 0 auto 10px;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr .w-addr-warp.active{
+            border: 2px solid #b4a078;
+            padding: 19px 24px;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr .w-addr-warp .line{
+            display: flex;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr .w-addr-warp .line .lable{
+            color: #999;
+            width: 70px;
+            text-align: center;
+        }
+        .d-modal .contentWrap .d-pop .w-body-addr .w-addr-warp .line .val{
+            max-width: 720px;
+            font-size: 14px;
+        }
+        .d-modal .contentWrap .d-pop .footer{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 50px;
+        }
+        .d-modal .contentWrap .d-pop .footer button{
+            width: 144px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+            outline: 0;
+            border: none;
+            cursor: pointer;
+        }
+        .d-modal .contentWrap .d-pop .footer .confire{
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+        }
+        .d-modal .contentWrap .d-pop .footer .cancel{
+            text-align: center;
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="confirmRoot">
+            <div class="m-confirmOrderNotice">
+                <div class="notice">
+                    <a href="">关于人工服务工作时间变更通知</a>
+                </div>
+            </div>
+            <div class="d-panel">
+                <div class="hd">收货信息</div>
+                <div class="bd">
+                    <div class="leftCont">
+                        <div class="line">
+                            <i class="icon"></i>
+                            <span class="default_text">默认地址</span>
+                            <button>修改</button>
+                        </div>
+                        <div class="line">
+                            <p class="label">收 货 人 :</p>
+                            <p class="val">123</p>
+                        </div>
+                        <div class="line">
+                            <p class="label">联系方式 :</p>
+                            <p class="val">188****8888</p>
+                        </div>
+                        <div class="line">
+                            <p class="label">收货地址 :</p>
+                            <p class="val">北京市北京市朝阳区建外街道123</p>
+                        </div>
+                    </div>
+                    <div class="rightCont">
+                        <div class="location">
+                            <p class="address" id="switchAdress">
+                                <a href="javascript:;">地址切换</a>
+                            </p>
+                            <button class="btn">新建地址</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-itemInfo">
+                <div class="info">
+                    <span class="seqNo">包裹1</span>
+                    <span class="postTimeDesc">支付后，预计48小时内发货</span>
+                </div>
+                <div class="d-table">
+                    <table class="table">
+                        <thead>
+                            <tr class="tr_head">
+                                <th width="360" style="text-align: left;padding-left: 21px;">商品信息</th>
+                                <th width="165">单价</th>
+                                <th width="171">数量</th>
+                                <th width="191">小计</th>
+                                <th width="179">实付</th>
+                            </tr>
+                        </thead>
+                        <tbody class="t_body">
+                            <tr>
+                                <td class="m-itemInfoTd">
+                                    <div class="imgs">
+                                        <img src="../../img/28d22f6b3409f05481e450a6a585f763.webp" alt="">
+                                    </div>
+                                    <div class="r_text">
+                                        <p class="name">女式冷感面料吊带家居打底裙</p>
+                                        <p class="typeColor">杏色 M</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="price">¥79.00</p>
+                                </td>
+                                <td>
+                                    <p class="price">1</p>
+                                </td>
+                                <td>
+                                    <p class="price">¥79.00</p>
+                                </td>
+                                <td>
+                                    <p class="price">¥79.00</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="m-itemInfoFt">
+                    <div class="row">
+                        <div class="cel">
+                            <p class="yhq">
+                                使用优惠券(2张)
+                                <span class="icon"></span>
+                            </p>
+                            <button class="btn">暂无可用</button>
+                            <div class="m-activeForm">
+                                <a href="javascript:;" id="activeTt">
+                                    兑换优惠券
+                                    <i class="icon_s"></i>
+                                </a>
+                                <div class="blockActive">
+                                    <div class="activeIptWrap">
+                                        <input type="text" placeholder="请输入优惠码">
+                                        <button>兑换</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cel">
+                            <p class="yhq">
+                                使用余额
+                            </p>
+                            <div class="check">
+                                <input type="checkbox" disabled>
+                                <span>可用余额 ¥0.00</span>
+                            </div>
+                            <a href="javascript:;">余额抵扣规则？</a>
+                        </div>
+                        <div class="cel"></div>
+                        <div class="cel">
+                            <p class="yhq">
+                                使用礼品卡
+                                <span class="icon"></span>
+                            </p>
+                            <div class="check">
+                                <input type="checkbox" disabled>
+                                <span>可用余额 ¥0.00</span>
+                            </div>
+                            <div class="m-activeForm">
+                                <a href="javascript:;">添加礼品卡
+                                    <i class="icon_s"></i>
+                                </a>
+                                <div class="blockActive">
+                                    <div class="activeIptWrap">
+                                        <input type="text" placeholder="请输入优惠码">
+                                        <button>兑换</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowTwo">
+                        <div class="left">
+                            <p class="label">
+                                发票信息：
+                                <a href="javascript:;" class="icon"></a>
+                            </p>
+                            <div class="checkbox">
+                                <input type="checkbox" class="check" id="needInvoiceBtn">
+                                <span>我要开发票</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="m-confirmPayInfo">
+                                <div class="m-payItemsInfo">
+                                    <div class="line">
+                                        <p class="label">商品合计:</p>
+                                        <p class="val">¥79.00</p>
+                                    </div>
+                                    <div class="line">
+                                        <p class="label">邮费:</p>
+                                        <p class="val">¥79.00</p>
+                                    </div>
+                                    <div class="line lineThree">
+                                        <p class="label">商品合计:</p>
+                                        <p class="val priceTotal">¥79.00</p>
+                                    </div>
+                                </div>
+                                <div style="overflow: hidden;">
+                                    <button class="d-button" id="toPay">去付款</button>
+                                </div>
+                                <div class="lineSix">
+                                    <p class="label">
+                                        <span class="name">
+                                            123
+                                        </span>
+                                        188****8888</p>
+                                    <p class="address-detail">北京市北京市朝阳区建外街道123</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-agreement">
+                <input type="checkbox" class="checkboxs">
+                <a href="javascript:;">同意《协和商城服务协议》</a>
+            </div>
+        </div>
+        <div class="d-default d-add">
+            <div class="d-modal">
+                <div class="contentWrap">
+                    <div class="d-pop">
+                        <div class="rowtop">
+                            <div class="title">
+                                选择地址
+                            </div>
+                            <div class="icon_del" id="delModal"></div>
+                        </div>
+                        <div class="w-body-addr">
+                            <div class="w-addr-warp active">
+                                <div class="line">
+                                    <p class="lable">收&nbsp;&nbsp;货人: </p>
+                                    <p class="val">123</p>
+                                </div>
+                                <div class="line">
+                                    <p class="lable">联系方式： </p>
+                                    <p class="val">185****8888</p>
+                                </div>
+                                <div class="line">
+                                    <p class="lable">收货地址：</p>
+                                    <p class="val">北京市北京市东城区东华门街道123</p>
+                                </div>
+                                <i class="w-icon-normal"></i>
+                            </div>
+                            <div class="w-addr-warp">
+                                <div class="line">
+                                    <p class="lable">收&nbsp;&nbsp;货人: </p>
+                                    <p class="val">123</p>
+                                </div>
+                                <div class="line">
+                                    <p class="lable">联系方式： </p>
+                                    <p class="val">185****8888</p>
+                                </div>
+                                <div class="line">
+                                    <p class="lable">收货地址：</p>
+                                    <p class="val">北京市北京市东城区东华门街道123</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="confire">确定</button>
+                            <button class="cancel" id="cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#needInvoiceBtn').click(function(){
+            $('#needInvoiceBtn').toggleClass('active');
+        })
+        $('.checkboxs').click(function(){
+            $(this).toggleClass('active');
+        })
+        $('#activeTt').click(function(){
+            $('#activeTt .icon_s').toggleClass('active');
+            $('.blockActive').toggleClass('active');
+        })
+        $('.w-addr-warp').click(function(){
+            $('.w-addr-warp').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('#switchAdress').click(function(){
+            $('.d-add').addClass('active');
+        })
+        $('#delModal').click(function(){
+            $('.d-add').removeClass('active');
+        })
+        $('#cancel').click(function(){
+            $('.d-add').removeClass('active');
+        })
+        $('#toPay').click(function(){
+            window.location = '../order/toPay.html'
+        })
+    </script>
+</body>
+</html>

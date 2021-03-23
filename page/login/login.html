@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>协和商城-登录</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .body {
+            height: calc(100% - 80px);
+            background: url(https://img14.360buyimg.com/da/jfs/t1/155109/9/15231/96513/6009262bEfc0a36ef/5515ba46c3c0f3c5.jpg) no-repeat center;
+            background-color: #b30801;
+            background-size: 1200px;
+            height: 500px;
+        }
+        .head-logo{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .login-content{
+            position: absolute;
+            left: 50%;
+            margin-left: 300px;
+            margin-top: 100px;
+            background-color: white;
+            width: 300px;
+            border-radius: 4px;
+            height: 350px;
+        }
+        .login-content-head{
+            font-weight: 700;
+            border-bottom: 1px solid #dedede;
+            overflow: hidden;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .login-type{
+            padding: 5px;
+            float: left;
+        }
+        .login-type.active{
+            color: #e4393c;
+        }
+        .login-content-body{
+            padding: 20px;
+        }
+        .login-content-foot{
+            border: 1px solid #e85356;
+            display: block;
+            background: #e4393c;
+            height: 31px;
+            line-height: 31px;
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Microsoft YaHei';
+            text-align: center;
+            margin: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .phonenumber label{
+            float: left;
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url(https://misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2018-0827/i/pwd-icons-new.png) no-repeat;
+        }
+        .smscode label{
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url(https://misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2018-0827/i/pwd-icons-new.png) no-repeat  -48px -48px;
+            float: left;
+        
+        }
+        .login-content-body>div{
+            border: 1px solid #dedede;
+            height: 38px;
+        }
+        .login-content-body input{
+            line-height: 38px;
+            float: left;
+            border: 0;
+            outline: none;
+            text-indent: 10px;
+        }
+        .smscode{
+            margin-top: 20px;
+        }
+        .smscode span{
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 38px;
+            color: #666;
+        }
+        .smscode input{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="head-logo">
+            <a href="/shopping/index.html">
+                <img src="https://img30.360buyimg.com/popshop/jfs/t28594/290/259029626/10859/d32a666c/5bed1cbfN337673b1.jpg" width="240">
+            </a>
+        </div>
+        <div class="body">
+            <div class="login-content">
+                <div class="login-content-head">
+                    <div class="login-type active">手机号登录</div>
+                </div>
+                <div class="login-content-body">
+                    <div class="phonenumber">
+                        <label></label>
+                        <input type="text" placeholder="请输入手机号">
+                    </div>
+                    <div class="smscode">
+                        <label></label>
+                        <input type="text" placeholder="请输入验证码">
+                        <span>获取验证码</span>
+                    </div>
+                </div>
+                <div class="login-content-foot">
+                    登 录
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/module/jq/jq.min.js"></script>
+</body>
+</html>
