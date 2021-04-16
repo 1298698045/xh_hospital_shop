@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的积分</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+        }
+        .rightcontent .g-main #wraper .p-pointsIndex{
+            line-height: 1;
+        }
+        .rightcontent .g-main #wraper .p-pointsIndex .m-pointsHead{
+            width: 892px;
+            height: 265px;
+            font-size: 14px;
+            overflow: hidden;
+            background: url('/img/banner_1.1.webp') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .rightcontent .g-main #wraper .p-pointsIndex .m-pointsHead .headContent{
+            width: 340px;
+            height: 195px;
+            margin: 34px 0 0 60px;
+            text-align: center;
+            color: #B4A078;
+        }
+        .p-pointsIndex .m-pointsHead .headContent .f-ib{
+            display: inline-block;
+        }
+        .p-pointsIndex .m-pointsHead .headContent .f-fz16{
+            margin-top: 34px;
+            font-size: 16px;
+        }
+        .p-pointsIndex .m-pointsHead .headContent .points{
+            font-size: 44px;
+            line-height: 44px;
+            margin: 20px 0;
+        }
+        .p-pointsIndex .m-pointsHead .headContent .link a{
+            width: 80px;
+            height: 26px;
+            border: 1px solid #b4a078;
+            color: #b4a078;
+            display: inline-block;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 2px;
+        }
+        .p-pointsIndex .m-pointsHead .headContent .link a:hover {
+            background: #B4A078;
+            color: #fff;
+        }
+        .p-pointsIndex .m-pointsList {
+            margin: 20px 0;
+        }
+        .moduleHead {
+            background: #F6F6F6;
+            border: 1px solid #EAEAEA;
+            padding: 15px 0 12px 30px;
+        }
+        .moduleHead .title {
+            font-size: 16px;
+            margin-right: 18px;
+        }
+        .moduleHead .subTitle {
+            color: #666;
+            font-size: 12px;
+        }
+        .p-pointsIndex .m-pointsList .list {
+            margin-top: -1px;
+            border: 1px solid #EAEAEA;
+            overflow: hidden;
+        }
+        .p-pointsIndex .m-pointsList .list .item {
+            position: relative;
+            width: 33.3%;
+            height: 272px;
+            border-left: 1px solid #eaeaea;
+            text-align: center;
+            cursor: pointer;
+            float: left;
+        }
+        .p-pointsIndex .m-pointsList .list .item:first-child {
+            border-left: none;
+        }
+        .p-pointsIndex .m-pointsList .list .item .w-icon-member {
+            height: 80px;
+            width: 80px;
+            margin: 40px 0 25px;
+            display: inline-block;
+            background: url('/img/member-s1e8e347c79-3d6387449d.webp') no-repeat;
+        }
+        .p-pointsIndex .m-pointsList .list .item .w-icon-member.member-points-cart {
+            background-repeat: no-repeat;
+            background-position: 0 -2892px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .title {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .subTitle, .p-pointsIndex .moduleHead .subTitle {
+            color: #666;
+            font-size: 12px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .button {
+            display: inline-block;
+            margin-top: 20px;
+            width: 90px;
+            height: 26px;
+            line-height: 24px;
+            background: #F4F0EA;
+            border: 1px solid #B4A078;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #B4A078;
+        }
+        .p-pointsIndex .m-pointsList .list .item .button:hover {
+            background-color: #fff;
+        }
+        .p-pointsIndex .m-pointsList .list .item .w-icon-member.member-points-superMembership {
+            background-position: 0 -2982px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .w-icon-member.member-points-time {
+            background-position: 0 -3072px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .bottomText::before {
+            content: '-';
+            margin-right: 5px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .bottomText {
+            margin-top: 27px;
+            color: #666;
+            font-size: 12px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .bottomText::after {
+            content: '-';
+            margin-left: 5px;
+        }
+        .p-pointsIndex .m-pointsList .list .item .container_child {
+            opacity: 0;
+            transition: opacity .3s;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+        .p-pointsIndex .m-pointsList .list .item .container_child .qrCode {
+            margin: 61px auto 0;
+            width: 150px;
+            height: 150px;
+            padding: 5px;
+            border: 1px solid #e8e8e8;
+        }
+        .p-pointsIndex .m-pointsList .list .item .container_child .qrCode .imgs{
+            width: 138px;
+            height: 138px;
+            background: #f30;
+        }
+        .p-pointsIndex .m-pointsList .list  .item:last-child:hover .container_child{
+            opacity: 1;
+        }
+        .listWrapper {
+            padding: 30px 0 50px;
+            border: 1px solid #EAEAEA;
+            border-top: none;
+            margin-bottom: 30px;
+        }
+        .listWrapper .tab {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .listWrapper .tab .tabItem {
+            display: inline-block;
+            width: 149px;
+            line-height: 36px;
+            font-size: 16px;
+            border: 1px solid #B4A078;
+            color: #B5A176;
+            background-color: #F4F0EA;
+            cursor: pointer;
+        }
+        .listWrapper .tab .tabItem.active {
+            background-color: #B4A078;
+            color: #fff;
+        }
+        .polite{
+            padding: 0 20px;
+            margin-top: 20px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .polite .weekItem{
+            position: relative;
+            width: 200px!important;
+            text-align: center;
+            float: left;
+            box-sizing: border-box;
+            margin: 0 5px;
+        }
+        .polite .weekItem .hd{
+            width: 100%;
+            height: 200px;
+        }
+        .polite .weekItem .hd .imgs{
+            width: 100%;
+            height: 100%;
+        }
+        .polite .weekItem .hd:hover .imgs img{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .polite .weekItem .hd .imgs img{
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            border: 1px solid transparent;
+            color: #f4f4f4;
+            display: block;
+            margin: 0 auto;
+            opacity: 1;
+        }
+        .polite .weekItem .remain {
+            position: relative;
+            margin: 10px auto;
+            width: 110px;
+            height: 16px;
+            border: 1px solid #F2CECD;
+            border-radius: 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .polite .weekItem .remain .remainNum {
+            line-height: 14px;
+            color: #666;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .polite .weekItem  .name {
+            font-size: 14px;
+            width: 187px;
+            margin: 6px auto 10px;
+        }
+        .polite .weekItem  .name:hover{
+            color: #B4A078;
+            cursor: pointer;
+        }
+        .polite .weekItem .price .points{
+            font-size: 14px;
+            color: #BE4141;
+            margin-right: 10px;
+        }
+        .polite .weekItem .price .originPrice{
+            color: #999;
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+        .f-text-overflow{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .p-pointsIndex .weekItem .soldOutBtn:hover {
+            background-color: #fff;
+        }
+        .weekItem .soldOutBtn {
+            background-color: #FFF3F3;
+            border: 1px solid #C0403E;
+            line-height: 28px;
+            color: #C0403E;
+            margin-top: 20px;
+            width: 110px;
+            height: 30px;
+            font-size: 14px;
+            border-radius: 2px;
+            cursor: pointer;
+            outline: 0;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li class="active">我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="g-main">
+                    <div id="wraper">
+                        <div class="p-pointsIndex">
+                            <div class="m-pointsHead">
+                                <div class="headContent">
+                                    <span class="f-fz16 f-ib">可用积分</span>
+                                    <br data-reactid=".3.1.1.1">
+                                    <span class="f-ib points" data-reactid=".3.1.1.2">0</span>
+                                    <div class="link">
+                                        <a href="#javascript:;">积分明细</a>
+                                        <a href="#javascript:;">积分指南</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-pointsList">
+                                <div class="moduleHead">
+                                    <span class="title">严选积分轻松得</span>
+                                    <span class="subTitle">聚少成多 积少致巨</span>
+                                </div>
+                                <div class="list">
+                                    <div class="item f-left">
+                                        <i class="w-icon-member member-points-cart"></i>
+                                        <p class="title">购物送积分</p>
+                                        <p class="subTitle">额外赠最高100积分</p>
+                                        <a href="#javascript:;" class="button">去购物</a>
+                                    </div>
+                                    <div class="item f-left">
+                                        <i class="w-icon-member member-points-superMembership"></i>
+                                        <p class="title">Pro会员</p>
+                                        <p class="subTitle">Pro会员购物享双倍积分</p>
+                                        <a href="#javascript:;" class="button">去开通</a>
+                                    </div>
+                                    <div class="item f-left">
+                                        <i class="w-icon-member member-points-time"></i>
+                                        <p class="title">APP签到领积分</p>
+                                        <p class="subTitle">连续签到7天得额外好礼</p>
+                                        <div class="bottomText">
+                                            APP端专属
+                                        </div>
+                                        <div class="container_child">
+                                            <div class="qrCode">
+                                                <p class="imgs">
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="moduleHead">
+                                <span class="title">积分超值兑换（限兑1件/期）</span>
+                                <span class="subTitle">超值抢兑 周周更新</span>
+                            </div>
+                            <div class="listWrapper">
+                                <div class="tab">
+                                    <span class="active tabItem">本期抢兑</span>
+                                    <span class="tabItem" style="margin-left:-5px">下期预告</span>
+                                </div>
+                                <div class="polite">
+                                    <!-- <div class="weekItem">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="remain">
+                                            <span class="remainNum">还剩0件</span>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                        <button class="soldOutBtn">去看看</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+       $('.listWrapper .tab .tabItem').click(function(){
+            $('.listWrapper .tab .tabItem').removeClass('active');
+            $(this).addClass('active');
+       })
+       let str = '';
+       for(let i=0; i < 4; i++){
+           str += `
+                <div class="weekItem">
+                    <div class="hd">
+                        <div class="imgs">
+                            <img src="/img/jf_1.1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="remain">
+                        <span class="remainNum">还剩0件</span>
+                    </div>
+                    <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                    <div class="price">
+                        <span class="points">99积分</span>
+                        <span class="originPrice">￥14.90</span>
+                    </div>
+                    <button class="soldOutBtn">去看看</button>
+                </div>
+           `
+       }
+       $('.polite').append(str);
+    </script>
+</body>
+</html>

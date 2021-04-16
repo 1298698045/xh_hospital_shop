@@ -203,7 +203,7 @@
 .footer .yx-cp-m-foot .footer_bottom .yx-cp-m-siteInfo .yx-cp-nav .yx-cp-text:hover{
     color: #fff;
 }
-.footer .yx-cp-m-foot .footer_bottom .yx-cp-m-siteInfo .yx-cp-copyright a,span{
+.footer .yx-cp-m-foot .footer_bottom .yx-cp-m-siteInfo .yx-cp-copyright a,.span{
     text-align: center;
     color: #999;
     font-size: 12px;

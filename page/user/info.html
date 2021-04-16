@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号信息</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+            border: 1px solid #e8e8e8;
+            border-collapse: collapse;
+        }
+        .rightcontent .g-main .info_tabs{
+            display: flex;
+            background: #f5f5f5;
+        }
+        .rightcontent .g-main .info_tabs .tab{
+            width: 170px;
+            border: 1px solid #e8e8e8;
+            border-left: none;
+            height: 42px;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            border-top: 3px solid transparent;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .info_tabs .tab.active{
+            color: #b4a078;
+            border-top: 3px solid #b4a078;
+        }
+        .rightcontent .g-main .info_content{
+            display: none;
+        }
+        .rightcontent .g-main .m-userInfoForm{
+            padding: 33px 60px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item{
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .label{
+            width: 70px;
+            font-size: 14px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val{
+            margin-left: 70px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val.avatar{
+            width: 70px;
+            height: 70px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val.avatar img{
+            width: 100%;
+            height: 100%;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .inp{
+            width: 180px;
+            height: 34px;
+            line-height: 34px;
+            font-size: 14px;    
+            padding-left: 9px;
+            outline: 0;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .radio_wrap{
+            display: flex;
+            align-items: center;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .w-radio{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .w-radio input[type="radio"]{
+            position: absolute;
+            opacity: 0;
+
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .w-radio input[type="radio"]+label::before{
+            content: '';
+            border-radius: 100%;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top: -0.2em;
+            vertical-align: middle;
+            cursor: pointer;
+            text-align: center;
+            background: url('/img/hxm_yanxuan-cashier_p_20161201_style_img_pc_x1_widgetGold-s85e7dfd3f5-2b1832474f.png');
+            background-position: 0 -212px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .w-radio input[type="radio"]:checked+label::before{
+            background: url('/img/hxm_yanxuan-cashier_p_20161201_style_img_pc_x1_widgetGold-s85e7dfd3f5-2b1832474f.png');
+            background-position: 0 -187px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .w-radio label{
+            margin-left: 3px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val span.phone{
+            display: inline-block;
+            margin-right: 20px;
+            color: #333;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val a{
+            font-size: 14px;
+            color: #69c;
+            text-decoration: underline;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val select{
+            outline: 0;
+            line-height: 34px;
+            width: 70px;
+            height: 28px;
+            color: #333;
+            padding: 4px 0;
+            border-radius: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .text{
+            color: #999;
+            font-size: 13px;
+            margin-right: 0;
+            margin-left: 20px;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .icon{
+            height: 14px;
+            width: 14px;
+            background: url('/img/icon-normal-sb5be29e752-290b858f9b.webp');
+            background-position: 0 -308px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .m-userInfoForm .item .r_val .saveBtn{
+            width: 144px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            border-color: #ddd;
+            padding: 0;
+            letter-spacing: normal;
+            border-radius: 2px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .m-userInfoForm .splitLine {
+            border-bottom: 1px dashed #e8e8e8;
+            margin-bottom: 23px;
+            padding-top: 19px;
+        }
+        .rightcontent .info_content .m-userInterestedCate{
+            font-size: 14px;
+            color: #333;
+            padding: 20px 10px 40px 38px;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedTips{
+            padding: 10px 0 20px;
+            line-height: 1;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox{
+            overflow: hidden;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem{
+            float: left;
+            width: 138px;
+            height: 166px;
+            margin: 0 30px 30px 0;
+            cursor: pointer;
+            /* background: #ccc; */
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemCover{
+            width: 138px;
+            height: 138px;
+            position: relative;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemCover img{
+            width: 100%;
+            height: 100%;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemCover .checkedInner{
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/img/a9be57d232ad375f2690b31ff9127f6b.webp') center center no-repeat;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemCover .checkedInner img{
+            width: 70px;
+            height: 70px;
+            margin: 34px auto;
+            display: block;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemDes{
+            margin-top: 10px;
+            width: 138px;
+            white-space: nowrap;
+            line-height: 18px;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemDes .w-chkbox input{
+            width: 18px;
+            height: 18px;
+            vertical-align: middle!important;
+        }
+        .rightcontent .info_content .m-userInterestedCate .interestedBox .w-interestedItem .itemDes .cateName{
+            font-size: 14px;
+            color: #333;
+            margin-left: 10px;
+        }
+        .info_content .m-userSizeInfoContainer{
+            padding-top: 10px;
+            font-size: 14px;
+            margin-left: 30px;
+        }
+        .info_content .m-userSizeInfoContainer .head{
+            line-height: 42px;
+            background: #F8F5F0;
+            margin-bottom: 10px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info_content .m-userSizeInfoContainer .head .add{
+            width: 74px;
+            height: 26px;
+            line-height: 26px;
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            text-align: center;
+            cursor: pointer;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList{
+            width: 440px;
+            height: 204px;
+            background: #FFF;
+            border: 1px solid #E8E8E8;
+            margin: 0 10px 10px 0;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .roleName{
+            border-bottom: 1px solid #EAEAEA;
+            height: 46px;
+            line-height: 46px;
+            font-size: 16px;
+            margin: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .roleName .l{
+            display: flex;
+            align-items: center;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .roleName .l .tag{
+            font-size: 12px;
+            width: 30px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #e36844;
+            border: 1px solid #e36844;
+            box-sizing: border-box;
+            margin-left: 10px;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .roleName .r a{
+            color: #69c;
+            font-size: 14px;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .roleName .r a:hover{
+            text-decoration: underline;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .infoRow{
+            display: flex;
+            margin: 0 20px;
+            padding: 10px 0 0 0;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .infoRow .infoItem{
+            width: 140px;
+            line-height: 34px;
+            display: flex;
+            align-self: center;
+        }
+        .info_content .m-userSizeInfoContainer .roleSizeList .infoRow .infoItem span:nth-child(1){
+            width: 80px;
+        }
+        #widgetDialogContainerWrap{
+            display: none;
+        }
+        #widgetDialogContainer{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            background: rgba(0,0,0,.7);
+            display: table;
+        }
+        #widgetDialogContainer .contentWrap{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        #widgetDialogContainer .contentWrap .m-pop{
+            position: relative;
+            min-height: 274px;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 10;
+            width: 800px;
+            height: 630px;
+            padding: 30px 0 0;
+            font-size: 14px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .title{
+            padding-left: 30px;
+            font-size: 18px;
+            line-height: 1;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .close{
+            display: inline-block;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: url('/img/close-s706cc4331c-af215c519a.webp') no-repeat;
+            background-position: 0 -297px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content{
+            display: flex;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .imgWrap{
+            width: 360px;
+            text-align: center;
+            margin-top: -48px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .imgWrap img{
+            width: 100%;
+            vertical-align: top;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap{
+            /* margin-left: 360px; */
+            padding-top: 38px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap{
+            overflow: hidden;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .label{
+            width: 78px;
+            text-align: right;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem{
+            margin-bottom: 20px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap{
+            margin-left: 10px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap input{
+            border: 1px solid #ddd;
+            width: 110px;
+            height: 30px;
+            padding-left: 10px;
+            outline: 0;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap .radio_wrap{
+            display: flex;
+            align-items: center;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap .radio_wrap .w-radio{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap .radio_wrap .w-radio input[type="radio"]{
+            position: absolute;
+            opacity: 0;
+
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap .radio_wrap .w-radio input[type="radio"]+label::before{
+            content: '';
+            border-radius: 100%;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top:0;
+            vertical-align: middle;
+            cursor: pointer;
+            text-align: center;
+            background: url('/img/hxm_yanxuan-cashier_p_20161201_style_img_pc_x1_widgetGold-s85e7dfd3f5-2b1832474f.png');
+            background-position: 0 -212px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem .inputWrap .radio_wrap .w-radio label{
+            vertical-align:middle;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .inputsWrap .m-sizeInputItem.sizeInputItemFloat{
+            float: left;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .formDesc{
+            font-size: 12px;
+            color: #999;
+            display: block;
+            margin-top: -10px;
+            padding-left: 18px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .default{
+            margin-top: 10px;
+            padding-left: 18px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .buttonGroup{
+            display: flex;
+            margin-left: 18px;
+            margin-top: 80px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .buttonGroup .btn{
+            width: 140px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+            border-radius: 2px;
+            padding: 0;
+            letter-spacing: normal;
+            text-align: center;
+            cursor: pointer;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .buttonGroup .btn.save{
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+            margin-right: 20px;
+        }
+        #widgetDialogContainer .contentWrap .m-pop .content .formWrap .buttonGroup .btn.cancel{
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+        }
+        .w-radio{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .w-radio input[type="radio"]{
+            position: absolute;
+            opacity: 0;
+
+        }
+        .w-radio input[type="radio"]+label::before{
+            content: '';
+            border-radius: 100%;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top:0;
+            vertical-align: middle;
+            cursor: pointer;
+            text-align: center;
+            background: url('/img/hxm_yanxuan-cashier_p_20161201_style_img_pc_x1_widgetGold-s85e7dfd3f5-2b1832474f.png');
+            background-position: 0 -212px;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li class="active">账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="g-main">
+                    <div class="info_tabs">
+                        <div class="tab active">基本资料</div>
+                        <div class="tab">感兴趣的分类</div>
+                        <div class="tab">我的尺码</div>
+                    </div>
+                    <div class="info_content" style="display: block;">
+                        <div class="m-userInfoForm">
+                            <div class="item">
+                                <p class="label">用户头像</p>
+                                <div class="r_val avatar">
+                                    <img src="/img/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">用户ID</p>
+                                <div class="r_val">
+                                    262280897
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">账号</p>
+                                <div class="r_val">
+                                    262280897
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">昵　　称</p>
+                                <div class="r_val">
+                                    <input class="inp" type="text" value="用户48555762">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">性　　别</p>
+                                <div class="r_val radio_wrap">
+                                    <div class="w-radio">
+                                        <input class="radio male" id="male" name="Gender" value="0" type="radio">
+                                        <label class="" for="male">
+                                            男
+                                        </label>
+                                    </div>
+                                    <div class="w-radio" style="margin-left: 40px;">
+                                        <input class="radio girl" id="girl" name="Gender" value="1" type="radio">
+                                        <label class="" for="girl">
+                                            女
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">手机号码</p>
+                                <div class="r_val">
+                                    <span class="phone">176****3888</span>
+                                    <a href="#javascript:;">更换号码</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">出生日期</p>
+                                <div class="r_val">
+                                    <select name="" id="">
+                                        <option value="">--</option>
+                                        <option value="">2021</option>
+                                        <option value="">2020</option>
+                                    </select>
+                                    <label class="" for="">
+                                        年
+                                    </label>
+                                    <select name="" id="">
+                                        <option value="">--</option>
+                                        <option value="">2021</option>
+                                        <option value="">2020</option>
+                                    </select>
+                                    <label class="" for="">
+                                        月
+                                    </label>
+                                    <select name="" id="">
+                                        <option value="">--</option>
+                                        <option value="">2021</option>
+                                        <option value="">2020</option>
+                                    </select>
+                                    <label class="" for="">
+                                        日
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">在校大学生</p>
+                                <div class="r_val">
+                                    <a href="#javascript:;">未认证</a>
+                                    <span class="text">什么是学生特权 </span>
+                                    <i class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="splitLine">
+
+                            </div>
+                            <div class="item">
+                                <p class="label">&nbsp;</p>
+                                <div class="r_val">
+                                    <p class="saveBtn">保存</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info_content">
+                        <div class="m-userInterestedCate">
+                            <div class="interestedTips">多选几个，小选会推荐地更精准哦！</div>
+                            <div class="interestedBox">
+                                <!-- <div class="w-interestedItem">
+                                    <div class="itemCover">
+                                        <img src="/img/tp_1.1.png" alt="">
+                                        <div class="checkedInner">
+                                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="itemDes">
+                                        <span class="w-chkbox">
+                                            <input type="checkbox" id="shop" name="shop">
+                                        </span>
+                                        <label for="shop" class="cateName">
+                                            床品被枕
+                                        </label>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info_content">
+                        <div class="m-userSizeInfoContainer">
+                            <div class="head">
+                                <p>最多可创建10个角色</p>
+                                <p class="add" id="add_size">新建</p>
+                            </div>
+                            <div class="roleSizeList">
+                                <div class="roleName">
+                                    <div class="l">
+                                        <p class="l_name">
+                                            我的尺码
+                                        </p>
+                                        <p class="tag">
+                                            默认
+                                        </p>
+                                    </div>
+                                    <div class="r">
+                                        <a href="#javascript:;">修改</a>
+                                        <a href="#javascript:;">删除</a>
+                                    </div>
+                                </div>
+                                <div class="infoRow">
+                                    <p class="infoItem">
+                                        <span>性别</span>
+                                        <span>男</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>身高(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>体重(kg)</span>
+                                        <span>--</span>
+                                    </p>
+                                </div>
+                                <div class="infoRow">
+                                    <p class="infoItem">
+                                        <span>肩宽(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>胸围(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>腰围(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                </div>
+                                <div class="infoRow">
+                                    <p class="infoItem">
+                                        <span>臀围(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>脚长(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                    <p class="infoItem">
+                                        <span>脚围(cm)</span>
+                                        <span>--</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="widgetDialogContainerWrap">
+            <div id="widgetDialogContainer">
+                <div class="contentWrap">
+                    <div class="m-pop">
+                        <i class="close cancel"></i>
+                        <div class="title">
+                            新建尺码
+                        </div>
+                        <div class="content">
+                            <div class="imgWrap">
+                                <img src="/img/rx.webp" alt="">
+                            </div>
+                            <div class="formWrap">
+                                <div class="inputsWrap">
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            角色名称
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="我的尺码">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            性别
+                                        </p>
+                                        <div class="inputWrap">
+                                            <div class="radio_wrap">
+                                                <div class="w-radio">
+                                                    <input class="radio maleTwo" id="maleTwo" name="genderTwo" value="0" type="radio">
+                                                    <label class="" for="maleTwo">
+                                                        男
+                                                    </label>
+                                                </div>
+                                                <div class="w-radio">
+                                                    <input class="radio girlTwo" id="girlTwo" name="genderTwo" value="1" type="radio">
+                                                    <label class="" for="girlTwo">
+                                                        女
+                                                    </label>
+                                                </div>
+                                                <div class="w-radio">
+                                                    <input class="radio children" id="children" name="genderTwo" value="2" type="radio">
+                                                    <label class="" for="children">
+                                                        儿童
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem sizeInputItemFloat">
+                                        <p class="label">
+                                            身高(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            体重(kg)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem sizeInputItemFloat">
+                                        <p class="label">
+                                            肩宽(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            胸围(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem sizeInputItemFloat">
+                                        <p class="label">
+                                            腰围(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            臀围(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem sizeInputItemFloat">
+                                        <p class="label">
+                                            脚长(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="m-sizeInputItem">
+                                        <p class="label">
+                                            脚围(cm)
+                                        </p>
+                                        <div class="inputWrap">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formDesc">信息越完整，对您选择服饰时越有帮助</div>
+                                <div class="w-radio default">
+                                    <input class="radio girlTwo" id="girlTwo" name="genderTwo" value="1" type="radio">
+                                    <label class="" for="girlTwo">
+                                        设为默认
+                                    </label>
+                                </div>
+                                <div class="buttonGroup">
+                                    <p class="btn save">保存</p>
+                                    <p class="btn cancel">取消</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+       $('.info_tabs .tab').click(function(){
+            $('.info_tabs .tab').removeClass('active');
+            $(this).addClass('active');
+            let idx = $(this).index();
+            $('.info_content').hide();
+            $('.info_content').eq(idx).show();
+       })
+       let list = [
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:1,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:2,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:3,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:4,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:5,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:6,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:7,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:8,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:9,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:10,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+        ]
+       templateFun();
+       function templateFun(){
+           let str = '';
+           
+           for(let i = 0; i < list.length; i++){
+                str += `
+                <div class="w-interestedItem">
+                    <div class="itemCover">
+                        <img src="/img/tp_1.1.png" alt="">
+                        <div class="checkedInner">
+                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="itemDes">
+                        <span class="w-chkbox">
+                            <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
+                        </span>
+                        <label for="${list[i].id}" class="cateName">
+                            床品被枕
+                        </label>
+                    </div>
+                </div>
+                `
+           }
+            $('.interestedBox').append(str);
+       }
+       $('.w-interestedItem .itemCover').click(function(){
+           let idx = $(this).index();
+          var val = $(this).parent().find('.checkbox:checked').length;
+          if(val==0){
+              $(this).children('.checkedInner').css({
+                  'display':'block'
+              })
+              $(this).parent().find('.checkbox').prop('checked',true);
+              list[idx].checked = true;
+          }else if(val==1){
+            $(this).children('.checkedInner').css({
+                'display':'none'
+            })
+            $(this).parent().find('.checkbox').prop('checked',false);
+            list[idx].checked = false;
+          }
+       })
+
+       $('.w-interestedItem .itemDes .checkbox').click(function(){
+           let isBook = $(this).val();
+           let idx = $(this).parents('.w-interestedItem').index();
+           list[idx].checked = !list[idx].checked;
+           if(list[idx].checked){
+                $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                    'display':'block'
+                })
+           }else {
+            $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                  'display':'none'
+              })
+           }
+       })
+       $('#add_size').click(function(){
+        $('#widgetDialogContainerWrap').show();
+       })
+    //    关闭弹框
+    $('.cancel').click(function(){
+        $('#widgetDialogContainerWrap').hide();
+    })
+    </script>
+</body>
+</html>

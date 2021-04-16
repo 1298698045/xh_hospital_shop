@@ -97,7 +97,7 @@ $(function(){
                 <div class="yx-cp-copyright">
                     <a href="javascript:;">食品经营许可证：JY13301080111719</a>
                     <a href="javascript:;">出版物经营许可证：新出发滨字第0132号</a>
-                    <span>妙得ICP证号：ICP 证浙B2-20160106</span>
+                    <span class="span">妙得ICP证号：ICP 证浙B2-20160106</span>
                     <a href="javascript:;">浙杭食药监械经营备20171029号</a>
                     <a href="javascript:;">营业执照</a>
                     <span>网易公司版权所有 © 1997-2021</span>
@@ -105,13 +105,13 @@ $(function(){
                 <div class="yx-cp-copyright">
                     <a href="javascript:;">无线电发射设备销售备案：42202011096855</a>
                     <a href="javascript:;">（浙杭）网械企备字[2019]第00119号</a>
-                    <span>（粤）网械平台备字（2019）第00004号</span>
-                    <span>（粤）-非经营性-2016-0023</span>
+                    <span class="span">（粤）网械平台备字（2019）第00004号</span>
+                    <span class="span">（粤）-非经营性-2016-0023</span>
                     <a href="javascript:;">进口冷链食品管理承诺书</a>
                 </div>
                 <div class="yx-cp-copyright">
                     <a href="javascript:;">食品经营许可证：JY14207050007694</a>
-                    <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010009</span>
+                    <span class="span">浙江省网络食品销售第三方平台提供者备案：浙网食A33010009</span>
                     <a href="javascript:;">单用途商业预付卡备案证：330100AAC0024</a>
                     <a href="javascript:;" class="icon">
                         <img src="../../img/86f32b668af6e537389a77480fb5c74d.gif" alt="">

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号安全</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+        }
+        .rightcontent .g-main .m-securityCenter{
+            width: 890px;
+            height: auto;
+            min-height: 550px;
+            border: 1px solid #e8e8e8;
+            padding-top: 36px;
+            font-size: 14px;
+        }
+        .rightcontent .g-main .m-securityCenter .row.curAccount{
+            padding: 0 0 16px;
+            border-bottom: 1px solid #e8e8e8;
+            margin: 0 30px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .rightcontent .g-main .m-securityCenter .row{
+            margin: 0 30px;
+            padding: 28px 0;
+            border-bottom: 1px dashed #e8e8e8;
+            display: flex;
+            justify-content: space-between;
+        }
+        .rightcontent .g-main .m-securityCenter .row label{
+            width: 90px;
+            text-align: right;
+            display: inline-block;
+        }
+        .rightcontent .g-main .m-securityCenter .row label .w-icon-normal{
+            margin-right: 10px;
+            background: url('/img/icon-normal-sb5be29e752-290b858f9b.webp') no-repeat;
+            background-position: 0 -6174px;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .rightcontent .g-main .m-securityCenter .row label .w-icon-normal.icon-normal-suc-s{
+            background-position: 0 -207px;
+        }
+        .rightcontent .g-main .m-securityCenter .row a{
+            color: #69c;
+        }
+        .rightcontent .g-main .m-securityCenter .row .col{
+            display: inline-block;
+            margin-left: 60px;
+        }
+        .rightcontent .g-main .m-securityCenter .row a:hover{
+            text-decoration: underline;
+        }
+        .m-securityCenter .logout{
+            margin-top: 20px;
+            margin-left: 32px;
+            font-size: 12px;
+            color: #333;
+        }
+        .m-securityCenter .logout a{
+            color: #b4a078;
+            cursor: pointer;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li class="active">账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="g-main">
+                    <div class="m-securityCenter">
+                        <div class="row curAccount">
+                            <div>
+                                <label for="">您当前的帐号</label>
+                                <span class="col">
+                                    18888888888
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="">
+                                    <i class="w-icon-normal"></i>
+                                    <span>
+                                        绑定手机
+                                    </span>
+                                </label>
+                                <span class="col">188****8888</span>
+                            </div>
+                            <p>
+                                <a href="#javascript:;">更换</a>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="">
+                                    <i class="w-icon-normal icon-normal-suc-s"></i>
+                                    <span>
+                                        支付密码
+                                    </span>
+                                </label>
+                                <span class="col">支付密码启用后，将作为您帐号资产使用时的身份证明</span>
+                            </div>
+                            <p>
+                                <a href="#javascript:;">立即设置</a>
+                            </p>
+                        </div>
+                        <div class="logout">
+                            <span>如需注销帐号，请至</span>
+                            <a href="#javascript:;">帮助中心-常见问题</a>
+                            <span>查看注销引导</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+    </script>
+</body>
+</html>
