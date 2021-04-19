@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红包</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="/static/plugin/css/pagination.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .about {
+            margin: 2px 0 20px;
+        }
+        .rightcontent .about span{
+            line-height: 1;
+            color: #999;
+            font-size: 14px;
+            padding-right: 10px;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            overflow: hidden;
+            z-index: 1;
+            /* padding-bottom: 80px; */
+            border: 1px solid #e8e8e8;
+            border-collapse: collapse;
+        }
+        .rightcontent .g-main .info_tabs{
+            display: flex;
+            background: #f5f5f5;
+        }
+        .rightcontent .g-main .info_tabs .tab{
+            width: 170px;
+            border: 1px solid #e8e8e8;
+            border-left: none;
+            height: 42px;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            border-top: 3px solid transparent;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .info_tabs .tab.active{
+            color: #b4a078;
+            border-top: 3px solid #b4a078;
+        }
+        .rightcontent .g-main .info_content{
+            display: none;
+        }
+        .rightcontent .g-main .m-collectionCt{
+            padding-left: 15px;
+            padding-top: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .m-itemList{
+            width: 100%;
+            min-height: 532px;
+            overflow: hidden;
+        }
+        .m-itemList .item{
+            width: 280px;
+            height: 222px;
+            text-align: center;
+            float: left;
+            margin: 0 10px 40px 0;
+            background: url('/img/redpacket.png') no-repeat;
+        }
+        .m-itemList .item.active{
+            background: url('/img/redpacket_active.png') no-repeat;
+        }
+        .m-itemList .item .name{
+            color: #d52b33;
+            line-height: 18px;
+            padding: 22px 0 8px;
+            font-size: 18px;
+        }
+        .m-itemList .item .price{
+            font-size: 36px;
+            line-height: 36px;
+            color: #d52b33;
+        }
+        .m-itemList .item .price .unit{
+            font-size: 20px;
+            line-height: 32px;
+            vertical-align: bottom;
+        }
+        .m-itemList .item .time{
+            color: #b4a078;
+            margin-top: 8px;
+            line-height: 14px;
+            font-size: 14px;
+        }
+        .m-itemList .item .desc {
+            text-align: left;
+            line-height: 20px;
+            font-size: 14px;
+            width: 210px;
+            margin: 46px auto 0;
+            position: relative;
+            color: #FFFDF9;
+        }
+        .m-itemList .item .desc .w-toolTip{
+            right: 6px;
+            position: absolute;
+            top: 20px;
+        }
+        .m-itemList .item .desc .w-toolTip .w-icon-coupon{
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            background: url('/img/coupon-s823df166ea-166f661804.webp') no-repeat;
+            background-position: 0 -215px;
+            cursor: pointer;
+        }
+        .m-itemList .item .desc .w-toolTip:hover .toolTip-cnt{
+            display: block;
+        }
+        .m-itemList .item .desc .w-toolTip .toolTip-cnt{
+            position: absolute;
+            top: 18px;
+            z-index: 100;
+            left: -151px;
+            width: 220px;
+            padding-top: 9px;
+            display: none;
+        }
+        .m-itemList .item .desc .w-toolTip .toolTip-cnt .toolTip-triangle{
+            position: absolute;
+            top: 4px;
+            left: 154px;
+            margin: auto;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            background-position: 0 -6567px;
+            height: 6px;
+            width: 12px;
+        }
+        .m-itemList .item .desc .w-toolTip .toolTip-cnt .toolTip-inner{
+            padding: 15px 18px;
+            font-size: 12px;
+            color: #333;
+            border: 1px solid #ddd;
+            background-color: #fefbea;
+            word-wrap: break-word;
+        }
+        span{
+            display: inline-block;
+        }
+        .info_content .m-emptyStatus{
+            margin: 150px auto;
+            text-align: center;
+        }
+        .info_content .m-emptyStatus .w-icon-empty{
+            height: 180px;
+            width: 180px;
+            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -2230px;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .m-emptyStatus .emptyText {
+            font-size: 16px;
+            color: #999;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+        .w-icon-normal{
+            margin-left: 8px;
+            height: 14px;
+            width: 14px;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: unset;
+            font-size: 12px;
+            word-spacing: normal;
+            letter-spacing: normal;
+            background: url(/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png) no-repeat;
+            background-position: 0 -308px;
+        }
+        ._page_container ._pages{
+            margin: 0 auto 50px;
+        }
+        ._page_container{
+            text-align: right;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li class="active">我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="about">
+                    <span>关于红包</span>
+                    <a href="#javascript:;">
+                        <i class="w-icon-normal"></i>
+                    </a>
+                </div>
+                <div class="g-main">
+                    <div class="info_tabs">
+                        <div class="tab active">可使用</div>
+                        <div class="tab">已使用</div>
+                        <div class="tab">已失效</div>
+                    </div>
+                    <div class="info_content" style="display: block;">
+                        <div class="m-collectionCt">
+                            <ul class="m-itemList collecitonList">
+                                <!-- <li class="item">
+                                    <div class="name f-fz18">￥40红包</div>
+                                    <div class="price">
+                                        <span>40</span>
+                                        <span class="unit">元</span>
+                                    </div>
+                                    <div class="time">2021.04.17-2021.04.19</div>
+                                    <div class="desc">
+                                        <span>满239元可用；仅限新用户；新人专享、礼品卡、猪肉卡、黑...</span>
+                                        <div class="w-toolTip">
+                                            <i class="w-icon-coupon"></i>
+                                            <div class="toolTip-cnt">
+                                                <i class="toolTip-triangle"></i>
+                                                <p class="toolTip-inner">
+                                                    仅限新用户；新人专享、礼品卡、猪肉卡、黑胶唱片、部分新品、秒杀商品和加价购商品以及商详页标明不可用红包商品不可使用
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info_content" style="border: none;">
+                        <div class="m-emptyStatus">
+                            <div class="w-icon-empty icon-empty-collection"></div>
+                            <div class="emptyText">暂无红包</div>
+                        </div>
+                    </div>
+                    <div class="info_content" style="border: none;">
+                        <div class="m-collectionCt">
+                            <ul class="m-itemList collecitonListTwo">
+                            </ul>
+                            <div id="pages"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script src="/static/plugin/js/pagination.js"></script>
+    <script>
+         new Pagination({
+            element: '#pages', // 元素        
+            type: 1, // 样式类型，可选[1,2]      
+            pageIndex: 1, // 初始页码       
+            pageSize: 5, // 每页数量       
+            pageCount: 5, // 页码数量       
+            total: 100, // 数据总条数        
+            jumper: false, // 显示输入框跳转        
+            singlePageHide: false, // 只有一页时不显示分页       
+            prevText: '上一页', // 上一页文字        
+            nextText: '下一页', // 下一页文字       
+            disabled: true, // 是否显示禁用        
+            currentChange: function(index) {
+                // 页码改变时回调         
+                console.log(index);
+            }
+        });
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+       $('.info_tabs .tab').click(function(){
+            $('.info_tabs .tab').removeClass('active');
+            $(this).addClass('active');
+            let idx = $(this).index();
+            $('.info_content').hide();
+            $('.info_content').eq(idx).show();
+       })
+       templateFun();
+       function templateFun(){
+           let str = '';
+           
+           for(let i = 0; i < 24; i++){
+                str += `
+                <li class="item">
+                    <div class="name f-fz18">￥40红包</div>
+                    <div class="price">
+                        <span>40</span>
+                        <span class="unit">元</span>
+                    </div>
+                    <div class="time">2021.04.17-2021.04.19</div>
+                    <div class="desc">
+                        <span>满239元可用；仅限新用户；新人专享、礼品卡、猪肉卡、黑...</span>
+                        <div class="w-toolTip">
+                            <i class="w-icon-coupon"></i>
+                            <div class="toolTip-cnt">
+                                <i class="toolTip-triangle"></i>
+                                <p class="toolTip-inner">
+                                    仅限新用户；新人专享、礼品卡、猪肉卡、黑胶唱片、部分新品、秒杀商品和加价购商品以及商详页标明不可用红包商品不可使用
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                `
+           }
+            $('.collecitonList').append(str);
+       }
+       templateFunTwo();
+       function templateFunTwo(){
+           let str = '';
+           
+           for(let i = 0; i < 9; i++){
+                str += `
+                <li class="item active">
+                    <div class="name f-fz18">￥40红包</div>
+                    <div class="price">
+                        <span>40</span>
+                        <span class="unit">元</span>
+                    </div>
+                    <div class="time">2021.04.17-2021.04.19</div>
+                    <div class="desc">
+                        <span>满239元可用；仅限新用户；新人专享、礼品卡、猪肉卡、黑...</span>
+                        <div class="w-toolTip">
+                            <i class="w-icon-coupon"></i>
+                            <div class="toolTip-cnt">
+                                <i class="toolTip-triangle"></i>
+                                <p class="toolTip-inner">
+                                    仅限新用户；新人专享、礼品卡、猪肉卡、黑胶唱片、部分新品、秒杀商品和加价购商品以及商详页标明不可用红包商品不可使用
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                `
+           }
+            $('.collecitonListTwo').append(str);
+       }
+       $('.w-interestedItem .itemCover').click(function(){
+           let idx = $(this).index();
+          var val = $(this).parent().find('.checkbox:checked').length;
+          if(val==0){
+              $(this).children('.checkedInner').css({
+                  'display':'block'
+              })
+              $(this).parent().find('.checkbox').prop('checked',true);
+              list[idx].checked = true;
+          }else if(val==1){
+            $(this).children('.checkedInner').css({
+                'display':'none'
+            })
+            $(this).parent().find('.checkbox').prop('checked',false);
+            list[idx].checked = false;
+          }
+       })
+
+       $('.w-interestedItem .itemDes .checkbox').click(function(){
+           let isBook = $(this).val();
+           let idx = $(this).parents('.w-interestedItem').index();
+           list[idx].checked = !list[idx].checked;
+           if(list[idx].checked){
+                $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                    'display':'block'
+                })
+           }else {
+            $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                  'display':'none'
+              })
+           }
+       })
+       $('#add_size').click(function(){
+        $('#widgetDialogContainerWrap').show();
+       })
+    //    关闭弹框
+    $('.cancel').click(function(){
+        $('#widgetDialogContainerWrap').hide();
+    })
+    </script>
+</body>
+</html>

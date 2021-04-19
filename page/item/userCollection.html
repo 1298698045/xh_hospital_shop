@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收藏夹</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+            border: 1px solid #e8e8e8;
+            border-collapse: collapse;
+        }
+        .rightcontent .g-main .info_tabs{
+            display: flex;
+            background: #f5f5f5;
+        }
+        .rightcontent .g-main .info_tabs .tab{
+            width: 170px;
+            border: 1px solid #e8e8e8;
+            border-left: none;
+            height: 42px;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            border-top: 3px solid transparent;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .info_tabs .tab.active{
+            color: #b4a078;
+            border-top: 3px solid #b4a078;
+        }
+        .rightcontent .g-main .info_content{
+            display: none;
+        }
+        .rightcontent .g-main .m-collectionCt{
+            padding: 20px 24px 40px;
+        }
+        
+        .m-itemList{
+            width: 100%;
+            min-height: 532px;
+        }
+        .m-itemList .item{
+            width: 200px!important;
+            height: 350px!important;
+            font-size: 14px;
+            position: relative;
+        }
+        .m-itemList .item:hover{
+            box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
+            background-color: #f4f0ea;
+        }
+        .m-itemList .item:hover .hd .w-delete{
+            display: block;
+        }
+        .m-itemList .item .hd{
+            position: relative;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        } 
+        .m-itemList .item .hd img{
+            width: 200px;
+            height: 200px;
+        }
+        .m-itemList .item .hd .w-delete{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            z-index: 9;
+            cursor: pointer;
+            display: none;
+        }
+        .m-itemList .item .hd .w-delete span{
+            height: 24px;
+            width: 24px;
+            background: url('/img/close-s706cc4331c-af215c519a.webp');
+            background-position: 0 -677px;
+            background-repeat: no-repeat;
+        }
+        .m-itemList .item .hd .w-delete span:hover{
+            background-position: 0 -643px;
+        }
+        .m-itemList .item .bd .prdtTags {
+            height: 20px;
+            font-size: 0;
+            color: #fff;
+            width: 200px;
+            margin: 0 auto 3px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .m-itemList .item .bd a{
+            color: #333;
+        }
+        span{
+            display: inline-block;
+        }
+        .m-itemList .item .bd .name {
+            width: 166px;
+            margin: 0 auto 4px;
+            max-height: 40px;
+            line-height: 20px;
+            display: -webkit-box;
+            overflow: hidden;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .m-itemList .item .bd .price{
+            color: #d4282d;
+            text-align: center;
+            height: 20px;
+            line-height: 22px;
+        }
+        .m-itemList .item .bd .similar{
+            height: 27px;
+            line-height: 27px;
+            margin-top: 6px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+        }
+        .m-itemList .item .bd .similar .btn{
+            display: inline-block;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+        }
+        .m-itemList .item .bd .similar .btn.firstBtn{
+            width: 90px;
+            background: #F5F5F5;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            border-right: 0;
+            margin-right: -4px;
+        }
+        .m-itemList .item .bd .similar .btn.secondBtn{
+            width: 90px;
+            background: #F5F5F5;
+            border: 1px solid #ddd;
+            border-radius: 0;
+        }
+        .m-itemList .item .bd .similar .btn:hover{
+            background: #fff;
+        }
+        .m-itemTag {
+            display: inline-block;
+            height: 20px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff!important;
+            padding: 0 5px;
+            background-color: #e36844;
+        }
+        .new.m-itemTag {
+            background-color: #b4a078;
+        }
+        .info_content .m-emptyStatus{
+            margin: 150px auto 0;
+            text-align: center;
+        }
+        .info_content .m-emptyStatus .w-icon-empty{
+            height: 180px;
+            width: 180px;
+            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -760px;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .m-emptyStatus .emptyText {
+            font-size: 16px;
+            color: #999;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li class="active">我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li>礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="g-main">
+                    <div class="info_tabs">
+                        <div class="tab active">商品收藏 (1)</div>
+                        <div class="tab">专题收藏 (0)</div>
+                    </div>
+                    <div class="info_content" style="display: block;">
+                        <div class="m-collectionCt">
+                            <ul class="m-itemList collecitonList">
+                                <li class="item">
+                                    <div class="hd">
+                                        <a href="#javascript:;">
+                                            <img src="/img/tp_1.1.png" alt="">
+                                        </a>
+                                        <div class="w-delete">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="bd">
+                                        <div class="prdtTags">
+                                            <span class="m-itemTag new ">新品</span>
+                                        </div>
+                                        <h4 class="name">
+                                            <a href="#javascript:;" title="【严选5周年店庆礼】荔枝酒 500毫升">
+                                                <span>【严选5周年店庆礼】荔枝酒 500毫升</span>
+                                            </a>
+                                        </h4>
+                                        <p class="price">
+                                            <span>
+                                                ￥69
+                                            </span>
+                                        </p>
+                                        <div class="similar">
+                                            <a href="#javasctipt:;" class="btn w-button firstBtn">找相似</a>
+                                            <a href="#javasctipt:;" class="btn w-button secondBtn">加入购物车</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info_content" style="border: none;">
+                        <div class="m-emptyStatus">
+                            <div class="w-icon-empty icon-empty-collection"></div>
+                            <div class="emptyText">还没有任何收藏呢</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+       $('.info_tabs .tab').click(function(){
+            $('.info_tabs .tab').removeClass('active');
+            $(this).addClass('active');
+            let idx = $(this).index();
+            $('.info_content').hide();
+            $('.info_content').eq(idx).show();
+       })
+       let list = [
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:1,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:2,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:3,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:4,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:5,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:6,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:7,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:8,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:9,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+            {
+                imgUrl:"/img/453d496b477bd9b10700e0db3ba78ed1.png",
+                id:10,
+                name:"1",
+                label:"床品被枕",
+                checked:false
+            },
+        ]
+       templateFun();
+       function templateFun(){
+           let str = '';
+           
+           for(let i = 0; i < list.length; i++){
+                str += `
+                <div class="w-interestedItem">
+                    <div class="itemCover">
+                        <img src="/img/tp_1.1.png" alt="">
+                        <div class="checkedInner">
+                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="itemDes">
+                        <span class="w-chkbox">
+                            <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
+                        </span>
+                        <label for="${list[i].id}" class="cateName">
+                            床品被枕
+                        </label>
+                    </div>
+                </div>
+                `
+           }
+            $('.interestedBox').append(str);
+       }
+       $('.w-interestedItem .itemCover').click(function(){
+           let idx = $(this).index();
+          var val = $(this).parent().find('.checkbox:checked').length;
+          if(val==0){
+              $(this).children('.checkedInner').css({
+                  'display':'block'
+              })
+              $(this).parent().find('.checkbox').prop('checked',true);
+              list[idx].checked = true;
+          }else if(val==1){
+            $(this).children('.checkedInner').css({
+                'display':'none'
+            })
+            $(this).parent().find('.checkbox').prop('checked',false);
+            list[idx].checked = false;
+          }
+       })
+
+       $('.w-interestedItem .itemDes .checkbox').click(function(){
+           let isBook = $(this).val();
+           let idx = $(this).parents('.w-interestedItem').index();
+           list[idx].checked = !list[idx].checked;
+           if(list[idx].checked){
+                $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                    'display':'block'
+                })
+           }else {
+            $(this).parents('.w-interestedItem').children('.itemCover').children('.checkedInner').css({
+                  'display':'none'
+              })
+           }
+       })
+       $('#add_size').click(function(){
+        $('#widgetDialogContainerWrap').show();
+       })
+    //    关闭弹框
+    $('.cancel').click(function(){
+        $('#widgetDialogContainerWrap').hide();
+    })
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/home/index.css">
     <link rel="stylesheet" href="../../css/user/index.css">
     <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="/static/plugin/css/swiper-3.4.2.min.css">
     <style>
         .clearfix:after{
             content:".";/*加一段内容*/
@@ -273,6 +274,7 @@
         .polite .weekItem .hd{
             width: 100%;
             height: 200px;
+            overflow: hidden;
         }
         .polite .weekItem .hd .imgs{
             width: 100%;
@@ -296,14 +298,14 @@
             position: relative;
             margin: 10px auto;
             width: 110px;
-            height: 16px;
+            /* height: 16px; */
+            line-height: 16px;
             border: 1px solid #F2CECD;
             border-radius: 100px;
             text-align: center;
             overflow: hidden;
         }
         .polite .weekItem .remain .remainNum {
-            line-height: 14px;
             color: #666;
             font-size: 12px;
             display: inline-block;
@@ -348,10 +350,48 @@
             cursor: pointer;
             outline: 0;
         }
+        .listWrapper .polite .item{
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .listWrapper .polite .item .name{
+            margin-top: 20px;
+        }
+        .listWrapper .polite .item:hover .hd .imgs img{
+            transform: scale(1);
+        }
+        .listWrapper .polite .item.active{
+            box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
+            background-color: #f4f0ea;
+        }
         /* .m-noticeInfo . */
         #cainixihuan{
             clear: both;
             padding-top: 100px;
+        }
+        .my-pagination-hidden{
+            display: none;
+        }
+        .swiper-container{
+            height: auto!important;
+            overflow: unset!important;
+        }
+        .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+            width: 30px;
+            height: 30px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            background-position: 0 -2460px;
+            left: -12px!important;
+        }
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+            width: 30px;
+            height: 30px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            background-position: 0 -4581px;
+            right: -12px!important;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            top: 35%!important;
         }
     </style>
 </head>
@@ -458,6 +498,15 @@
                                     <span class="tabItem" style="margin-left:-5px">下期预告</span>
                                 </div>
                                 <div class="polite">
+                                    <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+                                        <div class="swiper-wrapper politeList">
+                                            <!-- <div class="swiper-slide swiper-slide-active weekItem">Slide 1</div> -->
+                                        </div>
+                                        <!-- Add Pagination -->
+                                        <div class="swiper-pagination my-pagination-hidden"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
                                     <!-- <div class="weekItem">
                                         <div class="hd">
                                             <div class="imgs">
@@ -476,6 +525,91 @@
                                     </div> -->
                                 </div>
                             </div>
+                            <div class="moduleHead">
+                                <span class="title">Pro会员专属兑</span>
+                                <span class="subTitle">Pro会员专享</span>
+                            </div>
+                            <div class="listWrapper">
+                                <div class="polite">
+                                    <div class="swiper-container swiper-container-two swiper-container-horizontal swiper-container-free-mode">
+                                        <div class="swiper-wrapper swiperContent">
+                                            <!-- <div class="swiper-slide swiper-slide-active weekItem">Slide 1</div> -->
+                                        </div>
+                                        <!-- Add Pagination -->
+                                        <div class="swiper-pagination my-pagination-hidden"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="moduleHead">
+                                <span class="title">精选积分兑换</span>
+                                <span class="subTitle">会员专享 每月更新</span>
+                            </div>
+                            <div class="listWrapper">
+                                <div class="polite">
+                                    <div class="weekItem item active">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                    </div>
+                                    <div class="weekItem item">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                    </div>
+                                    <div class="weekItem item">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                    </div>
+                                    <div class="weekItem item">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                    </div>
+                                    <div class="weekItem item">
+                                        <div class="hd">
+                                            <div class="imgs">
+                                                <img src="/img/jf_1.1.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                                        <div class="price">
+                                            <span class="points">99积分</span>
+                                            <span class="originPrice">￥14.90</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -489,6 +623,7 @@
     <script src="../../js/module/jq/jq.min.js"></script>
     <script src="../../components/module/totalcontainersearch.js"></script>
     <script src="../../js/layout/footer.js"></script>
+    <script src="/static/plugin/js/swiper-3.4.2.min.js"></script>
     <script>
         $('#addressAdmin').click(function(){
            window.location = '../addressAdmin/index.html'
@@ -501,27 +636,57 @@
             $(this).addClass('active');
        })
        let str = '';
-       for(let i=0; i < 4; i++){
+       for(let i=0; i < 8; i++){
            str += `
-                <div class="weekItem">
-                    <div class="hd">
-                        <div class="imgs">
-                            <img src="/img/jf_1.1.webp" alt="">
+            <div class="swiper-slide">
+                    <div class="weekItem">
+                        <div class="hd">
+                            <div class="imgs">
+                                <img src="/img/jf_1.1.webp" alt="">
+                            </div>
                         </div>
+                        <div class="remain">
+                            <span class="remainNum">还剩0件</span>
+                        </div>
+                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+                        <div class="price">
+                            <span class="points">99积分</span>
+                            <span class="originPrice">￥14.90</span>
+                        </div>
+                        <button class="soldOutBtn">去看看</button>
                     </div>
-                    <div class="remain">
-                        <span class="remainNum">还剩0件</span>
-                    </div>
-                    <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
-                    <div class="price">
-                        <span class="points">99积分</span>
-                        <span class="originPrice">￥14.90</span>
-                    </div>
-                    <button class="soldOutBtn">去看看</button>
                 </div>
            `
        }
-       $('.polite').append(str);
+       $('.politeList').append(str);
+       $('.swiperContent').append(str);
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationHiddenClass : 'my-pagination-hidden',
+            slidesPerView: 4,
+            paginationClickable: true,
+            spaceBetween: 30,
+            freeMode: true,
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next',
+        });
+        $('.swiperContent').append(str);
+        var swiper = new Swiper('.swiper-container-two', {
+            pagination: '.swiper-pagination',
+            paginationHiddenClass : 'my-pagination-hidden',
+            slidesPerView: 3,
+            paginationClickable: true,
+            spaceBetween: 30,
+            freeMode: true,
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next',
+        });
+        $('.polite .item').hover(function(){
+            $('.polite .item').removeClass('active');
+            $(this).toggleClass('active');
+        },function(){
+            $(this).addClass('active');
+        })
     </script>
 </body>
 </html>
