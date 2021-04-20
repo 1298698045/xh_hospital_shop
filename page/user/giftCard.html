@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>礼品卡</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .clearfix:after{
+            content:".";/*加一段内容*/
+            display:block;/*让生成的元素以块级元素显示，占满剩余空间*/
+            height:0;/*避免生成的内容破坏原有布局高度*/
+            clear:both;/*清除浮动*/
+            visibility:hidden;/*让生成的内容不可见*/
+        }
+        .leftnav{
+            width: 180px;
+            padding: 10px 0 20px;
+            border: 1px solid #ddd;
+        }
+        .nav-title{
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 0;
+            padding-left: 30px;
+        }
+        .leftnav li{
+            padding-left: 30px;
+            font-size: 14px;
+            border-left: 3px solid #fff;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .leftnav li.active{
+            color: #b4a078;
+            border-left-color:#BEA988;
+        }
+        .leftnav li:hover{
+            color: #b4a078;
+        }
+        .systemTop{
+            height: 100px;
+            line-height: 100px;
+            color:#CC9756 ;
+            box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+            font-size: 22px;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .systemTop>div{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #cainixihuan{
+            margin-top: 100px;
+        }
+        .homelist-item{
+            margin-bottom: 10px;
+        }
+        .leftnav{
+            float: left;
+        }
+        .rightcontent{
+            float: left;
+            width: 890px;
+            margin-left: 20px;
+        }
+        .rightcontent .giftCard{
+            width: 890px;
+            border: 1px solid #e8e8e8;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        .giftCard .balance .name {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+        .giftCard .balance .text {
+            font-size: 24px;
+            line-height: 24px;
+            color: #d4282d;
+            vertical-align: bottom;
+        }
+        .giftCard .balance .w-link {
+            color: #69c;
+        }
+        .giftCard .balance {
+            margin-top: 30px;
+            margin-bottom: 26px;
+            margin-left: 30px;
+        }
+        .giftCard .j-activateForm {
+            display: block;
+            margin-bottom: 16px;
+            margin-left: 30px;
+            overflow: hidden;
+        }
+        .giftCard .activateForm .activateForm-input {
+            height: 34px;
+            width: 250px;
+            padding: 9px 10px;
+            font-size: 14px;
+            line-height: 14px;
+            border: 1px solid #e8e8e8;
+            float: left;
+        }
+        .giftCard .activateForm .activateForm-submit {
+            width: 58px;
+            height: 34px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #b4a078;
+            cursor: pointer;
+            border-radius: 0;
+            margin-left: -1px;
+            float: left;
+        }
+        .giftCard .activateForm .lock {
+            color: #fff;
+            background-color: #ccc;
+            border: none;
+        }
+        .giftCard .cardInfo {
+            margin-bottom: 26px;
+            margin-left: 30px;
+        }
+        .giftCard .cardInfo .about {
+            color: #666;
+            font-size: 12px;
+        }
+        .giftCard .cardInfo .icon-normal-ask {
+            vertical-align: middle;
+            margin-top: -2px;
+            margin-left: 6px;
+            height: 14px;
+            width: 14px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            background-position: 0 -308px;
+            display: inline-block;
+        }
+        .rightcontent .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+            border: 1px solid #e8e8e8;
+            border-collapse: collapse;
+        }
+        .rightcontent .g-main .info_tabs{
+            display: flex;
+            background: #f5f5f5;
+        }
+        .rightcontent .g-main .info_tabs .tab{
+            width: 170px;
+            border: 1px solid #e8e8e8;
+            border-left: none;
+            height: 42px;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            border-top: 3px solid transparent;
+            cursor: pointer;
+        }
+        .rightcontent .g-main .info_tabs .tab.active{
+            color: #b4a078;
+            border-top: 3px solid #b4a078;
+        }
+        .rightcontent .g-main .info_content{
+            display: none;
+        }
+
+        .j-giftCardPanel {
+            min-height: 311px;
+            border-right: 1px solid #e8e8e8;
+            /* border-bottom: 1px solid #e8e8e8; */
+            border-left: 1px solid #e8e8e8;
+            padding-bottom: 10px;
+            position: relative;
+            width: 100%;
+            padding: 0 21px;
+            background-color: #fff;
+        }
+        
+        .j-giftCardPanel .table{
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            border-collapse: collapse;
+            border-spacing: 0;
+            table-layout: fixed;
+            box-sizing: border-box;
+        }
+        .j-giftCardPanel .table .head {
+            text-align: center;
+            font-size: 13px;
+            height: 49px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .j-giftCardPanel .table .txtcenter {
+            font-weight: 400;
+            color: #999;
+            padding-top: 22px;
+            padding-bottom: 14px;
+            text-align: inherit;
+        }
+        .empty {
+            height: 180px;
+            font-size: 14px;
+        }
+        span{
+            display: inline-block;
+        }
+        .m-itemList .item .bd .name {
+            width: 166px;
+            margin: 0 auto 4px;
+            max-height: 40px;
+            line-height: 20px;
+            display: -webkit-box;
+            overflow: hidden;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .m-itemList .item .bd .price{
+            color: #d4282d;
+            text-align: center;
+            height: 20px;
+            line-height: 22px;
+        }
+        .m-itemList .item .bd .similar{
+            height: 27px;
+            line-height: 27px;
+            margin-top: 6px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+        }
+        .m-itemList .item .bd .similar .btn{
+            display: inline-block;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+        }
+        .m-itemList .item .bd .similar .btn.firstBtn{
+            width: 90px;
+            background: #F5F5F5;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            border-right: 0;
+            margin-right: -4px;
+        }
+        .m-itemList .item .bd .similar .btn.secondBtn{
+            width: 90px;
+            background: #F5F5F5;
+            border: 1px solid #ddd;
+            border-radius: 0;
+        }
+        .m-itemList .item .bd .similar .btn:hover{
+            background: #fff;
+        }
+        .m-itemTag {
+            display: inline-block;
+            height: 20px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff!important;
+            padding: 0 5px;
+            background-color: #e36844;
+        }
+        .new.m-itemTag {
+            background-color: #b4a078;
+        }
+        .info_content .m-emptyStatus{
+            margin: 150px auto 0;
+            text-align: center;
+        }
+        .info_content .m-emptyStatus .w-icon-empty{
+            height: 180px;
+            width: 180px;
+            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -760px;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .m-emptyStatus .emptyText {
+            font-size: 16px;
+            color: #999;
+        }
+        /* .m-noticeInfo . */
+        #cainixihuan{
+            clear: both;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="listcontent">
+        <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="leftnav">
+                <div class="nav-title">账号管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li id="myHome">个人中心</li>
+                        <li>消息通知</li>
+                        <li>账号信息</li>
+                        <li id="addressAdmin">地址管理</li>
+                        <li>账号安全</li>
+                        <li>我的积分</li>
+                        <li>我的收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                </div>
+                <div class="nav-title">交易管理</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>订单管理</li>
+                        <li>余额</li>
+                        <li>我的红包</li>
+                        <li>优惠券</li>
+                        <li class="active">礼品卡</li>
+                    </ul>
+                </div>
+                <div class="nav-title">服务中心</div>
+                <div class="nav-body">
+                    <ul>
+                        <li>售后记录</li>
+                        <li>价格保护</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <div class="giftCard">
+                    <div class="balance">
+                        <span class="name">礼品卡余额：</span>
+                        <span class="text">￥0.00</span>
+                        <a class="w-link" href="#javascript:;" style="margin-left:20px">设置支付密码</a>
+                    </div>
+                    <div class="j-activateForm activateForm">
+                        <input class="j-activateForm-ipt activateForm-input " type="text" placeholder="请输入礼品卡密码" maxlength="19" autocomplete="off">
+                        <input class="j-activateForm-submit activateForm-submit lock" disabled="disabled" type="submit" value="绑定">
+                    </div>
+                    <div class="cardInfo">
+                        <a href="#javascript:;" class="about">
+                            关于礼品卡 
+                            <i class="w-icon-normal icon-normal-ask"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="g-main">
+                    <div class="info_tabs">
+                        <div class="tab active">已绑定礼品卡</div>
+                        <div class="tab">交易明细</div>
+                    </div>
+                    <div class="info_content" style="display: block;">
+                        <div class="j-giftCardPanel">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="head">
+                                        <th class="txtcenter">
+                                            <span>卡片类型</span>
+                                        </th>
+                                        <th class="txtcenter">卡号</th>
+                                        <th class="txtcenter">面值（￥）</th>
+                                        <th class="txtcenter">余额（￥）</th>
+                                        <th class="txtcenter">截止使用时间</th>
+                                        <th class="txtcenter">状态</th>
+                                    </tr>
+                                    <tr class="empty">
+                                        <td colspan="6">暂无可用礼品卡</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="info_content" style="border: none;">
+                        <!-- <div class="m-emptyStatus">
+                            <div class="w-icon-empty icon-empty-collection"></div>
+                            <div class="emptyText">还没有任何收藏呢</div>
+                        </div> -->
+                        <div class="j-giftCardPanel">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="head">
+                                        <th class="txtcenter">
+                                            <span>消费类型</span>
+                                        </th>
+                                        <th class="txtcenter">订单号</th>
+                                        <th class="txtcenter">卡号</th>
+                                        <th class="txtcenter">变动金额（￥）</th>
+                                        <th class="txtcenter">变动时间</th>
+                                        <th class="txtcenter">余额（￥）</th>
+                                    </tr>
+                                    <tr class="empty">
+                                        <td colspan="6">暂无消费记录</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cainixihuan"></div>
+        </div>
+        <div id="pageFooter"></div>
+        </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script>
+        $('#addressAdmin').click(function(){
+           window.location = '../addressAdmin/index.html'
+       })
+       $('#myHome').click(function(){
+           window.location = '../user/index.html'
+       })
+       $('.info_tabs .tab').click(function(){
+            $('.info_tabs .tab').removeClass('active');
+            $(this).addClass('active');
+            let idx = $(this).index();
+            $('.info_content').hide();
+            $('.info_content').eq(idx).show();
+       })
+    </script>
+</body>
+</html>
