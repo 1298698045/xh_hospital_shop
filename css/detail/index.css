@@ -58,7 +58,8 @@ body{
     float: left;
 }
 .right-content{
-    width: 770px;
+    /* width: 770px; */
+    width: 620px;
     float: left;
     padding: 0 10px;
     margin-left: 30px;
@@ -255,7 +256,8 @@ body{
 }
 .detail-leftcontent{
     float: left;
-    width: 750px;
+    /* width: 750px; */
+    width: 650px;
     margin-left: 15px;
 }
 .detail-rightcontent{

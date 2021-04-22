@@ -224,3 +224,395 @@ if($('#cainixihuan').length>0){
   <div class="tm-end"></div>
   `)
 }
+
+
+function headFun(){
+    let str = `
+        <div class="j-YXComponentTop">
+            <div class="yx-cp-base yx-cp-m-top">
+                <div class="yx-cp-m-siteNav">
+                    <div class="yx-cp-row">
+                        <div class="yx-cp-siteNav-l">&nbsp;</div>
+                        <div class="yx-cp-siteNav-r">
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd">
+                                    <div class="j-yx-cp-topLogin" title="网易严选登录">
+                                        <a href="#javascript:;">登录/注册</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">我的订单</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">会员</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">甄选家</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <span>企业采购</span>
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-upArrow" style="margin-left:10px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <span>客户服务</span>
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-upArrow" style="margin-left:10px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-app" style="margin-left:10px;"></i>
+                                        <span>APP</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yx-cp-m-funcTab j-yx-cp-m-funcTab">
+                    <div class="yx-cp-row">
+                        <div class="row_child">
+                            <a class="yx-cp-tabLogo yx-cp-funcTabFixed-hide" href="http://you.163.com/" title="网易严选" target="_blank">
+                                <i class="yx-cp-icon-yxtop icon-yxtop-logo"></i>
+                            </a>
+                            <div class="yx-cp-m-search yx-cp-zIndex3">
+                                <input type="text" class="yx-cp-searchInput">
+                                <div class="yx-cp-searchButton">
+                                    <span>
+                                        搜索
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="yx-cp-m-cartEnterWrap">
+                                <div class="yx-cp-m-cartEnter">
+                                    <i class="yx-cp-icon-yxtop icon-yxtop-cart-s"></i>
+                                    <span class="yx-cp-cartName">购物车</span>
+                                    <i class="j-cart-num j-cart-num2  icon-yxtop-badge">0</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yx-cp-m-tabNav clearfix">
+                            <li class="yx-cp-tabNav-item  yx-cp-firstItem">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="首页" target="_blank">首页</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="居家生活" target="_blank">居家生活</a>
+                                <div class="yx-cp-tabNav-dropdown">
+                                    <div class="yx-cp-cateGroupList clearfix">
+                                        <div class="yx-cp-cateGroup">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow">
+                                                床品件套
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateGroup yx-min">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                                被枕褥毯
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateGroup yx-min">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                                被枕褥毯
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="服饰鞋包" target="_blank">服饰鞋包</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="美食酒水" target="_blank">美食酒水</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="个护清洁" target="_blank">个护清洁</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="母婴亲子" target="_blank">母婴亲子</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="运动旅行" target="_blank">运动旅行</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="数码家电" target="_blank">数码家电</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="严选全球" target="_blank">严选全球</a>
+                            </li>
+                            <li class="yx-cp-tabNav-split yx-cp-funcTabFixed-hide"></li>
+                            <li class="yx-cp-tabNav-item  yx-cp-funcTabFixed-hide">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="为你严选" target="_blank">为你严选</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="众筹" target="_blank">众筹</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yx-cp-m-funcTab-fixed">
+            <div class="head-center">
+                <a class="yx-cp-tabLogo-fixed yx-cp-funcTab-hide" href="#javascript:;" title="网易严选" target="_blank">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-miniLogo" data-reactid=".0.1.0.1.0"></i>
+                </a>
+                <div class="yx-cp-m-tabNav clearfix">
+                    <li class="yx-cp-tabNav-item  yx-cp-firstItem">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="首页" target="_blank">首页</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="居家生活" target="_blank">居家生活</a>
+                        <div class="yx-cp-tabNav-dropdown">
+                            <div class="yx-cp-cateGroupList clearfix">
+                                <div class="yx-cp-cateGroup">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow">
+                                        床品件套
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yx-cp-cateGroup yx-min">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                        被枕褥毯
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yx-cp-cateGroup yx-min">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                        被枕褥毯
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="服饰鞋包" target="_blank">服饰鞋包</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="美食酒水" target="_blank">美食酒水</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="个护清洁" target="_blank">个护清洁</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="母婴亲子" target="_blank">母婴亲子</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="运动旅行" target="_blank">运动旅行</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="数码家电" target="_blank">数码家电</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="严选全球" target="_blank">严选全球</a>
+                    </li>
+                </div>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-search"></i>
+                </a>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-userempty"></i>
+                </a>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-cart"></i>
+                </a>
+            </div>
+        </div>
+    `
+    $('.headWrap').append(str);
+}
+headFun();
+$(window).scroll(function(){
+    var scrollTop = scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    if(scrollTop>1000){
+        $('.j-YXComponentTop').hide()
+    }else{
+        $('.yx-cp-m-funcTab-fixed').show()
+    }
+    if(scrollTop == 0){
+        $('.yx-cp-m-funcTab-fixed').hide();
+        $('.j-YXComponentTop').show()
+    }
+})

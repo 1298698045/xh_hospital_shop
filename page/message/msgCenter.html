@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>价格保护</title>
+    <title>消息通知 - 协和商城</title>
     <link rel="stylesheet" href="../../css/module/index.css">
     <link rel="stylesheet" href="../../css/home/index.css">
     <link rel="stylesheet" href="../../css/user/index.css">
     <link rel="stylesheet" href="../../css/home/footer.css">
+
     <style>
         .clearfix:after{
             content:".";/*加一段内容*/
@@ -52,7 +53,7 @@
             margin-top: 50px;
         }
         .systemTop>div{
-            width: 1200px;
+            width: 1090px;
             margin: 0 auto;
         }
         #cainixihuan{
@@ -69,82 +70,106 @@
             width: 890px;
             margin-left: 20px;
         }
-        .rightcontent .g-main{
-            width: 890px;
-            /* margin-left: 20px; */
-            overflow: hidden;
-            z-index: 1;
-            padding-bottom: 80px;
-            /* border: 1px solid #e8e8e8; */
-            border-collapse: collapse;
-        }
-        .rightcontent .g-main .info_tabs{
+        .tabs{
+            height: 40px;
+            border-bottom: 2px solid #eaeaea;
             display: flex;
-            border-bottom: 2px solid #eaeaee;
-            position: relative;
         }
-        .rightcontent .g-main .info_tabs .tab{
-            width: 170px;
-            /* border: 1px solid #e8e8e8; */
-            border-left: none;
-            height: 42px;
-            line-height: 40px;
-            font-size: 18px;
+        .tabs .tab{
+            width: 150px;
+            padding: 10px 0;
+            height: 40px;
             font-weight: 900;
+            font-size: 18px;
+            color: #333;
             text-align: center;
-            box-sizing: border-box;
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
         }
-        .rightcontent .g-main .info_tabs .tab:hover{
+        .tabs .tab a{
+            width: 100%;
+            height: 18px;
+            display: block;
+            line-height: 1;
+            border-left: 3px solid #eaeaea;
+        }
+        .tabs .tab.firstText a{
+            border: none;
+        }
+        .tabs .tab.active a{
             color: #b4a078;
         }
-        .rightcontent .g-main .info_tabs .tab.active{
-            color: #b4a078;
+        .tabs .tab.active{
             border-bottom: 2px solid #b4a078;
         }
-        .rightcontent .g-main .info_tabs .helpCenterEntry{
-            position: absolute;
-            z-index: 2;
-            right: 0;
-            bottom: 9px;
-            font-size: 14px;
-            color: #999;
-        }
-        .rightcontent .g-main .info_tabs .helpCenterEntry .w-link{
-            color: #69c;
-        }
-        .rightcontent .g-main .info_tabs .helpCenterEntry .w-link:hover{
-            text-decoration: underline;
-        }
-        .rightcontent .g-main .info_content{
+        .m-displayContainer{
             display: none;
         }
-        
-        span{
-            display: inline-block;
-        }
-        .info_content .m-emptyStatus{
-            margin: 150px auto 0;
+        .m-emptyStatus {
             text-align: center;
+            margin: 150px auto 0;
         }
-        .info_content .m-emptyStatus .w-icon-empty{
-            height: 180px;
+        .icon-empty-msg{
             width: 180px;
-            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
-            background-repeat: no-repeat;
-            background-position: 0 -760px;
-            background-size: cover;
-            margin: 0 auto;
+            height: 180px;
+            background: url('/img/hxmnull.png') no-repeat;
+            display: inline-block;
+            vertical-align: top;
+            background-position: -544px 0;
         }
         .m-emptyStatus .emptyText {
             font-size: 16px;
             color: #999;
         }
-        /* .m-noticeInfo . */
-        #cainixihuan{
-            clear: both;
-            padding-top: 100px;
+        .m-notification {
+            padding-top: 27px;
+        }
+        .m-notification .notificationItem {
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .m-itemHd {
+            position: relative;
+            line-height: 1;
+        }
+        .m-itemHd.addBorder {
+            padding-left: 10px;
+            margin: 13px 0 12px;
+        }
+        .m-itemHd.addBorder:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 18px;
+            background: #b4a078;
+            border-radius: 28px;
+            left: 0;
+            top: 0;
+        }
+        .m-itemHd .title {
+            font-size: 16px;
+            padding: 0 10px 0 0;
+        }
+        .m-itemHd .date {
+            color: #666;
+            font-size: 12px;
+        }
+        .m-notification  .bd {
+            border-top: 1px solid #eaeaea;
+            padding-top: 17px;
+            font-size: 14px;
+        }
+        .m-notification  .bd:after, .m-notification  .bd:before {
+            content: " ";
+            display: table;
+        }
+        .m-notification  .bd .info {
+            line-height: 1;
+        }
+        .m-notification  .bd .info .desc {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .w-link {
+            color: #69c;
         }
     </style>
 </head>
@@ -163,7 +188,7 @@
                 <div class="m-crumbs">
                     <a href="/">首页</a>
                     <span class="w-icon-arrow arrow-right-hollow"></span>
-                    <span class="z-cur">价格保护</span>
+                    <span class="z-cur">消息通知</span>
                 </div>
             </div>
             <div class="leftnav">
@@ -173,7 +198,7 @@
                         <li>
                             <a href="/page/user/index.html">个人中心</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="/page/message/msgCenter.html">消息通知</a> 
                         </li>
                         <li>
@@ -222,7 +247,7 @@
                         <li>
                             <a href="/page/aftersale/list.html">售后记录</a>
                         </li>
-                        <li  class="active">
+                        <li>
                             <a href="/page/priceProtect/list.html">价格保护</a>
                         </li>
                         <li>
@@ -232,30 +257,65 @@
                 </div>
             </div>
             <div class="rightcontent">
-                <div class="g-main">
-                    <div class="info_tabs">
-                        <div class="tab active">价格申请</div>
-                        <div class="tab">申请记录</div>
-                        <div class="helpCenterEntry f-pa f-fz14">
-                            <span class="f-txt-assist f-margin-right-20">确认收货后7天内的商品（特殊商品除外）支持价格保护</span>
-                            <a target="_blank" class="w-link">价保规则&gt;&gt;</a>
+                <div class="block">
+                    <div class="tabs">
+                        <p class="tab active firstText">
+                            <a href="javascript:;">严选活动</a>
+                        </p>
+                        <p class="tab">
+                            <a href="javascript:;">我的资产</a>
+                        </p>
+                        <p class="tab">
+                            <a href="javascript:;">通知消息</a>
+                        </p>
+                        <p class="tab">
+                            <a href="javascript:;">物流助手</a>
+                        </p>
+                        <p class="tab">
+                            <a href="javascript:;">互动消息</a>
+                        </p>
+                    </div>
+                    <div class="m-displayContainer" style="display: block;">
+                        <div class="m-emptyStatus">
+                            <div class="w-icon-empty icon-empty-msg"></div>
+                            <div class="emptyText">当前无此类消息</div>
                         </div>
                     </div>
-                    <div class="info_content" style="display: block;">
+                    <div class="m-displayContainer">
                         <div class="m-emptyStatus">
-                            <div class="w-icon-empty icon-empty-collection"></div>
-                            <div class="emptyText">没有符合价保条件的商品</div>
+                            <div class="w-icon-empty icon-empty-msg"></div>
+                            <div class="emptyText">当前无此类消息</div>
                         </div>
                     </div>
-                    <div class="info_content" style="border: none;">
+                    <div class="m-displayContainer">
+                        <div class="m-notification">
+                            <div class="m-itemHd hd addBorder">
+                                <span class="title">有奖调研，有机会赢50元礼品卡（4.22截止）</span>
+                                <span class="date">2021-04-17 12:00:15</span>
+                            </div>
+                            <div class="bd">
+                                <div class="info">
+                                    <div class="desc">仅需3-5分钟，完整填写并提交可抽50元礼品卡（≈现金）；参与后续访谈最高可得200元！</div>
+                                    <a href="javascript:;" class="w-link">查看详情 ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-displayContainer">
                         <div class="m-emptyStatus">
-                            <div class="w-icon-empty icon-empty-collection"></div>
-                            <div class="emptyText">没有符合价保条件的商品</div>
+                            <div class="w-icon-empty icon-empty-msg"></div>
+                            <div class="emptyText">当前无此类消息</div>
+                        </div>
+                    </div>
+                    <div class="m-displayContainer">
+                        <div class="m-emptyStatus">
+                            <div class="w-icon-empty icon-empty-msg"></div>
+                            <div class="emptyText">当前无此类消息</div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <!-- 猜你喜欢 -->
             <!-- <div id="cainixihuan"></div> -->
         </div>
         <div id="pageFooter"></div>
@@ -265,18 +325,17 @@
     <script src="../../components/module/totalcontainersearch.js"></script>
     <script src="../../js/layout/footer.js"></script>
     <script>
-        $('#addressAdmin').click(function(){
+       $('#addressAdmin').click(function(){
            window.location = '../addressAdmin/index.html'
        })
-       $('#myHome').click(function(){
-           window.location = '../user/index.html'
+       $('#orderAdmin').click(function(){
+           window.location = '../order/orderDetail.html'
        })
-       $('.info_tabs .tab').click(function(){
-            $('.info_tabs .tab').removeClass('active');
+       $('.tabs .tab').click(function(){
+            $('.tabs .tab').removeClass('active');
             $(this).addClass('active');
-            let idx = $(this).index();
-            $('.info_content').hide();
-            $('.info_content').eq(idx).show();
+            $('.m-displayContainer').hide();
+            $('.m-displayContainer').eq($(this).index()).show();
        })
     </script>
 </body>

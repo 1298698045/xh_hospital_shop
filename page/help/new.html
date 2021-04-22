@@ -4,9 +4,935 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <style>
+        .systemTop>div{
+            width: 1090px;
+            margin: 0 auto;
+        }
+        .main-content{
+            margin-top: 50px;
+        }
+        .m-crumbs {
+            font-size: 12px;
+            color: #333;
+            line-height: 1;
+            /* padding-top: 20px;
+            padding-bottom: 20px; */
+        }
+        .m-crumbs a{
+            color: #333;
+        }
+        .m-crumbs span{
+            display: inline-block;
+        }
+        .m-crumbs a:hover{
+            text-decoration: underline;
+        }
+        .m-crumbs .arrow-right-hollow{
+            height: 11px;
+            width: 5px;
+            margin: 0 5px;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background-position: 0 -1129px;
+        }
+        .m-crumbs .z-cur {
+            color: #999;
+        }
+        .wraper .g-sub{
+            width: 180px; 
+            z-index: 2;
+            margin-bottom: 30px;
+            float: left;
+        }
+        .wraper .g-sub .subNav{
+            margin-top: 20px;
+        }
+        .wraper .g-sub .subNav .help{
+            border: 1px solid #e8e8e8;
+            position: relative;
+            margin-top: -1px;
+            cursor: pointer;
+        }
+        .wraper .g-sub .subNav .help.on{
+            background: #f5f5f5;
+        }
+        .wraper .g-sub .subNav .help .title {
+            height: 43px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 43px;
+            position: relative;
+        }
+        .wraper .g-sub .subNav .help .title:hover{
+            color: #b4a078;
+        }
+        .wraper .g-sub .subNav .help .title .arrow-up-hollow{
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            height: 5px;
+            width: 11px;
+            display: inline-block;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background-position: 0 -1278px;
+            transform: rotate(180deg);
+        }
+        .wraper .g-sub .subNav .help.on .arrow-up-hollow {
+            transform: rotate(0);
+        }
+        .wraper .g-sub .subNav .help.on .help-cnt{
+            display: block;
+        }
+        .wraper .g-sub .subNav .help .help-cnt {
+            display: none;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .wraper .g-sub .subNav .help .help-cnt .list-item a {
+            margin: 20px 0;
+            line-height: 1;
+            font-size: 14px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #333;
+        }
+        .wraper .g-sub .subNav .help .help-cnt .list-item a:hover{
+            color: #b4a078;
+        }
+        .wraper .g-sub .subNav .help .help-cnt .list-item a.cur{
+            color: #b4a078;
+        }
+        .wraper .g-main{
+            width: 890px;
+            margin-left: 20px;
+            overflow: hidden;
+            z-index: 1;
+            padding-bottom: 80px;
+            position: relative;
+            margin-top: 20px;
+            float: left;
+        }
+        .wraper .g-main .helpContent{
+            width: 890px;
+            border: 1px solid #e8e8e8;
+            padding: 25px 40px;
+            text-align: justify;
+            float: left;
+            display: none;
+        }
+        .wraper .g-main .helpContent .title {
+            font-size: 18px;
+            border-bottom: 1px dashed #e8e8e8;
+            padding-bottom: 25px;
+        }
+        .wraper .g-main .helpContent .content{
+            margin-top: 35px;
+        }
+        .wraper .g-main .helpContent .decimal{
+            box-sizing: border-box;
+            margin: 0px;
+            /* padding: 0px 0px 0px 20px; */
+            list-style: none;
+            color: rgb(51, 51, 51);
+            font-family: "Microsoft Yahei", 微软雅黑, verdana;
+            font-size: 14px;
+            font-style: normal;
+            font-variant-ligatures: normal;
+            font-variant-caps: normal;
+            font-weight: 400;
+            letter-spacing: normal;
+            orphans: 2;
+            text-align: justify;
+            text-indent: 0px;
+            text-transform: none;
+            white-space: normal;
+            widows: 2;
+            word-spacing: 0px;
+            -webkit-text-stroke-width: 0px;
+            background-color: rgb(255, 255, 255);
+            text-decoration-style: initial;
+            text-decoration-color: initial;
+            list-style-type:none;		
+            counter-reset:sectioncounter;
+        }
+        .wraper .g-main .helpContent .decimal li{
+            box-sizing: border-box;
+            margin: 20px 0px 0px;
+            padding: 0px;
+            list-style-type: decimal;
+        }
+        /* .wraper .g-main .helpContent .decimal li::before{
+            content:counter(sectioncounter) "、"; 
+            counter-increment:sectioncounter;
+            display: inline-block;
+        } */
+        .wraper .g-main .helpContent .decimal li .question{
+            box-sizing: border-box;
+        }
+        .wraper .g-main .helpContent .decimal li .answer{
+            box-sizing: border-box;
+            color: rgb(153, 153, 153);
+            list-style-type: decimal;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="listcontent">
+        <!-- <div class="j-YXComponentTop">
+            <div class="yx-cp-base yx-cp-m-top">
+                <div class="yx-cp-m-siteNav">
+                    <div class="yx-cp-row">
+                        <div class="yx-cp-siteNav-l">&nbsp;</div>
+                        <div class="yx-cp-siteNav-r">
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd">
+                                    <div class="j-yx-cp-topLogin" title="网易严选登录">
+                                        <a href="#javascript:;">登录/注册</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">我的订单</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">会员</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">甄选家</a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <span>企业采购</span>
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-upArrow" style="margin-left:10px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <span>客户服务</span>
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-upArrow" style="margin-left:10px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="yx-cp-siteNavItem">
+                                <div class="yx-cp-siteNavItemHd pipe">
+                                    <a href="#javascript:;">
+                                        <i class="yx-cp-icon-yxtop icon-yxtop-app" style="margin-left:10px;"></i>
+                                        <span>APP</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yx-cp-m-funcTab j-yx-cp-m-funcTab">
+                    <div class="yx-cp-row">
+                        <div class="row_child">
+                            <a class="yx-cp-tabLogo yx-cp-funcTabFixed-hide" href="http://you.163.com/" title="网易严选" target="_blank">
+                                <i class="yx-cp-icon-yxtop icon-yxtop-logo"></i>
+                            </a>
+                            <div class="yx-cp-m-search yx-cp-zIndex3">
+                                <input type="text" class="yx-cp-searchInput">
+                                <div class="yx-cp-searchButton">
+                                    <span>
+                                        搜索
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="yx-cp-m-cartEnterWrap">
+                                <div class="yx-cp-m-cartEnter">
+                                    <i class="yx-cp-icon-yxtop icon-yxtop-cart-s"></i>
+                                    <span class="yx-cp-cartName">购物车</span>
+                                    <i class="j-cart-num j-cart-num2  icon-yxtop-badge">0</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yx-cp-m-tabNav clearfix">
+                            <li class="yx-cp-tabNav-item  yx-cp-firstItem">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="首页" target="_blank">首页</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="居家生活" target="_blank">居家生活</a>
+                                <div class="yx-cp-tabNav-dropdown">
+                                    <div class="yx-cp-cateGroupList clearfix">
+                                        <div class="yx-cp-cateGroup">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow">
+                                                床品件套
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床品件套</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateGroup yx-min">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                                被枕褥毯
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateGroup yx-min">
+                                            <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                                被枕褥毯
+                                            </div>
+                                            <div class="yx-cp-columnList clearfix">
+                                                <div class="yx-cp-cateColumn">
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-cateItem">
+                                                        <a href="javascript:;">
+                                                            <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                            <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="服饰鞋包" target="_blank">服饰鞋包</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="美食酒水" target="_blank">美食酒水</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="个护清洁" target="_blank">个护清洁</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="母婴亲子" target="_blank">母婴亲子</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="运动旅行" target="_blank">运动旅行</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="数码家电" target="_blank">数码家电</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="严选全球" target="_blank">严选全球</a>
+                            </li>
+                            <li class="yx-cp-tabNav-split yx-cp-funcTabFixed-hide"></li>
+                            <li class="yx-cp-tabNav-item  yx-cp-funcTabFixed-hide">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="为你严选" target="_blank">为你严选</a>
+                            </li>
+                            <li class="yx-cp-tabNav-item">
+                                <a class="yx-cp-topLevel" href="#javascript:;" title="众筹" target="_blank">众筹</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yx-cp-m-funcTab-fixed">
+            <div class="head-center">
+                <a class="yx-cp-tabLogo-fixed yx-cp-funcTab-hide" href="#javascript:;" title="网易严选" target="_blank">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-miniLogo" data-reactid=".0.1.0.1.0"></i>
+                </a>
+                <div class="yx-cp-m-tabNav clearfix">
+                    <li class="yx-cp-tabNav-item  yx-cp-firstItem">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="首页" target="_blank">首页</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="居家生活" target="_blank">居家生活</a>
+                        <div class="yx-cp-tabNav-dropdown">
+                            <div class="yx-cp-cateGroupList clearfix">
+                                <div class="yx-cp-cateGroup">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow">
+                                        床品件套
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床品件套</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yx-cp-cateGroup yx-min">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                        被枕褥毯
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yx-cp-cateGroup yx-min">
+                                    <div class="yx-cp-cateGroup-name yx-f-text-overflow yx-min">
+                                        被枕褥毯
+                                    </div>
+                                    <div class="yx-cp-columnList clearfix">
+                                        <div class="yx-cp-cateColumn">
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>
+                                                </a>
+                                            </div>
+                                            <div class="yx-cp-cateItem">
+                                                <a href="javascript:;">
+                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">
+                                                    <span class="yx-cp-subCate-text">床垫床褥</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="服饰鞋包" target="_blank">服饰鞋包</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="美食酒水" target="_blank">美食酒水</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="个护清洁" target="_blank">个护清洁</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="母婴亲子" target="_blank">母婴亲子</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="运动旅行" target="_blank">运动旅行</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="数码家电" target="_blank">数码家电</a>
+                    </li>
+                    <li class="yx-cp-tabNav-item">
+                        <a class="yx-cp-topLevel" href="#javascript:;" title="严选全球" target="_blank">严选全球</a>
+                    </li>
+                </div>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-search"></i>
+                </a>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-userempty"></i>
+                </a>
+                <a href="#javascript:;">
+                    <i class="yx-cp-icon-yxtop icon-yxtop-cart"></i>
+                </a>
+            </div>
+        </div> -->
+        <!-- <div id="site-nav"></div>
+        <div class="systemTop">
+            <div>
+                协和商城 |
+                个人中心
+            </div>
+        </div> -->
+        <div class="headWrap"></div>
+        <div class="main-content">
+            <div class="m-crumbs">
+                <a href="/">首页</a>
+                <span class="w-icon-arrow arrow-right-hollow"></span>
+                <span class="z-cur">帮助中心</span>
+            </div>
+            <div class="wraper clearfix">
+                <div class="g-sub">
+                    <div class="subNav">
+                        <div class="help on">
+                            <div class="title">
+                                <span>常见问题</span>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>购买相关</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">如何看懂眼镜验光单</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">话费充值说明</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>配送与验收</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">发货时间</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">配送范围及费用</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">商品验货与签收</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">合单发货政策说明</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>会员制度</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">会员制度</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">会员特权</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">会员等级</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">会员成长值</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">企业用户</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">大学生认证</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">Pro会员省钱金额计算规则</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">Pro会员服务协议</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>甄选家</span>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>严选众筹</span>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>评价规则</span>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>售后服务</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">退换货政策</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">维修政策</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">大家具服务细则</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">食品类目商品争议处理判定标准</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">食品类目商品退换货细则</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">退货流程</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">换货流程</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">退换货地址</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">退换货运费</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">极速售后服务</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">退款说明</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">价保规则</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">发票常见问题</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>安全公告</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">医疗器械质量公告</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">进口冷链食品管理承诺书</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subNav">
+                        <div class="help">
+                            <div class="title">
+                                <span>服务协议</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">《网易严选服务协议》</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">《网易严选港澳台及海外销售服务协议》</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">《网易严选Pro会员服务协议》</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">网易严选芝麻GO卡服务协议</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">网易严选微信轻享卡服务协议</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">网易严选账户注销协议</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>隐私政策</span>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>公告</span>
+                                <i class="w-icon-arrow arrow-up-hollow"></i>
+                            </div>
+                            <div class="help-cnt">
+                                <div class="help-list">
+                                    <ul class="list-item">
+                                        <li>
+                                            <a class="cur" href="#javascript:;">意见公告</a>
+                                        </li>
+                                        <li>
+                                            <a href="#javascript:;">生效公告</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="help">
+                            <div class="title">
+                                <span>商务合作</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-main">
+                    <div class="helpContent" style="display: block;">
+                        <div class="title">常见问题</div>
+                        <div class="content">
+                            <ul class="decimal fz14">
+                                <li>
+                                    <div>
+                                        <div class="question">问：网易严选的商品都是正品吗？</div>
+                                        <div class="answer">答：网易严选秉承网易一贯的严谨态度，对商品的产地、工艺、原材料都严格把关，力求帮消费者甄选到最优质的商品，您可以放心选购。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：网易严选的订单如何配送？</div>
+                                        <div class="answer">答：网易严选会根据商品所在地、顾客所在地和商品的尺寸重量优选物流配送商，确保优质用户体验。目前暂不支持自选快递，具体物流信息可在下单成功后“我的订单-追踪物流”中查看。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：我的包裹多长时间能送到？</div>
+                                        <div class="answer">答：我们会在订单支付成功后1-3天内发货（节假日顺延，部分特殊商品七天内发货），送达时间视快递配送时间而定。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：如何免运费？</div>
+                                        <div class="answer">答： 对于严选自营仓商品，前述商品单笔订单总价金额（不含运费）大于或等于99元的，我们提供一次免费送货服务；对于严选合作仓商品，订购一件前述商品，我们即提供一次免费送货服务。港澳台地区需单笔订单金额大于或等于500元，我们提供一次免费送货服务； 部分商品的详情页服务政策中说明有单独的运费政策，以商详页运费说明为准。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：订单生成后我需要在多长时间内支付货款？</div>
+                                        <div class="answer">答：下单后我们会为您保留1小时，为确保订单的有效性，需要您在1小时内完成支付。 部分商品的详情页服务政策中说明有单独的运费政策，以商详页运费说明为准。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：在线支付已经成功，为什么我的订单状态还是显示“待付款”？</div>
+                                        <div class="answer">答：一般来说，网上支付是即时到账的。但有时因为网络原因，可能会有几分钟的延迟，请您耐心等待，并及时查询您的银行卡账户余额，如果费用已扣，但订单状态依然是“等待付款”，请联系客服处理。 部分商品的详情页服务政策中说明有单独的运费政策，以商详页运费说明为准。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：实物与图片有色差吗？</div>
+                                        <div class="answer">答：网易严选中的商品照片均以实物拍摄，颜色经设计师校对，由于不同的电脑显示器、光线、亮度都有差异，造成轻微色差难以避免。 部分商品的详情页服务政策中说明有单独的运费政策，以商详页运费说明为准。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：下单后可以修改订单信息吗？</div>
+                                        <div class="answer">答：订单支付前，用户可以在订单详情页中修改订单收货信息和发票信息，修改结果以实际页面修改提示为准。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：下单时忘记选择开发票，我该如何申请补开发票？</div>
+                                        <div class="answer">答：下单时如未选择开发票，可在订单确认收货后180天内，在需补开发票的订单详情页申请补开（网易严选App也可在“售后服务-发票服务”未开票订单列表申请开票）。确认收货超过180天的订单，请联系严选在线客服咨询是否可补开。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：客服的联系方式是什么？</div>
+                                        <div class="answer">答：您可以通过在线客服和电话联系客服。
+                                            　　客服电话: 400-0368-163</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：使用优惠券后，订单中单个商品实际支付的价格怎么计算的？</div>
+                                        <div class="answer">答：订单中使用过的优惠券金额将按比例摊分到每件商品上，您是根据"券后结算价"来支付的。</div>
+                                        <div class="answer" style="box-sizing: border-box; margin: 20px 0px 15px; padding: 0px;">例如：若订单中包含价格70元的商品A，价格30元的商品B，此单中用了10元优惠券（该券均适用A、B）。那么商品A上被摊分的金额等于：10（现金券金额）/100（订单总额）*70（商品A 的价格）=7元。因此商品A的实际支付价格为63元，若商品A发生退货，则退款金额也为63元。"券后结算价"来支付的。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="question">问：退货时，商品的退款是怎么计算的？</div>
+                                        <div class="answer">答：按照实际支付货款退还。若您在该订单中使用过优惠券，则该优惠券不予返还，并按 "券后结算价"为商品退款。</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="helpContent">
+                        <div class="title">如何看懂眼镜验光单</div>
+                        <div class="content">
+                            <div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: "Microsoft Yahei", 微软雅黑, verdana; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                                <h2 style="box-sizing: border-box; margin: 0px 0px 20px; padding: 0px; font-size: 16px; line-height: 18px;">1.如何获取验光数据</h2>
+                            </div>
+                            <div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, 微软雅黑, verdana; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                                <div style="box-sizing: border-box; color: rgb(102, 102, 102);">
+                                <p style="box-sizing: border-box; margin: 0px 0px 15px; padding: 0px;"><span class="borderBox" style="box-sizing: border-box; color: rgb(180, 160, 120); border: 1px solid rgb(180, 160, 120); margin: 0px 11px 0px 0px; display: inline-block; width: 60px; text-align: center;">方法一</span>去正规眼科医院检测</p>
+                                
+                                <p style="box-sizing: border-box; margin: 0px 0px 15px; padding: 0px;"><span class="borderBox" style="box-sizing: border-box; color: rgb(180, 160, 120); border: 1px solid rgb(180, 160, 120); margin: 0px 11px 0px 0px; display: inline-block; width: 60px; text-align: center;">方法二</span>去正规眼镜店检测</p>
+                                
+                                <p style="box-sizing: border-box; margin: 0px 0px 15px; padding: 0px;"><span class="borderBox" style="box-sizing: border-box; color: rgb(180, 160, 120); border: 1px solid rgb(180, 160, 120); margin: 0px 11px 0px 0px; display: inline-block; width: 60px; text-align: center;">方法三</span>二年内历史验光数据，度数无加深且目前佩戴清晰舒适情况下可使用</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="../../js/module/jq/jq.min.js"></script>
+<script src="../../components/module/totalcontainersearch.js"></script>
+<script src="../../js/layout/footer.js"></script>
+<script>
+    $(function(){
+        $('.help').click(function(){
+            $('.help').removeClass('on');
+            $(this).addClass('on');
+            let idx = $(this).index();
+            $('.g-main .helpContent').hide();
+            $('.g-main .helpContent').eq(idx).show();
+        })
+        // $(window).scroll(function(){
+        //     var scrollTop = scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        //     if(scrollTop>1000){
+        //         $('.j-YXComponentTop').hide()
+        //     }else{
+        //         $('.yx-cp-m-funcTab-fixed').show()
+        //     }
+        //     if(scrollTop == 0){
+        //         $('.yx-cp-m-funcTab-fixed').hide();
+        //         $('.j-YXComponentTop').show()
+        //     }
+        // })
+    })
+</script>
 </html>

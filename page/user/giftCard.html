@@ -73,7 +73,7 @@
             width: 890px;
             border: 1px solid #e8e8e8;
             margin-bottom: 20px;
-            margin-left: 20px;
+            /* margin-left: 20px; */
         }
         .giftCard .balance .name {
             font-size: 18px;
@@ -145,7 +145,7 @@
         }
         .rightcontent .g-main{
             width: 890px;
-            margin-left: 20px;
+            /* margin-left: 20px; */
             overflow: hidden;
             z-index: 1;
             padding-bottom: 80px;
@@ -310,44 +310,84 @@
 </head>
 <body>
     <div id="listcontent">
-        <div id="site-nav"></div>
+        <!-- <div id="site-nav"></div>
         <div class="systemTop">
             <div>
                 协和商城 |
                 个人中心
             </div>
-        </div>
+        </div> -->
+        <div class="headWrap"></div>
         <div class="main-content">
+            <div class="m-crumbs-wrap">
+                <div class="m-crumbs">
+                    <a href="/">首页</a>
+                    <span class="w-icon-arrow arrow-right-hollow"></span>
+                    <span class="z-cur">礼品卡</span>
+                </div>
+            </div>
             <div class="leftnav">
                 <div class="nav-title">账号管理</div>
                 <div class="nav-body">
                     <ul>
-                        <li id="myHome">个人中心</li>
-                        <li>消息通知</li>
-                        <li>账号信息</li>
-                        <li id="addressAdmin">地址管理</li>
-                        <li>账号安全</li>
-                        <li>我的积分</li>
-                        <li>我的收藏</li>
-                        <li>我的足迹</li>
+                        <li>
+                            <a href="/page/user/index.html">个人中心</a>
+                        </li>
+                        <li>
+                            <a href="/page/message/msgCenter.html">消息通知</a> 
+                        </li>
+                        <li>
+                            <a href="/page/user/info.html">账号信息</a>
+                        </li>
+                        <li id="addressAdmin">
+                            <a href="/page/addressAdmin/index.html">地址管理</a>
+                        </li>
+                        <li>
+                            <a href="/page/user/securityCenterV2.html">账号安全</a>
+                        </li>
+                        <li>
+                            <a href="/page/points/index.html">我的积分</a>
+                        </li>
+                        <li>
+                            <a href="/page/item/userCollection.html">我的收藏</a>
+                        </li>
+                        <li>
+                            <a href="/page/user/footprint.html">我的足迹</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="nav-title">交易管理</div>
                 <div class="nav-body">
                     <ul>
-                        <li>订单管理</li>
-                        <li>余额</li>
-                        <li>我的红包</li>
-                        <li>优惠券</li>
-                        <li class="active">礼品卡</li>
+                        <li id="orderAdmin">
+                            <a href="/page/order/myList.html">订单管理</a>
+                        </li>
+                        <li>
+                            <a href="/page/reward/index.html">余额</a>
+                        </li>
+                        <li>
+                            <a href="/page/user/redpacket.html">我的红包</a>
+                        </li>
+                        <li>
+                            <a href="/page/user/coupon.html">优惠券</a>
+                        </li>
+                        <li  class="active">
+                            <a href="/page/user/giftCard.html">礼品卡</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="nav-title">服务中心</div>
                 <div class="nav-body">
                     <ul>
-                        <li>售后记录</li>
-                        <li>价格保护</li>
-                        <li>帮助中心</li>
+                        <li>
+                            <a href="/page/aftersale/list.html">售后记录</a>
+                        </li>
+                        <li>
+                            <a href="/page/priceProtect/list.html">价格保护</a>
+                        </li>
+                        <li>
+                            <a href="/page/help/new.html">帮助中心</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -423,7 +463,7 @@
                 </div>
             </div>
 
-            <div id="cainixihuan"></div>
+            <!-- <div id="cainixihuan"></div> -->
         </div>
         <div id="pageFooter"></div>
         </div>
