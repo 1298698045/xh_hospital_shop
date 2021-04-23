@@ -181,6 +181,10 @@
             color: rgb(153, 153, 153);
             list-style-type: decimal;
         }
+
+
+
+        
     </style>
 </head>
 <body>
@@ -259,6 +263,53 @@
                                     <i class="yx-cp-icon-yxtop icon-yxtop-cart-s"></i>
                                     <span class="yx-cp-cartName">购物车</span>
                                     <i class="j-cart-num j-cart-num2  icon-yxtop-badge">0</i>
+                                </div>
+                                <div class="yx-cp-m-miniCart">
+                                    <i class="yx-cp-tw-1"></i>
+                                    <i class="yx-cp-tw-2"></i>
+                                    <div class="yx-cp-wrap">
+                                        <div class="yx-cp-cartInfo j-yx-cp-cartInfo">
+                                            <div class="yx-cp-cartInfo-inner">
+                                                <div class="yx-cp-cartItem">
+                                                    <div class="yx-cp-item yx-cp-item-left">
+                                                        <a href="javascript:;">
+                                                            <img src="/img/tp_1.1.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="yx-cp-item yx-cp-item-middle">
+                                                        <p>
+                                                            <a href="javascript:;" title="办公室早餐神器，天然酵母面包">办公室早餐神器，天然酵母面包</a>
+                                                        </p>
+                                                        <p>
+                                                            <span class="yx-cp-specValue">北海道牛奶风味 270克 </span>
+                                                            <span class="yx-cp-count">
+                                                                <span>x &nbsp;</span>
+                                                                <span>1</span>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="yx-cp-item yx-cp-item-right">
+                                                        <div class="yx-cp-price">
+                                                            ￥16.00
+                                                        </div>
+                                                        <div class="yx-cp-deleteItem">
+                                                            <i class="yx-cp-icon-yxclose icon-yxclose-close11"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="yx-cp-cartBottom">
+                                                <div class="yx-cp-totalPrice">
+                                                    <span style="color:#999;">商品合计:</span>
+                                                    <br>
+                                                    <span>￥33.90</span>
+                                                </div>
+                                                <div class="yx-cp-goToCart">
+                                                    <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="javascript:;" target="_blank">去购物车结算</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -552,9 +603,58 @@
                 <a href="#javascript:;">
                     <i class="yx-cp-icon-yxtop icon-yxtop-userempty"></i>
                 </a>
-                <a href="#javascript:;">
-                    <i class="yx-cp-icon-yxtop icon-yxtop-cart"></i>
-                </a>
+                <div class="cartIcon" style="position: relative;">
+                    <a href="#javascript:;">
+                        <i class="yx-cp-icon-yxtop icon-yxtop-cart"></i>
+                    </a>
+                    <div class="yx-cp-m-miniCart">
+                        <i class="yx-cp-tw-1"></i>
+                        <i class="yx-cp-tw-2"></i>
+                        <div class="yx-cp-wrap">
+                            <div class="yx-cp-cartInfo j-yx-cp-cartInfo">
+                                <div class="yx-cp-cartInfo-inner">
+                                    <div class="yx-cp-cartItem">
+                                        <div class="yx-cp-item yx-cp-item-left">
+                                            <a href="javascript:;">
+                                                <img src="/img/tp_1.1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="yx-cp-item yx-cp-item-middle">
+                                            <p>
+                                                <a href="javascript:;" title="办公室早餐神器，天然酵母面包">办公室早餐神器，天然酵母面包</a>
+                                            </p>
+                                            <p>
+                                                <span class="yx-cp-specValue">北海道牛奶风味 270克 </span>
+                                                <span class="yx-cp-count">
+                                                    <span>x &nbsp;</span>
+                                                    <span>1</span>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="yx-cp-item yx-cp-item-right">
+                                            <div class="yx-cp-price">
+                                                ￥16.00
+                                            </div>
+                                            <div class="yx-cp-deleteItem">
+                                                <i class="yx-cp-icon-yxclose icon-yxclose-close11"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yx-cp-cartBottom">
+                                    <div class="yx-cp-totalPrice">
+                                        <span style="color:#999;">商品合计:</span>
+                                        <br>
+                                        <span>￥33.90</span>
+                                    </div>
+                                    <div class="yx-cp-goToCart">
+                                        <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="javascript:;" target="_blank">去购物车结算</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div> -->
         <!-- <div id="site-nav"></div>
@@ -921,6 +1021,12 @@
             $('.g-main .helpContent').hide();
             $('.g-main .helpContent').eq(idx).show();
         })
+
+        // $('.yx-cp-m-cartEnterWrap .yx-cp-m-cartEnter').hover(function(){
+        //     $(this).next().show();
+        // },function(){
+
+        // })
         // $(window).scroll(function(){
         //     var scrollTop = scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
         //     if(scrollTop>1000){

@@ -301,6 +301,7 @@
             width: 210px;
             height: 210px;
             background-color: #fff;
+            overflow: hidden;
         }
         .likeWrap .swiper-container .weekItem .hd_img a img{
             width: 100%;
@@ -308,6 +309,9 @@
             transition: transform 1s;
             margin: 0 auto;
             opacity: 1;
+        }
+        .likeWrap .swiper-container .weekItem .hd_img:hover a img{
+            transform: scale(1.1);
         }
         .likeWrap .swiper-container .weekItem .bd .prdtTags{
             height: 20px;
@@ -329,7 +333,6 @@
             margin: 0 auto 4px;
             max-height: 40px;
             line-height: 20px;
-            display: -webkit-box;
             overflow: hidden;
             word-break: break-all;
             font-size: 14px;
@@ -605,6 +608,7 @@
             paginationClickable: true,
             spaceBetween: 30,
             freeMode: true,
+            // freeModeMomentum:false,
             prevButton:'.swiper-button-prev',
             nextButton:'.swiper-button-next',
         });
