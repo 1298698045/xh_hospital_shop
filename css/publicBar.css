@@ -1,0 +1,192 @@
+.m-indexSideBar.fixed{
+    position: fixed;
+    top: 62px!important;
+}
+.m-indexSideBar{
+    width: 110px;
+    height: auto;
+    border: 1px solid #E2DED6;
+    left: 50%;
+    margin-left: -680px;
+    z-index: 98;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    opacity: 1;
+    will-change: transform;
+    transform: translateZ(0);
+    top: 445px;
+}
+.m-indexSideBar .item{
+    width: 108px;
+    height: 36px;
+    padding: 1px 11px 0;
+    text-align: left;
+    position: relative;
+    display: table;
+    cursor: pointer;
+}
+.m-indexSideBar .item.active{
+    color: #BB3343;
+    font-weight: bold;
+}
+.m-indexSideBar .item:hover{
+    color: #BB3343;
+    font-weight: bold;
+}
+.m-indexSideBar .item.firstItem{
+    font-size: 16px;
+    color: #BB3343;
+    text-align: center;
+    line-height: 38px;
+    height: 38px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    font-weight: 700;
+    cursor: default;
+    padding: 0;
+    background: url('/img/firstItem.png') no-repeat;
+}
+.m-indexSideBar .firstItem:after, .m-indexSideBar .firstItem:before {
+    content: '';
+    display: block;
+    width: 8px;
+    border-bottom: 2px solid #BB3343;
+    position: absolute;
+    bottom: 18px;
+    left: 85px;
+    z-index: 1;
+}
+.m-indexSideBar .firstItem:before {
+    left: 15px;
+}
+.m-indexSideBar .item .sideIcon {
+    position: absolute;
+    top: 2px;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+.m-indexSideBar .item .name {
+    vertical-align: middle;
+    display: table-cell;
+    line-height: 14px;
+    font-size: 12px;
+    padding-left: 36px;
+}
+.rightBar{
+    width: 72px;
+    height: 200px;
+    position: absolute;
+    top: 445px;
+    right: 0;
+    background: red;
+    font-size: 12px;
+}
+.rightBar.fixed{
+    position: fixed;
+    top: 62px!important;
+}
+.rightBar .j-yx-fixedtoolDownloadlink{
+    display: block;
+    width: 72px;
+    height: 140px;
+    padding-top: 0;
+    /* height: 82px; */
+    color: #666;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    /* padding-top: 14px; */
+    position: relative;
+    background: #fff;
+}
+.rightBar .j-yx-fixedtoolDownloadlink .qrCode{
+    width: 72px;
+    height: 72px;
+    background: #ccc;
+}
+.rightBar .j-yx-fixedtoolDownloadlink .yx-fixedtool-downText1{
+    line-height: 17px;
+    color: #666;
+}
+.rightBar .j-yx-fixedtoolDownloadlink .yx-fixedtool-downText2{
+    line-height: 17px;
+    color: #BC3B3B;
+}
+.rightBar .j-yx-fixedtoolDownloadlink:after {
+    display: block;
+    left: 6px;
+    bottom: 0;
+    width: 60px;
+    content: '';
+    border-bottom: 1px solid #eaeaea;
+    position: absolute;
+}
+.rightBar .j-yx-fixedtoolCustomerService{
+    display: block;
+    width: 72px;
+    height: 82px;
+    background-color: #fff;
+    color: #666;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    padding-top: 14px;
+    position: relative;
+}
+.rightBar .j-yx-fixedtoolCustomerService:hover{
+    color: #b4a078;
+}
+.rightBar .j-yx-fixedtoolCustomerService:hover .icon-yxfixedtool-customerService{
+    background-position: 0 -46px;
+}
+.icon-yxfixedtool-customerService {
+    height: 31px;
+    width: 32px;
+    background: url('/img/icon-yxfixedtool-sb35ce57899-796b48a324.webp');
+    background-position: 0 -128px;
+}
+.rightBar .j-yx-fixedtoolGoTop{
+    bottom: 0;
+    position: relative;
+    background-color: #fff;
+    color: #666;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    padding-top: 14px;
+    display: none;
+}
+.yx-cp-icon-yxfixedtool{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    font-size: 12px;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+.icon-yxfixedtool-goTop{
+    height: 15px;
+    width: 24px;
+    background: url('/img/icon-yxfixedtool-sb35ce57899-796b48a324.webp');
+    background-position: 0 -299px;
+}
+.rightBar .j-yx-fixedtoolGoTop .yx-fixedtoolText{
+    line-height: 20px;
+    font-size: 14px;
+    margin: 8px auto 0;
+    position: relative;
+}
+.rightBar .j-yx-fixedtoolGoTop::before{
+    display: block;
+    left: 6px;
+    top: 0;
+    width: 60px;
+    content: '';
+    border-bottom: 1px solid #eaeaea;
+    position: absolute;
+}

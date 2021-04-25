@@ -5,7 +5,8 @@
     height: 549px;
 }
 .footer .yx-cp-m-foot .footer_top{
-    margin-top: 60px;
+    /* margin-top: 60px; */
+    padding-top: 60px;
     padding-top: 60px;
     padding-bottom: 34px;
     background-color: #fff;

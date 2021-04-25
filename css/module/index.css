@@ -606,7 +606,7 @@ img {
 .yx-cp-m-siteNav .yx-cp-siteNavItemHd .yx-cp-icon-yxtop{
     height: 5px;
     width: 11px;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -690px;
     vertical-align: middle;
     display: inline-block;
@@ -617,7 +617,7 @@ img {
     width: 7px;
     vertical-align: middle;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 0;
 }
 .yx-cp-m-funcTab {
@@ -641,7 +641,7 @@ img {
 .icon-yxtop-logo {
     height: 60px;
     width: 212px;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -298px;
     display: inline-block;
     /* float: left; */
@@ -705,7 +705,7 @@ img {
     width: 18px;
     margin-left: 22px;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -148px;
     vertical-align: top;
 }
@@ -746,7 +746,7 @@ img {
     margin-left: 10px;
     height: 19px;
     width: 19px;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -51px;
 }
 .yx-cp-m-tabNav .yx-cp-tabNav-item .yx-cp-topLevel {
@@ -865,7 +865,7 @@ img {
     height: 30px;
     width: 126px;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -438px;
     margin-top: 8px;
 }
@@ -887,7 +887,7 @@ img {
     height: 20px;
     width: 20px;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -602px;
     margin-top: 16px;
     margin-right: 33px;
@@ -896,7 +896,7 @@ img {
     height: 22px;
     width: 20px;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -786px;
     margin-top: 16px;
     margin-right: 33px;
@@ -905,7 +905,7 @@ img {
     height: 24px;
     width: 24px;
     display: inline-block;
-    background: url('/img/icon-yxtop-s2904006215-b2811ec0e9.webp') no-repeat;
+    background: url('/img/icon-yxtop.png') no-repeat;
     background-position: 0 -204px;
     margin-top: 16px;
     /* margin-right: 33px; */
