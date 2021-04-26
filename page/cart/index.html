@@ -8,21 +8,25 @@
     <link rel="stylesheet" href="../../css/home/index.css">
     <link rel="stylesheet" href="../../css/cart/index.css">
     <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="/assets/css/like.css">
+    <link rel="stylesheet" href="/static/plugin/css/swiper-3.4.2.min.css">
     <style>
         
     </style>
 </head>
 <body>
     <div id="listcontent">
-        <div id="site-nav"></div>
-        <div class="headsearch"></div>
+        <!-- <div id="site-nav"></div>
+        <div class="headsearch"></div> -->
+        <div class="headWrap"></div>
         <div class="main-content">
             <div class="cart-content">
                 <div class="cart-head">
                     <div style="width:100px;" class="checkall checkbox-content">
                         <input type="checkbox">
+                        全选
                     </div>
-                    <div style="width: 450px;text-align: left;">商品信息</div>
+                    <div style="width: 354px;text-align: left;">商品信息</div>
                     <div style="width: 200px;">单价</div>
                     <div style="width: 200px;">数量</div>
                     <div style="width: 100px;">小计</div>
@@ -33,7 +37,7 @@
                         <div class="checkbox-content">
                             <input type="checkbox">
                         </div>
-                        <div class="commodity-msg" style="width: 500px;text-align: left;">
+                        <div class="commodity-msg" style="width: 400px;text-align: left;">
                             <div class="commodity-msg-img">
                                 <img src="https://yanxuan-item.nosdn.127.net/a696b45cfba25ca7de21ba5606e1be31.png?type=webp&quality=95&thumbnail=200x200&imageView" alt="">
                             </div>
@@ -51,7 +55,7 @@
                             </div>
                         </div>
                         <div class="commodity-prices" style="width: 100px;">¥349.00</div>
-                        <div class="commodity-edit" style="width: 100px;">删除</div>
+                        <div class="commodity-edit" style="width:100px">删除</div>
                     </div>
                 </div>
                 <div class="cart-foot">
@@ -62,17 +66,20 @@
                     <div class="cart-foot-delete">
                         批量删除
                     </div>
-                    <div class="cart-foot-PayMoney">
-                        <div>
-                            <span>应付总额：</span>
-                            <span class="PayMoney">¥ 349.00</span>
+                    <div style="float: right;">
+                        <div class="cart-foot-PayMoney" style="float: left;">
+                            <div>
+                                <span>应付总额：</span>
+                                <span class="PayMoney">¥ 349.00</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cart-foot-paybtn">
-                        下单
+                        <div class="cart-foot-paybtn">
+                            下单
+                        </div>
                     </div>
                 </div>
             </div>
+            <div id="likeTemp"></div>
             <div id="cainixihuan"></div>
         </div>
         <div id="pageFooter"></div>
@@ -81,6 +88,8 @@
     <script src="../../js/module/jq/jq.min.js"></script>
     <script src="../../components/module/totalcontainersearch.js"></script>
     <script src="../../js/layout/footer.js"></script>
+    <script src="/static/plugin/js/swiper-3.4.2.min.js"></script>
+    <script src="/components/likeTemp.js"></script>
     <script>
         $('.more').click(function(){
             $('.less').removeClass('notpointevent')

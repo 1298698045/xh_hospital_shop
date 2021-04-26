@@ -529,18 +529,18 @@
                                     <span>*</span>
                                     所在地区:</p>
                                 <div class="rightVal">
-                                    <select name="" id="">
+                                    <select name="" id="selProvince">
                                         <option value="">请选择</option>
                                     </select>
-                                    <select name="" id="">
+                                    <select name="" id="selCity">
                                         <option value="">请选择</option>
                                     </select>
-                                    <select name="" id="">
+                                    <select name="" id="selCountry">
                                         <option value="">请选择</option>
                                     </select>
-                                    <select name="" id="">
+                                    <!-- <select name="" id="">
                                         <option value="">请选择</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
                             <div class="row">
@@ -626,12 +626,62 @@
     <script src="../../js/layout/footer.js"></script>
     <script>
        $(function(){
+            var that = {
+                select:{
+                    citylist:[]
+                }
+            }
             // 新建地址
             $('.newAddress').click(function(){
+                $('#selProvince').html('');
                 $('.d-add').addClass('active');
                 load_script();
+                console.log(that.select.citylist,'that.select.citylist')
+                let str = '<option value="">请选择</option>';
+                for(let i=0;i<that.select.citylist.length;i++){
+                    str += `
+                        <option  value="${that.select.citylist[i].value}">${that.select.citylist[i].label}</option>
+                    `
+                }
+                $('#selProvince').append(str);
+            })
+            // 选择地址
+            var idx = 0;
+            $('#selProvince').change(function(){
+                $('#selCountry').html('<option value="">请选择</option>');
+                let val = $(this).val();
+                let str = '<option value="">请选择</option>';
+                for(let i=0; i<that.select.citylist.length;i++){
+                    if(val==that.select.citylist[i].value){
+                        idx = i;
+                        for(let j=0; j<that.select.citylist[idx].children.length;j++){
+                            str += `
+                                <option value="${that.select.citylist[idx].children[j].value}">${that.select.citylist[idx].children[j].label}</option>
+                            `
+                        }
+                    }
+                }
+                $('#selCity').html(str);
+            })
+            $('#selCity').change(function(){
+                let idxTwo = idx;
+                let val = $(this).val();
+                let str = '<option value="">请选择</option>';
+                for(let i=0; i < that.select.citylist[idx].children.length;i++){
+                    if(val == that.select.citylist[idx].children[i].value){
+                        for(let j=0; j< that.select.citylist[idx].children[i].children.length; j++){
+                            str += `
+                            <option value="${that.select.citylist[idx].children[i].children[j].value}">${that.select.citylist[idx].children[i].children[j].label}</option>
+
+                            `
+                        }
+                    }
+                }
+                $('#selCountry').html(str);
             })
             $('.delModal').click(function(){
+                $('#selCity').html('<option value="">请选择</option>');
+                $('#selCountry').html('<option value="">请选择</option>');
                 $('.d-add').removeClass('active');
             })
             $('#delRow').click(function(){
@@ -651,6 +701,7 @@
                 window.location = '../user/index.html'
             })
             
+            addressQuery();
             function addressQuery(){
                 // let rel = '';
                 // $.ajax({
@@ -669,6 +720,38 @@
                 //     }
                 // })
                 // return rel;
+                
+                $.ajax({
+                    type:'GET',
+                    url:'/static/plugin/json/city.json',
+                    dataType:'',
+                    success:function(data){
+                        data = data.citylist;
+                        console.log(data)
+                        for (var i = 0; i < data.length; i++) {
+                            that.select.citylist.push({
+                                value: data[i].p,
+                                label: data[i].p,
+                                children: []
+                            })
+                            for (var j = 0; j < data[i].c.length; j++) { 
+                                 that.select.citylist[i].children.push({
+                                     value: data[i].c[j].n,
+                                     label: data[i].c[j].n,
+                                     children: []
+                                 })
+                                for (var k = 0; k < data[i].c[j].a.length; k++) {
+                                     that.select.citylist[i].children[j].children.push({
+                                         value: data[i].c[j].a[k].s,
+                                         label: data[i].c[j].a[k].s,
+                                     })
+                                }
+                            }
+                        }
+                    }
+                })
+                console.log(that.select,'----');
+                
             }
             function  load_script(){
                 var script = document.createElement('script');

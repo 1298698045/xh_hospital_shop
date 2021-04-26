@@ -573,32 +573,56 @@
     <script>
         let cartStr = '';
         for(let i = 0; i < 8; i++){
-            cartStr += `
-                <div class="swiper-slide swiper-slide-active weekItem">
-                    <div class="hd_img">
-                        <a href="javascript:;">
-                            <img src="/img/tp_1.1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="bd">
-                        <div class="prdtTags">
-                            <span class="m-itemTag ">特价</span>
-                        </div>
-                        <h4 class="name">
-                            <a href="javascript:;">
-                                <span>冬暖夏凉智能卧房，趣凡·卧室组合  床+床垫</span>
-                            </a>
-                        </h4>
-                        <div class="price">
-                            <span>￥6375</span>
-                            <span class="counterPrice">
-                                ￥19999
-                            </span>
-                            <a href="javascipt:;" class="f-pr cartIcon"></a>
-                        </div>
-                    </div>
-                </div>
-            `
+            // cartStr += `
+            //     <div class="swiper-slide swiper-slide-active weekItem">
+            //         <div class="hd_img">
+            //             <a href="javascript:;">
+            //                 <img src="/img/tp_1.1.png" alt="">
+            //             </a>
+            //         </div>
+            //         <div class="bd">
+            //             <div class="prdtTags">
+            //                 <span class="m-itemTag ">特价</span>
+            //             </div>
+            //             <h4 class="name">
+            //                 <a href="javascript:;">
+            //                     <span>冬暖夏凉智能卧房，趣凡·卧室组合  床+床垫</span>
+            //                 </a>
+            //             </h4>
+            //             <div class="price">
+            //                 <span>￥6375</span>
+            //                 <span class="counterPrice">
+            //                     ￥19999
+            //                 </span>
+            //                 <a href="javascipt:;" class="f-pr cartIcon"></a>
+            //             </div>
+            //         </div>
+            //     </div>
+            // `
+            cartStr += '<div class="swiper-slide swiper-slide-active weekItem">'+
+'                    <div class="hd_img">'+
+'                        <a href="javascript:;">'+
+'                            <img src="/img/tp_1.1.png" alt="">'+
+'                        </a>'+
+'                    </div>'+
+'                    <div class="bd">'+
+'                        <div class="prdtTags">'+
+'                            <span class="m-itemTag ">特价</span>'+
+'                        </div>'+
+'                        <h4 class="name">'+
+'                            <a href="javascript:;">'+
+'                                <span>冬暖夏凉智能卧房，趣凡·卧室组合  床+床垫</span>'+
+'                            </a>'+
+'                        </h4>'+
+'                        <div class="price">'+
+'                            <span>￥6375</span>'+
+'                            <span class="counterPrice">'+
+'                                ￥19999'+
+'                            </span>'+
+'                            <a href="javascipt:;" class="f-pr cartIcon"></a>'+
+'                        </div>'+
+'                    </div>'+
+'                </div>';
         }
 
         $('.swiperContent').append(cartStr)
