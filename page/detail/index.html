@@ -9,8 +9,14 @@
     <link rel="stylesheet" href="../../css/home/index.css">
     <link rel="stylesheet" href="../../css/detail/index.css">
     <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="/static/plugin/css/pagination.css">
     <style>
-
+        ._page_container{
+            height: auto;
+        }
+        ._page_container ._pages{
+            margin: 20px auto;
+        }
     </style>
 </head>
 
@@ -553,6 +559,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <div id="pages"></div>
                     </div>
                 </div>
             </div>
@@ -645,6 +652,7 @@
     </div>
         <script src="../../js/module/jq/jq.min.js"></script>
         <script src="../../js/layout/footer.js"></script>
+        <script src="/static/plugin/js/pagination.js"></script>
         <script>
             $('.detailNavTab li').click(function () {
                 $('.detailNavTab li').removeClass('active')
@@ -718,6 +726,27 @@
             })
             $('.buybtn').click(function () {
                 window.location = '../order/confirm.html'
+            })
+        </script>
+        <script>
+            $(function(){
+                new Pagination({
+                    element: '#pages', // 元素        
+                    type: 1, // 样式类型，可选[1,2]      
+                    pageIndex: 1, // 初始页码       
+                    pageSize: 5, // 每页数量       
+                    pageCount: 9, // 页码数量       
+                    total: 100, // 数据总条数        
+                    jumper: false, // 显示输入框跳转        
+                    singlePageHide: false, // 只有一页时不显示分页       
+                    prevText: '上一页', // 上一页文字        
+                    nextText: '下一页', // 下一页文字       
+                    disabled: true, // 是否显示禁用        
+                    currentChange: function(index) {
+                        // 页码改变时回调         
+                        console.log(index);
+                    }
+                });
             })
         </script>
         <script src="../../components/module/totalcontainersearch.js"></script>

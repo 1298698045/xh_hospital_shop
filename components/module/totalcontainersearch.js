@@ -717,7 +717,7 @@ let str = '<div class="j-YXComponentTop">'+
 '                    </div>'+
 '                    <div class="yx-cp-siteNavItem">'+
 '                        <div class="yx-cp-siteNavItemHd pipe">'+
-'                            <a href="javascript:;">会员</a>'+
+'                            <a href="/page/membership/index.html">会员</a>'+
 '                        </div>'+
 '                    </div>'+
 '                    <div class="yx-cp-siteNavItem">'+

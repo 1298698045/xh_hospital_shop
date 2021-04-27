@@ -1,15 +1,259 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>网易严选 - 以严谨的态度，为中国消费者甄选天下优品</title>
-    <link rel="stylesheet" type="text/css" href="/css/register.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/css/register.css" /> -->
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/css/module/index.css">
+    <link rel="stylesheet" href="/css/home/index.css">
+    <link rel="stylesheet" href="/css/user/index.css">
+    <link rel="stylesheet" href="/css/home/footer.css">
+    <style>
+        .centerWrap{
+            margin-top: 100px;
+        }
+        .m-bdbg{
+            width: 100%;
+            height: 600px;
+            background: url('/img/loginBanner.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .g-row{
+            width: 1090px;
+            margin: 0 auto;
+            padding-top: 1px;
+        }
+        .g-row .m-loginBox {
+            margin-top: 83px;
+            margin-left: 703px;
+            width: 386px;
+            height: auto!important;
+            position: relative;
+        }
+        .g-row .m-loginBox .xh-loginBox{
+            width: 384px;
+            height: auto;
+            /* padding: 58px 40px 83px; */
+            background: #fff;
+        }
+        .g-row .m-loginBox .xh-loginBox .tabs{
+            padding: 30px 0 10px;
+        }
+        .g-row .m-loginBox .xh-loginBox .tabs .tab{
+            width: 50%;
+            text-align: center;
+            cursor: pointer;
+            color: #999;
+            float: left;
+        }
+        .g-row .m-loginBox .xh-loginBox .tabs .tab.fl-r{
+            float: right;
+            border-left: 1px solid #ddd;
+        }
+        .g-row .m-loginBox .xh-loginBox .tabs .tab.active{
+            color: #333;
+        }
+        .g-row .m-loginBox .xh-loginBox .bd{
+            padding:20px 40px 60px 40px;
+        }
+        .m-cnt .u-tab {
+            padding-bottom: 6px;
+            text-align: right;
+        }
+        .u-tab a{
+            height: 26px;
+            line-height: 26px;
+            display: inline-block;
+            color: #666;
+            font-size: 12px;
+        }
+        .u-tab a:hover{
+            color: #B4A078;
+        }
+        .m-cnt{
+            display: none;
+        }
+        .m-cnt .inputbox {
+            width: 298px !important;
+            /* height: 36px; */
+            border: 1px solid #e8e8e8;
+            line-height: 36px;
+            border-radius: 2px;
+        }
+        .m-cnt .u-logo {
+            float: left;
+            width: 29px;
+            text-align: center;
+            padding: 7px 0 7px 7px;
+            height: 24px;
+        }
+        .m-cnt .u-logo .u-logo-img3{
+            display: inline-block;
+            width: 21px;
+            height: 24px;
+            margin-top: 0px;
+            padding-right: 7px;
+            border-right: 1px solid #e8e8e8;
+            background: url('/img/inp_phone.png') 4px 2px no-repeat;
+        }
+        .m-cnt .u-logo .u-logo-img2{
+            display: inline-block;
+            width: 21px;
+            height: 24px;
+            margin-top: 0px;
+            padding-right: 7px;
+            border-right: 1px solid #e8e8e8;
+            background: url('/img/login_icon_pas.png') 4px 2px no-repeat;
+        }
+        .m-cnt .u-input {
+            position: relative;
+            float: left;
+        }
+        .m-cnt .u-input input {
+            height: 36px;
+            line-height: 36px;
+            padding-left: 8px;
+            width: 214px;
+            font-size: 14px;
+            font-weight: normal;
+            background: #fff;
+            outline: 0;
+            color: #333;
+            border: 0;
+        }
+        .m-cnt .m-pccnt .m-pcbox {
+            margin-top: 15px;
+        }
+        .m-pccnt .m-pcbox .inputbox .u-input input{
+            width: 150px;
+        }
+        .m-pccnt .m-pcbox .inputbox .pcbtn{
+            margin-left: 0;
+            display: inline-block;
+            float: right;
+        }
+        .m-pccnt .m-pcbox .inputbox .pcbtn a{
+            border: 1px solid #e8e8e8;
+            border-left: 0;
+            width: 88px;
+            height: 37px;
+            line-height: 36px;
+            background-color: #eee;
+            color: #333;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+        .loginbox {
+            margin-top: 40px;
+            margin-bottom: 11px;
+        }
+        .u-loginbtn {
+            display: block;
+            width: 100%;
+            height: 48px;
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+            background: #b4a078;
+            font-size: 18px;
+            line-height: 48px;
+            border-radius: 2px;
+        }
+        .fur-item {
+            position: relative;
+            padding: 0px 0px 4px;
+            margin-left: 24px;
+            color: #999;
+            font-size: 12px;
+        }
+        .m-cnt .fur-agree a {
+            color: #333;
+        }
+        .fur-agree {
+            color: #999;
+        }
+        .fur-agree a {
+            color: #999;
+            text-decoration: none;
+            line-height: 20px;
+        }
+        .u-zc-agree, .u-dl-agree{
+            display: block;
+            float: left;
+            margin-right: 5px;
+            width: 14px;
+            margin-top: 3px;
+            height: 14px;
+            cursor: pointer;
+            color: #999;
+            font-size: 12px;
+        }
+        .yx-loginFooter{
+            height: 60px;
+            background: #F5F3EF;
+            overflow: hidden;
+            width: 386px;
+            bottom: -1px;
+            left: -1px;
+            padding-right: 25px;
+        }
+        .yx-loginFooter .olist {
+            margin: 0 0 0 32px;
+            padding-top: 18px;
+            height: 50px;
+            text-align: left;
+            float: left;
+        }
+        .yx-loginFooter .olist .f-cb{
+            width: 30px;
+            height: 30px;
+            float: left;
+            padding: 0;
+            display: inline-block;
+            text-align: center;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+        .yx-loginFooter .olist .f-cb.weixin{
+            background: url('/img/77f98b239f0d848eb54151c4ad6eab96.webp') no-repeat;
+            background-repeat: no-repeat;
+            background-position: -7px -4px;
+        }
+        .yx-loginFooter .olist .f-cb.qq{
+            background: url('/img/77f98b239f0d848eb54151c4ad6eab96.webp') no-repeat;
+            background-repeat: no-repeat;
+            background-position: -4px -245px;
+        }
+        .yx-loginFooter .olist .f-cb.weibo{
+            background: url('/img/77f98b239f0d848eb54151c4ad6eab96.webp') no-repeat;
+            background-repeat: no-repeat;
+            background-position: -7px -123px;
+        }
+        .yx-loginFooter .olist .f-cb.renren{
+            background: url('/img/77f98b239f0d848eb54151c4ad6eab96.webp') no-repeat;
+            background-repeat: no-repeat;
+            background-position: -5px -83px;
+        }
+        .mobileLoginFooterLink{
+            float: right;
+            height: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            color: #999;
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 25px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 
 <body>
     <!--  头部-->
-    <div class="wramp_hearder">
+    <!-- <div class="wramp_hearder">
         <div id="hearder">
             <div class="hearder_left">
                 <div class="hearder_live">
@@ -73,7 +317,128 @@
                 </ul>
             </div>
         </div>
+    </div> -->
+    <div class="wrap">
+        <div class="headWrap"></div>
+        <div class="centerWrap">
+            <div class="m-bdbg j-bdbg">
+                <div class="g-row">
+                    <div class="m-loginBox">
+                        <div class="xh-loginBox">
+                            <div class="tabs clearfix">
+                                <p class="tab active">手机号登录</p>
+                                <p class="tab fl-r">邮箱登录</p>
+                            </div>
+                            <div class="bd">
+                                <div class="m-cnt" style="display: block;">
+                                    <form id="login-form" action="">
+                                        <div class="m-container m-uniteLogin">
+                                            <div class="u-tab f-cb">
+                                                <a href="javascript:;">使用密码验证登录</a>
+                                            </div>
+                                            <div class="inputbox clearfix">
+                                                <div class="u-logo">
+                                                    <div class="u-logo-img3"></div>
+                                                </div>
+                                                <div class="u-input box">
+                                                    <input type="tel" maxlength="11" spellcheck="false" tabindex="1" autocomplete="off" class="dlemail j-nameforslide" name="email" placeholder="请输入手机号" id="phoneipt">
+                                                </div>
+                                            </div>
+                                            <div class="m-pccnt f-cb">
+                                                <div class="m-pcbox">
+                                                    <div class="inputbox clearfix">
+                                                        <div class="u-input">
+                                                            <input type="tel"
+                                                             autocomplete="off" 
+                                                             spellcheck="false"
+                                                              tabindex="5" maxlength="6" 
+                                                              data-max-length="6" 
+                                                              class="j-inputtext pcin" name="phonecode"
+                                                               placeholder="请输入短信验证码">
+                                                        </div>
+                                                        <div class="pcbtn f-fl">
+                                                            <a class="tabfocus getsmscode " href="javascript:void(0);" id="auto-id-1619517401904">获取验证码</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="f-cb loginbox">
+                                                <a tabindex="8" class="u-loginbtn btncolor tabfocus" id="auto-id-1619517401913">手机号快捷登录</a>
+                                            </div>
+                                            <span class="u-zc-agree u-zc-agree-select">
+                                                <input type="checkbox" class="zc-un-login">
+                                            </span>
+                                            <div class="fur-item fur-agree">
+                                                <label for="">
+                                                    <span>我同意</span>
+                                                    <a data-outlink="1" tabindex="-1" href="javascript:;">《服务条款》</a>
+                                                    <span> 和 </span>
+                                                    <a data-outlink="1" tabindex="-1" href="javascript:;">《网易隐私政策》</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="m-cnt">
+                                    <form id="login-form" action="">
+                                        <div class="m-container m-uniteLogin">
+                                            <div class="inputbox clearfix">
+                                                <div class="u-logo">
+                                                    <div class="u-logo-img3"></div>
+                                                </div>
+                                                <div class="u-input box">
+                                                    <input type="text" maxlength="11" spellcheck="false" tabindex="1" autocomplete="off" class="dlemail j-nameforslide" name="email" placeholder="邮箱账号" id="phoneipt">
+                                                </div>
+                                            </div>
+                                            <div class="m-pccnt f-cb">
+                                                <div class="m-pcbox">
+                                                    <div class="inputbox clearfix">
+                                                        <div class="u-logo">
+                                                            <div class="u-logo-img2"></div>
+                                                        </div>
+                                                        <div class="u-input box">
+                                                            <input type="password" maxlength="11" spellcheck="false" tabindex="1" autocomplete="off" class="dlemail j-nameforslide" name="email" placeholder="请输入密码" id="phoneipt">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="f-cb loginbox">
+                                                <a tabindex="8" class="u-loginbtn btncolor tabfocus" id="auto-id-1619517401913">登录</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="yx-loginFooter">
+                                <div class="olist">
+                                    <a class="f-cb f-fl weixin" href="javascript:;"></a>
+                                    <a href="javascript:;" class="f-cb f-fl qq"></a>
+                                    <a class="f-cb f-fl weibo" href="javascript:;"></a>
+                                    <a class="f-cb f-fl renren" href="javascript:;"></a>
+                                </div>
+                                <a class="mobileLoginFooterLink" href="javascript:;">遇到问题？</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
     </div>
 </body>
+<script src="/js/module/jq/jq.min.js"></script>
+<script src="/components/module/totalcontainersearch.js"></script>
+<script src="/static/plugin/js/swiper-3.4.2.min.js"></script>
+<script src="/js/layout/footer.js"></script>
 <script src="/js/register.js"></script>
+<script>
+    $(function(){
+        $('.tabs .tab').click(function(){
+            $('.tabs .tab').removeClass('active');
+            $(this).addClass('active');
+            $('.m-cnt').hide();
+            $('.m-cnt').eq($(this).index()).show();
+        })
+    })
+</script>
 </html>

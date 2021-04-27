@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>协和商城</title>
+    <link rel="stylesheet" href="/css/module/index.css">
+    <link rel="stylesheet" href="/css/home/index.css">
+    <link rel="stylesheet" href="/css/user/index.css">
+    <link rel="stylesheet" href="/css/home/footer.css">
+    <link rel="stylesheet" href="/static/plugin/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="/css/publicBar.css">
+    <link rel="stylesheet" href="/static/plugin/css/pagination.css">
+    <style>
+        .center{
+            min-height: 100vh;
+            padding-top: 1px;
+            padding-bottom: 80px;
+            background-color: #f5f5f5;
+        }
+        .center .container_center{
+            width: 1090px;
+            margin: 120px auto;
+            position: relative;
+        }
+        .center .container_center .j-goodsAreaWrap{
+            width: 100%;
+            padding: 0 40px;
+            position: relative;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .m-sortBar {
+            margin-top: 10px;
+            border-bottom: 1px solid #eaeaea;
+            overflow: hidden;
+        }
+        .m-sortBar {
+            margin-top: 10px;
+            border-bottom: 1px solid #eaeaea;
+            overflow: hidden;
+        }
+        .category{
+            overflow: hidden;
+            line-height: 1;
+            padding-top: 20px;
+        }
+        .m-sortBar .name{
+            font-size: 14px;
+            color: #999;
+            float: left;
+            margin-right: 28px;
+            display: inline-block;
+        }
+        .m-sortBar .categoryGroup{
+            overflow: hidden;
+            float: left;
+            margin-bottom: 4px;
+            width: 930px;
+        }
+        .m-sortBar .categoryGroup .categoryItem{
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .m-sortBar .categoryGroup .categoryItem:hover{
+            color: #b4a078;
+        }
+        .m-sortBar .categoryGroup .categoryItem.active{
+            color: #b4a078;
+        }
+        .m-sortBar .category:first-child{
+            border: none;
+        }
+        .m-sortBar .area,.sorts{
+            overflow: hidden;
+            border-top: 1px dashed #dedede;
+            line-height: 1;
+            padding-top: 20px;
+        }
+        .m-sortBar .sorts .sort-price .icon {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+        .m-sortBar .sorts .sort-price .icon  .arrow-up-gold{
+            display: block;
+            margin-bottom: 2px;
+            height: 5px;
+            width: 10px;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background-position: 0 -1186px;
+        }
+        .m-sortBar .sorts .sort-price .icon  .arrow-down-gray{
+            display: block;
+            margin-top: 2px;
+            height: 5px;
+            width: 10px;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background-position: 0 -709px;
+        }
+        .m-sortBar .sorts .sort.sort-time {
+            margin-right: 30px;
+        }
+        .m-sortBar .sorts .sort.sort-time .arrow-down-gray-l{
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: 9px;
+            margin-top: -2px;
+            height: 12px;
+            width: 9px;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background-position: 0 -687px;
+        }
+        .m-sortBar .sorts .sort.sort-time .arrow-down-gray-l.active{
+            background-position: 0 -633px;
+        }
+        .m-content .m-Level2Category{
+            padding-top: 30px;
+        }
+        .m-content .m-Level2Category .head{
+            text-align: center;
+            line-height: 1;
+            padding-bottom: 40px;
+        }
+        .m-content .m-Level2Category .head .title span{
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 44px;
+        }
+        .m-content .m-Level2Category .head .desc{
+            font-size: 14px;
+            color: #999;
+            line-height: 1.5;
+        }
+        .itemList{
+            /* width: 10000px; */
+            opacity: 1;
+        }
+        .itemList  .product_item{
+            width: 245px!important;
+            margin-right: 10px;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+            line-height: 1;
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+            margin-right: 6px;
+            margin-bottom: 30px;
+        }
+        .itemList  .product_item:last-child{
+            margin: 0!important;
+        }
+        .itemList  .product_item:hover{
+            box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
+            background-color: #f4f0ea;
+        }
+        .itemList  .product_item .hd{
+            position: relative;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: transparent;
+            width: 245px;
+            height: 245px;
+        }
+        .product_item .hd img{
+            width: 100%;
+            height: 100%;
+        }
+        .product_item .prdtTags {
+            height: 20px;
+            font-size: 0;
+            color: #fff;
+            width: 200px;
+            margin: 0 auto 3px;
+            overflow: hidden;
+        }
+        .product_item .prdtTags .m-itemTag {
+            height: 20px;
+            line-height: 20px;
+            color: #fff!important;
+            padding: 0 5px;
+            background-color: #e36844;
+            margin-left: 6px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .product_item .name {
+            width: 166px;
+            margin: 0 auto 4px;
+            max-height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        .product_item .name:hover a{
+            color: #b4a078;
+            cursor: pointer;
+        }
+        .product_item .bd .price {
+            padding: 1px 0 9px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #d4282d;
+            display: inline-block;
+        }
+        ._page_container{
+            height: auto;
+        }
+        ._active_1{
+            background-color: #b4a078!important;
+            border-color: #b4a078!important;
+        }
+        ._page_container ._pages li:hover{
+            color: #b4a078;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="headWrap"></div>
+        <div class="center">
+            <div class="container_center">
+                <div class="m-crumbs">
+                    <a href="/">首页</a>
+                    <span class="w-icon-arrow arrow-right-hollow"></span>
+                    <span class="z-cur">居家生活</span>
+                </div>
+                <!-- 商品展示 -->
+                <div class="j-goodsAreaWrap">
+                    <div class="m-sortBar">
+                        <div class="category clearfix">
+                            <span class="name">分类：</span>
+                            <div class="categoryGroup">
+                                <a href="javascript:;" class="categoryItem j-categoryItem active">全部</a>
+                                <a href="javascript:;" class="categoryItem j-categoryItem">好物精选</a>
+                                <a href="javascript:;" class="categoryItem j-categoryItem">好物精选</a>
+                            </div>
+                        </div>
+                        <div class="sorts">
+                            <span class="name">排序：</span>
+                            <div class="categoryGroup">
+                                <a href="javascript:;" class="categoryItem j-categoryItem active">默认</a>
+                                <a href="javascript:;" class="categoryItem sort sort-price">
+                                    <span>价格</span>
+                                    <div class="icon">
+                                        <i class="w-icon-arrow arrow-up-gold"></i>
+                                        <i class="w-icon-arrow arrow-down-gray"></i>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="categoryItem sort sort-time">
+                                    <span>上架时间</span>
+                                    <i class="w-icon-arrow arrow-down-gray-l"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-content">
+                        <!-- <div class="m-Level2Category">
+                            <div class="head">
+                                <p class="title clearfix">
+                                    <span>好物精选</span>
+                                </p>
+                                <p class="desc">
+                                    好物精选
+                                </p>
+                            </div>
+                        </div> -->
+                        <div class="bd_cont">
+                            <ul class="itemList clearfix">
+                                <!-- <li class="product_item">
+                                    <div class="hd">
+                                        <a href="javascript:;">
+                                            <img src="/img/tp_1.1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="bd">
+                                        <div class="prdtTags">
+                                            <span class="m-itemTag ">
+                                                满139减20
+                                            </span>
+                                        </div>
+                                        <h4 class="name">
+                                            <a href="javascript:;">
+                                                煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                            </a>
+                                        </h4>
+                                        <p class="price">
+                                            <span class="retailPrice">
+                                                ￥35
+                                            </span>
+                                        </p>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="pages"></div>
+                </div>
+            </div>
+            <!-- <ul class="m-indexSideBar">
+                <li class="item firstItem">
+                    热销榜
+                </li>
+                <li class="item active">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+                <li class="item">
+                    <img src="/img/home_item1.png" alt="" class="sideIcon">
+                    <span class="name">
+                        全站
+                        <br>
+                        热销榜
+                    </span>
+                </li>
+            </ul> -->
+            <div class="rightBar">
+                <div class="box">
+                    <div class="j-yx-fixedtoolDownloadlink">
+                        <div class="qrCode">
+
+                        </div>
+                        <div class="yx-fixedtool-downText1">扫码领</div>
+                        <div class="yx-fixedtool-downText2">APP大额</div>
+                        <div class="yx-fixedtool-downText2">新人红包</div>
+                    </div>
+                    <div class="j-yx-fixedtoolCustomerService">
+                        <i class="yx-cp-icon-yxfixedtool icon-yxfixedtool-customerService"></i>
+                        <div class="yx-fixedtoolText">在线客服</div>
+                    </div>
+                    <div class="j-yx-fixedtoolGoTop">
+                        <i class="yx-cp-icon-yxfixedtool icon-yxfixedtool-goTop"></i>
+                        <p class="yx-fixedtoolText">回顶部</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
+</body>
+<script src="/js/module/jq/jq.min.js"></script>
+<script src="/components/module/totalcontainersearch.js"></script>
+<script src="/static/plugin/js/swiper-3.4.2.min.js"></script>
+<script src="/js/layout/footer.js"></script>
+<script src="/static/plugin/js/pagination.js"></script>
+<script>
+    $(function(){
+        new Pagination({
+            element: '#pages', // 元素        
+            type: 1, // 样式类型，可选[1,2]      
+            pageIndex: 1, // 初始页码       
+            pageSize: 5, // 每页数量       
+            pageCount: 9, // 页码数量       
+            total: 100, // 数据总条数        
+            jumper: false, // 显示输入框跳转        
+            singlePageHide: false, // 只有一页时不显示分页       
+            prevText: '上一页', // 上一页文字        
+            nextText: '下一页', // 下一页文字       
+            disabled: true, // 是否显示禁用        
+            currentChange: function(index) {
+                // 页码改变时回调         
+                console.log(index);
+            }
+        });
+        $('.m-sortBar .category .categoryItem').click(function(){
+            $('.m-sortBar .category .categoryItem').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('.m-sortBar .area .categoryItem').click(function(){
+            $('.m-sortBar .area .categoryItem').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('.m-sortBar .sorts .categoryItem').click(function(){
+            $('.m-sortBar .sorts .categoryItem').removeClass('active');
+            $(this).addClass('active');
+        })
+        temp();
+        function temp(){
+            let str = '';
+            for(let i=0; i < 24; i++){
+                str += '<li class="product_item">'+
+'                        <div class="hd">'+
+'                            <a href="javascript:;">'+
+'                                <img src="/img/tp_1.1.png" alt="">'+
+'                            </a>'+
+'                        </div>'+
+'                        <div class="bd">'+
+'                            <div class="prdtTags">'+
+'                                <span class="m-itemTag ">'+
+'                                    满139减20'+
+'                                </span>'+
+'                            </div>'+
+'                            <h4 class="name">'+
+'                                <a href="javascript:;">'+
+'                                    煎炸前吸水煎炸后吸油 食品接触厨房纸'+
+'                                </a>'+
+'                            </h4>'+
+'                            <p class="price">'+
+'                                <span class="retailPrice">'+
+'                                    ￥35'+
+'                                </span>'+
+'                            </p>'+
+'                        </div>'+
+'                    </li>';
+            }
+            $('.itemList').append(str)
+        }
+    })
+</script>
+</html>

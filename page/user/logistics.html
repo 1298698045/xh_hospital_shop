@@ -74,8 +74,10 @@
             color: #999;
         }
         .logistics .m-panel .stepWrap{
+            max-height: 288px;
             padding: 0 20px;
             margin-top: 20px;
+            overflow-y: auto;
         }
         .logistics .m-panel .stepWrap .row{
             font-size: 12px;
@@ -117,9 +119,14 @@
         }
         .logistics .m-panel .tabs .tab{
             flex: 1;
-            background: #b4a078;
+            background: #f5f3ef;
             border-right: 1px solid #ccc;
             text-align: center;
+            color: #333;
+        }
+        .logistics .m-panel .tabs .tab.active{
+            color: #fff;
+            background: #b4a078;
         }
     </style>
 </head>
@@ -141,8 +148,8 @@
                 </div>
                 <div class="m-panel">
                     <div class="tabs">
-                        <p class="tab">待揽收</p>
-                        <p class="tab">运输</p>
+                        <p class="tab active">待揽收</p>
+                        <p class="tab active">运输</p>
                         <p class="tab">派送</p>
                         <p class="tab">签收</p>
                     </div>
@@ -223,6 +230,22 @@
                                 <p>
                                     嘉兴嘉善县的大云雨伞[15257343946]已揽收
                                 </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="l_time">
+                                2020-09-09 21:00:00
+                            </p>
+                            <div class="r_desc">
+                                商品已经下单
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="l_time">
+                                2020-09-09 21:00:00
+                            </p>
+                            <div class="r_desc">
+                                商品已经下单
                             </div>
                         </div>
                         <div class="row">
