@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <title>优惠券</title>
     <link rel="stylesheet" href="../../css/module/index.css">
     <link rel="stylesheet" href="../../css/home/index.css">
@@ -165,7 +165,7 @@
         .rightcontent .g-main .m-itemList .item .item_content{
             width: 100%;
             height: 89px;
-            background: url('/img/coupon1_1.png') no-repeat;
+            background: url('/img/coupon_1.2.png') no-repeat;
             padding-top: 26px;
         }
         .rightcontent .g-main .m-itemList .item .item_content .tag{
@@ -254,7 +254,7 @@
             cursor: pointer;
             width: 15px;
             height: 8px;
-            background: url('/img/arrow-s8f43eb714c-d446c53437.webp') no-repeat;
+            background: url('/img/arrow-s8f43eb714c-d446c53437.png') no-repeat;
             background-position: 0 -514px;
         }
         .rightcontent .g-main .m-itemList .item .close{
@@ -265,7 +265,7 @@
             cursor: pointer;
             height: 20px;
             width: 20px;
-            background: url('/img/close-s706cc4331c-af215c519a.webp') no-repeat;
+            background: url('/img/close-s706cc4331c-af215c519a.png') no-repeat;
             background-position: 0 -46px;
         }
         .rightcontent .g-main .m-itemList .item:hover .close{
@@ -274,7 +274,7 @@
         .rightcontent .g-main .m-itemList .item .foot.fullText{
             line-height: 18px;
             padding: 6px 14px 9px 0;
-            background: url('/img/coupon_1.2.png') no-repeat;
+            background: url('/img/coupon_1.1_active.png') no-repeat;
             display: none;
         }
         .rightcontent .g-main .m-itemList .item .foot .validity .w-icon-arrow.arrow-couponR-up{
@@ -314,7 +314,7 @@
         .info_content .m-emptyStatus .w-icon-empty{
             height: 180px;
             width: 180px;
-            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
+            background: url('/img/agu0x-5v9uy.png');
             background-repeat: no-repeat;
             background-position: 0 -2230px;
             background-size: cover;
@@ -547,41 +547,74 @@
            let str = '';
            
            for(let i = 0; i < 18; i++){
-                str += `
-                    <li class="item">
-                        <div class="item_content">
-                            <div class="tag">
-                                新人专享
-                            </div>
-                            <div class="cont">
-                                <div class="left f-left">
-                                    <span class="simpleDesc">15</span>
-                                    <span class="unit">
-                                        元
-                                    </span>
-                                </div>
-                                <div class="right">
-                                    <p class="name f-text-overflow">满149减15</p>
-                                    <p class="timeRange">2021.04.18-2021.04.20</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="foot partText show">
-                            <div class="validity">
-                                <span>新用户专享；全场通用；限时购、特价等...</span>
-                                <i class="w-icon-arrow arrow-couponR-down"></i>
-                            </div>
-                        </div>
-                        <div class="foot fullText hide">
-                            <div class="validity">
-                                <span>
-                                    新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用
-                                </span>
-                                <i class="w-icon-arrow arrow-couponR-up"></i>
-                            </div>
-                        </div>
-                    </li>
-                `
+                // str += `
+                //     <li class="item">
+                //         <div class="item_content">
+                //             <div class="tag">
+                //                 新人专享
+                //             </div>
+                //             <div class="cont">
+                //                 <div class="left f-left">
+                //                     <span class="simpleDesc">15</span>
+                //                     <span class="unit">
+                //                         元
+                //                     </span>
+                //                 </div>
+                //                 <div class="right">
+                //                     <p class="name f-text-overflow">满149减15</p>
+                //                     <p class="timeRange">2021.04.18-2021.04.20</p>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //         <div class="foot partText show">
+                //             <div class="validity">
+                //                 <span>新用户专享；全场通用；限时购、特价等...</span>
+                //                 <i class="w-icon-arrow arrow-couponR-down"></i>
+                //             </div>
+                //         </div>
+                //         <div class="foot fullText hide">
+                //             <div class="validity">
+                //                 <span>
+                //                     新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用
+                //                 </span>
+                //                 <i class="w-icon-arrow arrow-couponR-up"></i>
+                //             </div>
+                //         </div>
+                //     </li>
+                // `
+                str += '<li class="item">'+
+'                        <div class="item_content">'+
+'                            <div class="tag">'+
+'                                新人专享'+
+'                            </div>'+
+'                            <div class="cont">'+
+'                                <div class="left f-left">'+
+'                                    <span class="simpleDesc">15</span>'+
+'                                    <span class="unit">'+
+'                                        元'+
+'                                    </span>'+
+'                                </div>'+
+'                                <div class="right">'+
+'                                    <p class="name f-text-overflow">满149减15</p>'+
+'                                    <p class="timeRange">2021.04.18-2021.04.20</p>'+
+'                                </div>'+
+'                            </div>'+
+'                        </div>'+
+'                        <div class="foot partText show">'+
+'                            <div class="validity">'+
+'                                <span>新用户专享；全场通用；限时购、特价等...</span>'+
+'                                <i class="w-icon-arrow arrow-couponR-down"></i>'+
+'                            </div>'+
+'                        </div>'+
+'                        <div class="foot fullText hide">'+
+'                            <div class="validity">'+
+'                                <span>'+
+'                                    新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用'+
+'                                </span>'+
+'                                <i class="w-icon-arrow arrow-couponR-up"></i>'+
+'                            </div>'+
+'                        </div>'+
+'                    </li>';
            }
             $('.collecitonList').append(str);
        }
@@ -590,42 +623,76 @@
            let str = '';
            
            for(let i = 0; i < 18; i++){
-                str += `
-                    <li class="item invalid">
-                        <div class="close"></div>
-                        <div class="item_content">
-                            <div class="tag">
-                                新人专享
-                            </div>
-                            <div class="cont">
-                                <div class="left f-left">
-                                    <span class="simpleDesc">15</span>
-                                    <span class="unit">
-                                        元
-                                    </span>
-                                </div>
-                                <div class="right">
-                                    <p class="name f-text-overflow">满149减15</p>
-                                    <p class="timeRange">2021.04.18-2021.04.20</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="foot partText show">
-                            <div class="validity">
-                                <span>新用户专享；全场通用；限时购、特价等...</span>
-                                <i class="w-icon-arrow arrow-couponR-down"></i>
-                            </div>
-                        </div>
-                        <div class="foot fullText hide">
-                            <div class="validity">
-                                <span>
-                                    新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用
-                                </span>
-                                <i class="w-icon-arrow arrow-couponR-up"></i>
-                            </div>
-                        </div>
-                    </li>
-                `
+                // str += `
+                //     <li class="item invalid">
+                //         <div class="close"></div>
+                //         <div class="item_content">
+                //             <div class="tag">
+                //                 新人专享
+                //             </div>
+                //             <div class="cont">
+                //                 <div class="left f-left">
+                //                     <span class="simpleDesc">15</span>
+                //                     <span class="unit">
+                //                         元
+                //                     </span>
+                //                 </div>
+                //                 <div class="right">
+                //                     <p class="name f-text-overflow">满149减15</p>
+                //                     <p class="timeRange">2021.04.18-2021.04.20</p>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //         <div class="foot partText show">
+                //             <div class="validity">
+                //                 <span>新用户专享；全场通用；限时购、特价等...</span>
+                //                 <i class="w-icon-arrow arrow-couponR-down"></i>
+                //             </div>
+                //         </div>
+                //         <div class="foot fullText hide">
+                //             <div class="validity">
+                //                 <span>
+                //                     新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用
+                //                 </span>
+                //                 <i class="w-icon-arrow arrow-couponR-up"></i>
+                //             </div>
+                //         </div>
+                //     </li>
+                // `
+                str += '<li class="item invalid">'+
+'                        <div class="close"></div>'+
+'                        <div class="item_content">'+
+'                            <div class="tag">'+
+'                                新人专享'+
+'                            </div>'+
+'                            <div class="cont">'+
+'                                <div class="left f-left">'+
+'                                    <span class="simpleDesc">15</span>'+
+'                                    <span class="unit">'+
+'                                        元'+
+'                                    </span>'+
+'                                </div>'+
+'                                <div class="right">'+
+'                                    <p class="name f-text-overflow">满149减15</p>'+
+'                                    <p class="timeRange">2021.04.18-2021.04.20</p>'+
+'                                </div>'+
+'                            </div>'+
+'                        </div>'+
+'                        <div class="foot partText show">'+
+'                            <div class="validity">'+
+'                                <span>新用户专享；全场通用；限时购、特价等...</span>'+
+'                                <i class="w-icon-arrow arrow-couponR-down"></i>'+
+'                            </div>'+
+'                        </div>'+
+'                        <div class="foot fullText hide">'+
+'                            <div class="validity">'+
+'                                <span>'+
+'                                    新用户专享；全场通用；限时购、特价等特惠商品不可使用；严选线下店不可用限时购、秒杀、特价、特殊商品、商品详情页标注不可用券的商品除外。;严选线下门店不可用'+
+'                                </span>'+
+'                                <i class="w-icon-arrow arrow-couponR-up"></i>'+
+'                            </div>'+
+'                        </div>'+
+'                    </li>';
            }
             $('.collecitonListTwo').append(str);
        }

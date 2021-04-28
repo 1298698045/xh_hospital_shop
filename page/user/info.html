@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <title>账号信息</title>
     <link rel="stylesheet" href="../../css/module/index.css">
     <link rel="stylesheet" href="../../css/home/index.css">
@@ -407,7 +407,7 @@
             top: 20px;
             right: 20px;
             cursor: pointer;
-            background: url('/img/close-s706cc4331c-af215c519a.webp') no-repeat;
+            background: url('/img/close-s706cc4331c-af215c519a.png') no-repeat;
             background-position: 0 -297px;
         }
         #widgetDialogContainer .contentWrap .m-pop .content{
@@ -1066,24 +1066,40 @@
            let str = '';
            
            for(let i = 0; i < list.length; i++){
-                str += `
-                <div class="w-interestedItem">
-                    <div class="itemCover">
-                        <img src="/img/tp_1.1.png" alt="">
-                        <div class="checkedInner">
-                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="itemDes">
-                        <span class="w-chkbox">
-                            <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
-                        </span>
-                        <label for="${list[i].id}" class="cateName">
-                            床品被枕
-                        </label>
-                    </div>
-                </div>
-                `
+                // str += `
+                // <div class="w-interestedItem">
+                //     <div class="itemCover">
+                //         <img src="/img/tp_1.1.png" alt="">
+                //         <div class="checkedInner">
+                //             <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
+                //         </div>
+                //     </div>
+                //     <div class="itemDes">
+                //         <span class="w-chkbox">
+                //             <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
+                //         </span>
+                //         <label for="${list[i].id}" class="cateName">
+                //             床品被枕
+                //         </label>
+                //     </div>
+                // </div>
+                // `
+                str += '<div class="w-interestedItem">'+
+'                    <div class="itemCover">'+
+'                        <img src="/img/tp_1.1.png" alt="">'+
+'                        <div class="checkedInner">'+
+'                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">'+
+'                        </div>'+
+'                    </div>'+
+'                    <div class="itemDes">'+
+'                        <span class="w-chkbox">'+
+'                            <input class="checkbox" checkbox="'+list[i].checked+'" value="'+list[i].checked+'" type="checkbox" id="'+list[i].id+'" name="myshop">'+
+'                        </span>'+
+'                        <label for="'+list[i].id+'" class="cateName">'+
+'                            床品被枕'+
+'                        </label>'+
+'                    </div>'+
+'                </div>';
            }
             $('.interestedBox').append(str);
        }

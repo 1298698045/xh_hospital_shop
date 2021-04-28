@@ -706,7 +706,7 @@ let str = '<div class="j-YXComponentTop">'+
 '                    <div class="yx-cp-siteNavItem">'+
 '                        <div class="yx-cp-siteNavItemHd">'+
 '                            <div class="j-yx-cp-topLogin" title="网易严选登录">'+
-'                                <a href="javascript:;">登录/注册</a>'+
+'                                <a href="/page/register.html">登录/注册</a>'+
 '                            </div>'+
 '                        </div>'+
 '                    </div>'+
@@ -837,25 +837,25 @@ let str = '<div class="j-YXComponentTop">'+
 '                                        <div class="yx-cp-cateColumn">'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
@@ -863,25 +863,25 @@ let str = '<div class="j-YXComponentTop">'+
 '                                        <div class="yx-cp-cateColumn">'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床品件套</span>'+
 '                                                </a>'+
 '                                            </div>'+
@@ -896,13 +896,13 @@ let str = '<div class="j-YXComponentTop">'+
 '                                        <div class="yx-cp-cateColumn">'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床垫床褥</span>'+
 '                                                </a>'+
 '                                            </div>'+
@@ -917,13 +917,13 @@ let str = '<div class="j-YXComponentTop">'+
 '                                        <div class="yx-cp-cateColumn">'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">被枕盖毯</span>'+
 '                                                </a>'+
 '                                            </div>'+
 '                                            <div class="yx-cp-cateItem">'+
 '                                                <a href="javascript:;">'+
-'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&amp;type=webp&amp;imageView" alt="床品件套">'+
+'                                                    <img class="yx-cp-subCate-icon" src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png" alt="床品件套">'+
 '                                                    <span class="yx-cp-subCate-text">床垫床褥</span>'+
 '                                                </a>'+
 '                                            </div>'+

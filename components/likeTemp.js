@@ -1,23 +1,38 @@
 $(function(){
-    let str = `
-        <div class="likeWrap">
-            <div class="slickHead">
-                <h3 class="title">猜你喜欢</h3>
-            </div>
-            <div class="m-slick">
-                <div class="polite">
-                    <div class="swiper-container swiper-container-two swiper-container-horizontal swiper-container-free-mode">
-                        <div class="swiper-wrapper swiperContent">
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination my-pagination-hidden"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `
+    // let str = `
+    //     <div class="likeWrap">
+    //         <div class="slickHead">
+    //             <h3 class="title">猜你喜欢</h3>
+    //         </div>
+    //         <div class="m-slick">
+    //             <div class="polite">
+    //                 <div class="swiper-container swiper-container-two swiper-container-horizontal swiper-container-free-mode">
+    //                     <div class="swiper-wrapper swiperContent">
+    //                     </div>
+    //                     <div class="swiper-pagination my-pagination-hidden"></div>
+    //                     <div class="swiper-button-prev"></div>
+    //                     <div class="swiper-button-next"></div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // `
+    let str = '<div class="likeWrap">'+
+    '            <div class="slickHead">'+
+    '                <h3 class="title">猜你喜欢</h3>'+
+    '            </div>'+
+    '            <div class="m-slick">'+
+    '                <div class="polite">'+
+    '                    <div class="swiper-container swiper-container-two swiper-container-horizontal swiper-container-free-mode">'+
+    '                        <div class="swiper-wrapper swiperContent">'+
+    '                        </div>'+
+    '                        <div class="swiper-pagination my-pagination-hidden"></div>'+
+    '                        <div class="swiper-button-prev"></div>'+
+    '                        <div class="swiper-button-next"></div>'+
+    '                    </div>'+
+    '                </div>'+
+    '            </div>'+
+    '        </div>';
 
     $('#likeTemp').append(str);
     let cartStr = '';

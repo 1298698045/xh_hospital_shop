@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <title>收藏夹</title>
     <link rel="stylesheet" href="../../css/module/index.css">
     <link rel="stylesheet" href="../../css/home/index.css">
@@ -146,7 +146,7 @@
         .m-itemList .item .hd .w-delete span{
             height: 24px;
             width: 24px;
-            background: url('/img/close-s706cc4331c-af215c519a.webp');
+            background: url('/img/close-s706cc4331c-af215c519a.png');
             background-position: 0 -677px;
             background-repeat: no-repeat;
         }
@@ -241,7 +241,7 @@
         .info_content .m-emptyStatus .w-icon-empty{
             height: 180px;
             width: 180px;
-            background: url('/img/icon-empty-s223d65534a-d12ecf748d.webp');
+            background: url('/img/agu0x-5v9uy.png');
             background-repeat: no-repeat;
             background-position: 0 -760px;
             background-size: cover;
@@ -294,7 +294,8 @@
             margin-bottom: 0;
             margin-right: 30px;
             float: left;
-            display: initial!important;
+            /* display: initial!important; */
+            display: inline-block!important;
         }
         .likeWrap .swiper-container .weekItem .hd_img{
             margin-bottom: 6px;
@@ -727,24 +728,40 @@
            let str = '';
            
            for(let i = 0; i < list.length; i++){
-                str += `
-                <div class="w-interestedItem">
-                    <div class="itemCover">
-                        <img src="/img/tp_1.1.png" alt="">
-                        <div class="checkedInner">
-                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="itemDes">
-                        <span class="w-chkbox">
-                            <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
-                        </span>
-                        <label for="${list[i].id}" class="cateName">
-                            床品被枕
-                        </label>
-                    </div>
-                </div>
-                `
+                // str += `
+                // <div class="w-interestedItem">
+                //     <div class="itemCover">
+                //         <img src="/img/tp_1.1.png" alt="">
+                //         <div class="checkedInner">
+                //             <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">
+                //         </div>
+                //     </div>
+                //     <div class="itemDes">
+                //         <span class="w-chkbox">
+                //             <input class="checkbox" checkbox="${list[i].checked}" value="${list[i].checked}" type="checkbox" id="${list[i].id}" name="myshop">
+                //         </span>
+                //         <label for="${list[i].id}" class="cateName">
+                //             床品被枕
+                //         </label>
+                //     </div>
+                // </div>
+                // `
+                str += '<div class="w-interestedItem">'+
+'                    <div class="itemCover">'+
+'                        <img src="/img/tp_1.1.png" alt="">'+
+'                        <div class="checkedInner">'+
+'                            <img src="/img/453d496b477bd9b10700e0db3ba78ed1.png" alt="">'+
+'                        </div>'+
+'                    </div>'+
+'                    <div class="itemDes">'+
+'                        <span class="w-chkbox">'+
+'                            <input class="checkbox" checkbox="'+list[i].checked+'" value="'+list[i].checked+'" type="checkbox" id="'+list[i].id+'" name="myshop">'+
+'                        </span>'+
+'                        <label for="'+list[i].id+'" class="cateName">'+
+'                            床品被枕'+
+'                        </label>'+
+'                    </div>'+
+'                </div>';
            }
             $('.interestedBox').append(str);
        }

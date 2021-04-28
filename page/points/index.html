@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <title>我的积分</title>
     <link rel="stylesheet" href="../../css/module/index.css">
     <link rel="stylesheet" href="../../css/home/index.css">
@@ -85,7 +85,7 @@
             height: 265px;
             font-size: 14px;
             overflow: hidden;
-            background: url('/img/banner_1.1.webp') no-repeat;
+            background: url('/img/banner_1.1.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -160,7 +160,7 @@
             width: 80px;
             margin: 40px 0 25px;
             display: inline-block;
-            background: url('/img/member-s1e8e347c79-3d6387449d.webp') no-repeat;
+            background: url('/img/member-s1e8e347c79-3d6387449d.png') no-repeat;
         }
         .p-pointsIndex .m-pointsList .list .item .w-icon-member.member-points-cart {
             background-repeat: no-repeat;
@@ -591,7 +591,7 @@
                                     <div class="weekItem item active">
                                         <div class="hd">
                                             <div class="imgs">
-                                                <img src="/img/jf_1.1.webp" alt="">
+                                                <img src="/img/jf_1.1.png" alt="">
                                             </div>
                                         </div>
                                         <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
@@ -603,7 +603,7 @@
                                     <div class="weekItem item">
                                         <div class="hd">
                                             <div class="imgs">
-                                                <img src="/img/jf_1.1.webp" alt="">
+                                                <img src="/img/jf_1.1.png" alt="">
                                             </div>
                                         </div>
                                         <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
@@ -615,7 +615,7 @@
                                     <div class="weekItem item">
                                         <div class="hd">
                                             <div class="imgs">
-                                                <img src="/img/jf_1.1.webp" alt="">
+                                                <img src="/img/jf_1.1.png" alt="">
                                             </div>
                                         </div>
                                         <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
@@ -627,7 +627,7 @@
                                     <div class="weekItem item">
                                         <div class="hd">
                                             <div class="imgs">
-                                                <img src="/img/jf_1.1.webp" alt="">
+                                                <img src="/img/jf_1.1.png" alt="">
                                             </div>
                                         </div>
                                         <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
@@ -639,7 +639,7 @@
                                     <div class="weekItem item">
                                         <div class="hd">
                                             <div class="imgs">
-                                                <img src="/img/jf_1.1.webp" alt="">
+                                                <img src="/img/jf_1.1.png" alt="">
                                             </div>
                                         </div>
                                         <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
@@ -677,26 +677,44 @@
        })
        let str = '';
        for(let i=0; i < 8; i++){
-           str += `
-            <div class="swiper-slide">
-                    <div class="weekItem">
-                        <div class="hd">
-                            <div class="imgs">
-                                <img src="/img/jf_1.1.webp" alt="">
-                            </div>
-                        </div>
-                        <div class="remain">
-                            <span class="remainNum">还剩0件</span>
-                        </div>
-                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
-                        <div class="price">
-                            <span class="points">99积分</span>
-                            <span class="originPrice">￥14.90</span>
-                        </div>
-                        <button class="soldOutBtn">去看看</button>
-                    </div>
-                </div>
-           `
+        //    str += `
+        //     <div class="swiper-slide">
+        //             <div class="weekItem">
+        //                 <div class="hd">
+        //                     <div class="imgs">
+        //                         <img src="/img/jf_1.1.png" alt="">
+        //                     </div>
+        //                 </div>
+        //                 <div class="remain">
+        //                     <span class="remainNum">还剩0件</span>
+        //                 </div>
+        //                 <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>
+        //                 <div class="price">
+        //                     <span class="points">99积分</span>
+        //                     <span class="originPrice">￥14.90</span>
+        //                 </div>
+        //                 <button class="soldOutBtn">去看看</button>
+        //             </div>
+        //         </div>
+        //    `
+        str += '<div class="swiper-slide">'+
+'                    <div class="weekItem">'+
+'                        <div class="hd">'+
+'                            <div class="imgs">'+
+'                                <img src="/img/jf_1.1.png" alt="">'+
+'                            </div>'+
+'                        </div>'+
+'                        <div class="remain">'+
+'                            <span class="remainNum">还剩0件</span>'+
+'                        </div>'+
+'                        <p class="name f-text-overflow">耐冷热不漏，双层咔咔密封保鲜袋 20只装起</p>'+
+'                        <div class="price">'+
+'                            <span class="points">99积分</span>'+
+'                            <span class="originPrice">￥14.90</span>'+
+'                        </div>'+
+'                        <button class="soldOutBtn">去看看</button>'+
+'                    </div>'+
+'                </div>';
        }
        $('.politeList').append(str);
        $('.swiperContent').append(str);
