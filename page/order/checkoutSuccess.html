@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付成功</title>
+    <link rel="stylesheet" href="../../css/module/index.css">
+    <link rel="stylesheet" href="../../css/home/index.css">
+    <link rel="stylesheet" href="../../css/user/index.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="/assets/css/like.css">
+    <style>
+        .centerWrap{
+            padding-top: 1px;
+            background: #f5f5f5;
+            padding-bottom: 50px;
+        }
+        .g-row{
+            width: 1090px;
+            height:500px;
+            margin: 120px auto 0;
+        }
+        .f-lt{
+            float: left;
+        }
+        .leftCont{
+            width: 70%;
+            height: 100%;
+            background: #fff;
+            padding: 42px 52px;
+        }
+        .rightCont{
+            width: 30%;
+            height: 100%;
+            background-image: linear-gradient(
+            -180deg
+            ,#FAEDDF 6%,#FFECEA 97%);
+            text-align: center;
+        }
+        .icon-normal-suc-l {
+            height: 32px;
+            width: 32px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png');
+            background-position: 0 -6098px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .leftCont .text1{
+            display: inline-block;
+            margin-bottom: 28px;
+            font-size: 18px;
+            line-height: 32px;
+        }
+        .leftCont .packageDesc{
+            min-height: 60px;
+            margin: 0 0 10px;
+        }
+        .leftCont .packageDesc .desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 24px;
+        }
+        .leftCont .hr{
+            border-top: 1px solid #eaeaea;
+            margin-bottom: 15px;
+        }
+        .leftCont .m-orderCompleteDetail{
+            margin-bottom: 10px;
+        }
+        .leftCont .m-orderCompleteDetail .payInfoItem{
+            line-height: 34px;
+        }
+        .m-orderCompleteFt{
+            position: relative;
+        }
+        .w-button {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            width: 96px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+        }
+        .w-button-primary {
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+        }
+        .w-button-ghost {
+            color: #b4a078;
+            border: 1px solid #b4a078;
+            background-color: #f5f3ef;
+        }
+        .m-orderCompleteFt .link{
+            line-height: 34px;
+            height: 34px;
+            font-size: 14px;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        .m-orderCompleteFt .link-2 {
+            line-height: 28px;
+            margin-top: 7px;
+            color: #69c;
+            font-size: 14px;
+        }
+        .m-order-return-cash{
+            position: relative;
+            margin-top: 45px;
+            display: block;
+            padding: 19px 0 0 25px;
+            width: 401px;
+            height: 74px;
+            background: url('/img/15978178207184228.png');
+            background-size: 401px 74px;
+        }
+        .m-order-return-cash .text-1{
+            font-size: 12px;
+        }
+        .m-order-return-cash .text-2{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .m-order-return-cash .red{
+            vertical-align: middle;
+            color: #DD1A21;
+        }
+        .m-order-return-cash .btn{
+            position: absolute;
+            display: inline-block;
+            top: 25px;
+            right: 20px;
+            width: 80px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 13px;
+            background-color: #DD1A21;
+            color: #fff;
+        }
+        .rightCont .phone {
+            margin-top: 90px;
+            height: 242px;
+            font-size: 14px;
+        }
+        .rightCont .link {
+            display: block;
+            text-decoration: none;
+            margin-top: 45px;
+            color: #69c;
+            font-size: 14px;
+        }
+        .f-txt-red {
+            color: #d4282d!important;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="headWrap"></div>
+        <div class="centerWrap">
+            <div class="g-row clearfix">
+                <div class="leftCont f-lt">
+                    <h2 class="text1">
+                        <i class="icon w-icon-normal icon-normal-suc-l"></i>
+                        <span>下单成功&nbsp;感谢您的支持</span>
+                    </h2>
+                    <div class="packageDesc">
+                        <span class="desc">
+                            <span>预计5月2日送达</span>
+                        </span>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="payInfo m-orderCompleteDetail">
+                        <div class="payInfoItem">
+                            <span>实付：</span>
+                            <span style="color:#d4282d;">
+                                <span>¥</span>
+                                <span>13.90</span>
+                            </span>
+                        </div>
+                        <div class="payInfoItem">
+                            <span>收件信息：</span>
+                            <span>北京市北京市朝阳区建外街道123 188****8888 123</span>
+                        </div>
+                    </div>
+                    <div class="m-orderCompleteFt">
+                        <a href="javascript:;" class="link btn w-button w-button-primary" style="margin-right:5px;">查看订单&nbsp;&gt;</a>
+                        <a class="link w-button w-button-ghost" href="/page/home.html" style="margin:0 20px 0 5px;">随便逛逛&nbsp;&gt;</a>
+                        <a class="link-2 w-link" href="javascript:;"><span>邀请好友，得现金奖励，订单的</span>
+                            <span>5%</span>
+                            <span>归你&nbsp;&gt;</span>
+                        </a>
+                    </div>
+                    <div class="m-order-return-cash">
+                        <div class="text-1">恭喜你</div>
+                        <div class="text-2">
+                            <span>本单获得</span>
+                            <span class="red">
+                                <span>3.47</span>
+                                <span>元</span>
+                            </span>
+                            <span>返现</span>
+                        </div>
+                        <div class="btn">立即返现</div>
+                    </div>
+                </div>
+                <div class="rightCont f-lt">
+                    <img src="//yanxuan.nosdn.127.net/3ade70b1e906ed297d684b04634a6b6b.png" alt="" class="phone">
+                    <a href="#javascript:;" class="link w-link">
+                        <span class="f-txt-red">下载领大额新人红包</span>
+                        <br>
+                        <span>随时随地了解订单物流&gt;&gt;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
+
+    <script src="../../js/module/jq/jq.min.js"></script>
+    <script src="../../components/module/totalcontainersearch.js"></script>
+    <script src="../../js/layout/footer.js"></script>
+    <script src="/components/likeTemp.js"></script>
+    <script>
+    </script>
+</body>
+</html>

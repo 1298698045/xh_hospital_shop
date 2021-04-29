@@ -248,6 +248,24 @@
             margin-top: 25px;
             margin-left: 5px;
         }
+        .m-container .checkbox{
+            margin-top: 10px;
+        }
+        .m-container .checkbox .check{
+            -webkit-appearance:none;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background: url('../../img/widget-s3bba68e5d5-eeb37afca8.webp') no-repeat ;
+            background-position: 0 -84px;
+            outline: 0;
+            border:none;
+            cursor: pointer;
+            float: left;
+        }
+        .m-container .checkbox .check.active{
+            background-position: 0 -56px;
+        }
     </style>
 </head>
 
@@ -365,9 +383,12 @@
                                             <div class="f-cb loginbox">
                                                 <a tabindex="8" class="u-loginbtn btncolor tabfocus" id="auto-id-1619517401913">手机号快捷登录</a>
                                             </div>
-                                            <span class="u-zc-agree u-zc-agree-select">
+                                            <!-- <span class="u-zc-agree u-zc-agree-select">
                                                 <input type="checkbox" class="zc-un-login">
-                                            </span>
+                                            </span> -->
+                                            <div class="checkbox">
+                                                <input type="checkbox" class="check" id="needInvoiceBtn">      
+                                            </div>
                                             <div class="fur-item fur-agree">
                                                 <label for="">
                                                     <span>我同意</span>
@@ -438,6 +459,9 @@
             $(this).addClass('active');
             $('.m-cnt').hide();
             $('.m-cnt').eq($(this).index()).show();
+        })
+        $('#needInvoiceBtn').click(function(){
+            $('#needInvoiceBtn').toggleClass('active');
         })
     })
 </script>

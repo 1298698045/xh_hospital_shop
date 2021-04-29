@@ -167,6 +167,153 @@
         .container #j-orderPayForm .timer{
             color: #d4282d;
         }
+        .d-add{
+            display: block;
+        }
+        .d-modal{
+            position: fixed;
+            display: table;
+            z-index: 1190;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: rgba(0,0,0,.8);
+        }
+        .d-modal .contentWrap{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .d-modal .contentWrap .d-pop{
+            width: 663px;
+            height: 381px;
+            padding: 30px 40px 0;
+            position: relative;
+            min-height: 274px;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 9999;
+            transition: transform .3s ease-out .1s,opacity .3s ease-out .1s;
+            transform: scale(1);
+        }
+        .d-modal .contentWrap .d-pop .rowtop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            /* margin-bottom: 40px; */
+            line-height: 1;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .icon_del{
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            cursor: pointer;
+            background-image: url('../../img/close-s706cc4331c-af215c519a.webp');
+            background-repeat: no-repeat;
+            background-position: 0 -331px;
+            display: none;
+        }
+        .d-modal .contentWrap .d-pop .rowtop .icon_del:hover{
+            background-position: 0 -297px;
+        }
+        .d-add.active{
+            display: block;
+        }
+        .m-askPayComplete {
+            padding: 25px 0 60px;
+            text-align: center;
+            /* border: 1px solid #e0e0e0; */
+        }
+        .w-text {
+            color: #333!important;
+        }
+        .m-askPayComplete .hd {
+            margin-bottom: 60px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .f-txt-red {
+            color: #d4282d!important;
+        }
+        .m-askPayComplete .bd {
+            /* padding: 0 130px; */
+            width: 400px;
+            margin: 0 auto 52px;
+        }
+        .m-askPayComplete .bd .left {
+            width: 200px;
+            height: 67px;
+            border-right: 1px solid #e8e8e8;
+        }
+        .m-askPayComplete .bd .left .text{
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .w-button {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            width: 96px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: 26px;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        .w-button-l {
+            width: 144px;
+            height: 42px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .m-pop .w-button {
+            bottom: 71px;
+        }
+        .m-askPayComplete .bd .f-left{
+            float: left;
+        }
+        .m-askPayComplete .bd .right{
+            width: 200px;
+            height: 67px;
+        }
+        .m-askPayComplete .bd .right .text{
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1;
+            color: #333;
+        }
+        .w-button-primary {
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+        }
+        .m-askPayComplete .ft {
+            font-size: 14px;
+        }
+        .w-text-muted {
+            color: #999!important;
+        }
+        .w-link{
+            color: #69c;
+        }
+        .w-link:hover{
+            text-decoration: underline;
+        }
+        .m-askPayComplete .kefuBtn {
+            margin-left: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -358,6 +505,46 @@
                 </div>
             </div>
         </div>
+        <div class="m-pop">
+            <div class="d-default d-add">
+                <div class="d-modal">
+                    <div class="contentWrap">
+                        <div class="d-pop">
+                            <div class="rowtop">
+                                <p class="title">&nbsp;</p>
+                                <p class="icon_del delModal"></p>
+                            </div>
+                            <div class="m-askPayComplete">
+                                <h3 class="hd w-text">
+                                    请在
+                                    <span class="f-txt-red">1</span>
+                                    小时内完成付款，否则订单会被系统取消
+                                </h3>
+                                <div class="bd clearfix">
+                                    <div class="left f-left">
+                                        <p class="text w-text">支付成功请点击</p>
+                                        <button id="j-askPayCompletePayCompleted" type="button" class="w-button w-button-l">已完成付款</button>
+                                    </div>
+                                    <div class="right f-left">
+                                        <p class="text w-text">遇到问题请点击</p>
+                                        <button id="j-askPayCompletePay" class="w-button w-button-l w-button-primary" type="button">重新付款</button>
+                                    </div>
+                                </div>
+                                <div class="ft">
+                                    <p class="w-text-muted text1">注：重新付款前，请关闭之前的付款页面</p>
+                                    <p class="w-text-muted text2">
+                                        如有疑问或需要帮助，请进入&nbsp;
+                                        <a class="w-link" href="javascript:;">帮助中心</a>
+                                        &nbsp;或联系
+                                        <a id="j-askPayCompletePaykefuBtn" class="w-button kefuBtn">在线客服</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="../../js/module/jq/jq.min.js"></script>
@@ -367,6 +554,7 @@
             let radio = document.querySelectorAll('.radio');
             $('#j-goPay').click(function(){
                 console.log($("input[name='radioOne']:checked").val())
+                window.location.href = '/page/qrCode/cashierwxshow.html';
             })
 
             let timer;
@@ -386,6 +574,10 @@
                     alert("时间到，结束!"); 
                 } 
             }
+            $('#j-askPayCompletePayCompleted').click(function(){
+                $('.d-add').hide();
+                window.location.href = '/page/order/orderDetail.html';
+            })
         })
     </script>
 </body>

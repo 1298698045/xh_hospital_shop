@@ -1169,10 +1169,9 @@ let str = '<div class="j-YXComponentTop">'+
 }
 headFun();
 $(window).scroll(function(){
-    var scrollTop = scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-    if(scrollTop>1000){
+    var scrollTop = scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    if(scrollTop>100){
         $('.j-YXComponentTop').hide()
-    }else{
         $('.yx-cp-m-funcTab-fixed').show()
     }
     if(scrollTop == 0){
