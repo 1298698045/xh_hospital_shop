@@ -2,634 +2,1948 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     
-    <title>协和商城 ~ 首页</title>
-    <link rel="stylesheet" href="css/home/index.css">
-    <link rel="stylesheet" href="css/module/index.css">
-    <link rel="stylesheet" href="https://3.swiper.com.cn/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/home/footer.css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=.3; minimum-scale=.3; maximum-scale=.3"> -->
+    <title>协和商城</title>
+    <link rel="stylesheet" href="/css/module/index.css">
+    <link rel="stylesheet" href="/css/home/index.css">
+    <link rel="stylesheet" href="/css/user/index.css">
+    <link rel="stylesheet" href="/css/home/footer.css">
+    <link rel="stylesheet" href="/static/plugin/css/swiper-3.4.2.min.css">
+    <style>
+        .centerWrap{
+            position: relative;
+        }
+        .home_banner{
+            width: 100%;
+            height: 420px;
+            background: url('/img/0fae504f6958db87ee919c38bac02c9b.jpg');
+            background-position: center;
+            background-size: cover;
+            margin-top: 102px;
+        }
+        .m-container .g-row{
+            width: 1090px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .m-container .products {
+            height: 510px;
+            margin: 30px auto 0;
+        }
+        .m-commonHeader {
+            padding-bottom: 20px;
+        }
+        .m-commonHeader .name {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            float: left;
+            margin-right: 20px;
+        }
+        .m-commonHeader .frontName {
+            padding-top: 13px;
+            display: inline-block;
+            line-height: 1;
+            font-size: 14px;
+        }
+        .f-left{
+            float: left;
+        }
+        .f-right{
+            float: right;
+        }
+        .lh1{
+            line-height: 1;
+        }
+        .m-commonHeader .moreItems {
+            display: inline-block;
+            line-height: 1;
+            margin-left: 30px;
+            padding-top: 14px;
+            cursor: pointer;
+        }
+        .slickWidth{
+            position: relative;
+            z-index: 0;
+            display: block;
+            /* overflow: hidden; */
+            margin: 0;
+            padding: 0;
+        }
+        .slickWidth .swiper-container{
+            width: 100%;
+            height: 100%!important;
+            position: static;
+        }
+        .slickWidth .swiper-container .swiper-slide{
+            width: auto!important;
+        }
+        .itemList{
+            /* width: 10000px; */
+            opacity: 1;
+        }
+        .itemList  .product_item{
+            width: 265px!important;
+            margin-right: 10px;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+            line-height: 1;
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+        }
+        .itemList  .product_item:last-child{
+            margin: 0!important;
+        }
+        .itemList  .product_item:hover{
+            box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
+            background-color: #f4f0ea;
+        }
+        .itemList  .product_item .hd{
+            position: relative;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: transparent;
+            width: 265px;
+            height: 265px;
+        }
+        .product_item .hd img{
+            width: 100%;
+            height: 100%;
+        }
+        .product_item .prdtTags {
+            height: 20px;
+            font-size: 0;
+            color: #fff;
+            width: 200px;
+            margin: 0 auto 3px;
+            overflow: hidden;
+        }
+        .product_item .prdtTags .m-itemTag {
+            height: 20px;
+            line-height: 20px;
+            color: #fff!important;
+            padding: 0 5px;
+            background-color: #e36844;
+            margin-left: 6px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .product_item .name {
+            width: 166px;
+            margin: 0 auto 4px;
+            max-height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        .product_item .name:hover a{
+            color: #b4a078;
+            cursor: pointer;
+        }
+        .product_item .bd .price {
+            padding: 1px 0 9px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #d4282d;
+            display: inline-block;
+        }
+        .swiper-button-prev,.swiper-button-next{
+            width: 50px;
+            height: 50px;
+            background: #E2C199;
+            cursor: pointer;
+            opacity: 80;
+            border-radius: 50%;
+        }
+        .swiper-button-prev{
+            left: -65px!important;
+        }
+        .swiper-button-next{
+            right: -65px;
+        }
+        .swiper-button-prev .left_icon{
+            width: 35px;
+            height: 45px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            display: inline-block;
+            background-position: 0 -5438px;
+        }
+        .swiper-button-next .right_icon{
+            width: 35px;
+            height: 45px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_icon-normal-sb5be29e752-290b858f9b.png') no-repeat;
+            display: inline-block;
+            background-position: 0 -5658px;
+        }
+        .m-indexPopularItem {
+            padding: 60px 0;
+            background: #f4f0ea;
+        }
+        .m-indexPopularItem .tabList {
+            overflow: hidden;
+            padding-left: 13px;
+            float: left;
+        }
+        .m-indexPopularItem .tabList .innerWrap .itemTab{
+            text-align: center;
+            float: left;
+            font-size: 14px;
+            width: 70px;
+            height: 28px;
+            line-height: 28px;
+            margin-right: 55px;
+        }
+        .m-indexPopularItem .tabList .innerWrap .itemTab.active a{
+            color: #b4a078;
+        }
+        .m-indexPopularItem .tabList .innerWrap .itemTab.active{
+            border-bottom: 2px solid #b4a078;
+        }
+        .showContainer .left-popular{
+            width: 390px;
+            height: 570px;
+            margin-left: 0;
+            background-color: #fff;
+            overflow: hidden;
+            text-align: center;
+            text-align: center;
+            float: left;
+        }
+        .showContainer .left-popular .hd{
+            margin-bottom: 18px;
+            border-bottom: 1px solid #F4F0EA;
+        }
+        .showContainer .left-popular .hd .imgs{
+            width: 100%;
+            height: 100%;
+        }
+        .showContainer .left-popular .hd .imgs img{
+            width: 320px;
+            height: 320px;
+            margin: 40px 35px;
+        }
+        .showContainer .left-popular:hover .hd .imgs img{
+            transition: transform 1s;
+            transform: scale(1.1);
+        }
+        .m-product .bd .prdtTags{
+            margin-bottom: 10px;
+            color: #fff;
+            width: 200px;
+            margin: 0 auto 3px;
+            overflow: hidden;
+        }
+        .m-product .bd .prdtTags .m-itemTag{
+            height: 20px;
+            line-height: 20px;
+            color: #fff!important;
+            padding: 0 5px;
+            background-color: #e36844;
+            display: inline-block;
+            font-size: 12px;
+        }
+        .showContainer .m-product .bd .name{
+            line-height: 26px;
+            max-height: 52px;
+            margin: 0 auto 13px;
+            font-size: 18px;
+            width: 248px;
+        }
+        .m-product .bd .name a:hover{
+            color: #b4a078;
+        }
+        .showContainer .m-product .bd .name a{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .m-product  .price{
+            font-size: 13px;
+            line-height: 13px;
+            color: #d4282d;
+            padding: 1px 0 9px;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .m-popularItem {
+            background-color: #fff;
+            overflow: hidden;
+            width: 223px;
+            height: 280px;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+        }
+        .m-product .hd{
+            border-bottom: 1px solid #F4F0EA;
+            margin-bottom: 8px;
+        }
+        .m-popularItem .hd .img {
+            width: 180px;
+            height: 180px;
+        }
+        .m-popularItem .bd .name {
+            width: 136px!important;
+            margin: 0 auto 4px!important;
+            line-height: 20px!important;
+        }
+        .m-popularItem .bd .name a{
+            font-size: 13px!important;
+        }
+        .m-popularItem .bd .price{
+            font-size: 13px!important;
+        }
+        .m-popularItem.down{
+            margin-top: 10px;
+        }
+        .m-popularItem:hover img{
+            transform: scale(1.1);
+            transition: transform 1s;
+        }
+        .m-saleCenter {
+            margin-top: 60px;
+            padding: 54px 0 52px;
+            height: 526px;
+            background-color: #f4f0ea;
+        }
+        .saleCenterList .f-fl{
+            float: left;
+        }
+        .saleCenterList .f-fr{
+            float: right;
+        }
+        .saleCenterList .m-indexCarousel{
+            width: 224px;
+            height: 376px;
+            background: #ccc;
+        }
+        .swiper-container-min{
+            width: 100%!important;
+            height: 100%!important;
+        }
+        .swiper-container-min .swiper-button-prev-child{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            background: url('/img/left_icon.png') no-repeat;
+            z-index: 999;
+            display: none;
+            cursor: pointer;
+        }
+        .swiper-container-min .swiper-button-next-child{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            background: url('/img/right_icon.png') no-repeat;
+            z-index: 999;
+            display: none;
+            cursor: pointer;
+        }
+        .swiper-container-min .swiper-pagination-bullet{
+            width: 8px;
+            height: 8px;
+            margin: 0 8px 10px;
+            padding: 0;
+            border-radius: 500px;
+            cursor: pointer;
+            color: transparent;
+            border: 1px solid #cecece;
+        }
+        .swiper-container-min .swiper-pagination-bullet-active{
+            position: relative;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 8px 10px;
+            padding: 0;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px #dfcead;
+            background: #a7936e;
+        }
+        .saleCenterList .moduleList{
+            width: 866px;
+        }
+        .saleCenterList .moduleList .module{
+            float: left;
+            background-color: #fff;
+        }
+        .saleCenterList .moduleList .module-0{
+            width: 624px;
+            height: 376px;
+            padding: 0 17px 0 19px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleHd{
+            font-size: 18px;
+            border-bottom: 1px solid #F4F0EA;
+        }
+        .saleCenterList .moduleList .module .moduleHd{
+            padding: 19px 0 12px;
+        }
+        .saleCenterList .moduleList .module .moduleHd .lt{
+            font-size: 16px;
+        }
+        .saleCenterList .moduleList .module .moduleHd .rt{
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd{
+            margin-top: 20px;
+            margin-right: -20px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item{
+            position: relative;
+            width: 284px;
+            margin: 0 20px 20px 0;
+            font-size: 14px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .hd{
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin-right: 10px;
+            background-color: #FBF9F6;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .hd img{
+            width: 100%;
+            height: 100%;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd{
+            line-height: 1.1;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .name{
+            max-width: 130px;
+            max-height: 40px;
+            overflow: hidden;
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .limitPrice{
+            color: #BE4141;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .limitPrice .yen{
+            font-size: 12px;
+            vertical-align: -2px;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .limitPrice .num{
+            vertical-align: -2px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .w-button{
+            position: absolute;
+            bottom: 8px;
+            width: 90px;
+            line-height: 26px;
+            text-align: center;
+            background-color: #BE4141;
+            border: 1px solid #D25A5A;
+            border-radius: 2px;
+            height: 28px;
+            padding: 0;
+            letter-spacing: normal;
+            font-size: 12px;
+            color: #333;
+        }
+        .saleCenterList .moduleList .module-0 .moduleBd .item .bd .w-button a{
+            color: #fff;
+        }
+        .saleCenterList .moduleList .module-1{
+            width: 242px;
+            height: 188px;
+            padding: 0 20px 0 22px;
+            border-left: 1px solid #F4F0EA;
+        }
+        .saleCenterList .moduleList .module-1 .moduleHd{
+            padding: 19px 0 12px;
+        }
+        .saleCenterList .moduleList .module-1 .moduleHd .lt{
+            font-size: 16px;
+        }
+        .saleCenterList .moduleList .module-1 .moduleHd .rt{
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item{
+            position: relative;
+            width: 200px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item .hd{
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            background-color: #FBF9F6;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item .hd img{
+            width: 100%;
+            height: 100%;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item .bd .name{
+            max-width: 130px;
+            margin: 4px 0 14px;
+        }
+        .f-text-overflow{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item .bd .price .limitPrice{
+            color: #BE4141;
+            font-size: 14px;
+        }
+        .saleCenterList .moduleList .module-1 .moduleBd .item .bd .cart-salecart{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 24px;
+            width: 24px;
+            background: url('/img/hxm_yanxuan-web_p_20150730_style_img_x1_cart-sb9c1d935ed-136a897db8.png');
+            background-repeat: no-repeat;
+            background-position: 0 -199px;
+            display: inline-block;
+        }
+        .m-indexCates {
+            margin-top: 60px;
+        }
+        .m-indexCates .subCateList{
+            display: inline-block;
+            font-size: 14px;
+            padding-top: 14px;
+        }
+        .m-commonHeader .subCateList .spilt {
+            margin: 0 13px;
+        }
+        .m-indexCates .banner{
+            margin-bottom: 20px;
+            width: 100%;
+            height: 310px;
+            background: url('https://yanxuan.nosdn.127.net/eae64c91bfd85a42192636af49185401.jpg');
+        }
+        .m-indexCate .bd_cont{
+            padding-bottom: 60px;
+        }
+        .m-expert{
+            margin-bottom: 80px!important;
+        }
+        .m-expert .expertContent .img{
+            width: 690px;
+            height: 380px;
+        }
+        .m-expert .expert{
+            float: left;
+            margin-left: 10px;
+        }
+        .m-expert .expert.small {
+            width: 390px;
+        }
+        .m-expert .expert.first {
+            margin-left: 0;
+            width: 690px;
+        }
+        .m-expert .expert.small .img {
+            width: 390px;
+            height: 185px;
+        }
+        .m-expert .expert.small.last{
+            margin-top: 10px;
+        }
+        .m-indexComment {
+            background-color: #f4f0ea;
+            padding: 60px;
+            overflow: hidden;
+            height: 660px;
+        }
+        .m-indexComment .m-bd .js-CommentSlick{
+            overflow: hidden;
+        }
+        .swiper-container-Two .swiper-slide{
+            width: 355px!important;
+            display: initial;
+            margin-right: 10px!important;
+        }
+        .swiper-container-Two .swiper-slide .m-product{
+            background: #fff;
+            width: 355px;
+            height: 492px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1;
+            text-align: center;
+        }
+        .swiper-container-Two .swiper-slide .m-product .hd{
+            position: relative;
+            background: #f4f4f4;
+            width: 355px;
+            height: 355px;
+            transition: height linear .3s;
+            overflow: hidden;
+        }
+        .swiper-container-Two .swiper-slide .m-product .hd img{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd{
+            position: absolute;
+            margin: 0 5px;
+            width: 345px;
+            min-height: 180px!important;
+            bottom: 0;
+            background-color: #fff;
+            zoom: 1;
+            overflow: hidden;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment{
+            padding: 20px 15px;
+            overflow: hidden;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment ._top{
+            color: #999;
+            font-size: 13px;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment ._top .frontname{
+            color: #999;
+            font-weight: 400;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .bd-child .frontname,.swiper-container-Two .swiper-slide .m-product .bd .m-comment .bd-child .pname{
+            float: left;
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .bd-child .date{
+            float: left;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment ._middle{
+            color: #999;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment ._middle .pname{
+            max-width: 190px;
+            font-size: 16px;
+            height: 16px;
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .bd-child .pname{
+            font-weight: 700;
+            float: left;
+            font-size: 14px;
+            color: #333;
+            line-height: 14px;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .bd-child .price{
+            margin-bottom: 0;
+            margin-right: 15px;
+            color: #b4a078;
+            float: right;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .comment-content{
+            text-align: left;
+            font-size: 13px;
+            color: #333;
+            line-height: 16px;
+            min-height: 80px;
+            max-height: 80px;
+            transition: max-height .4s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .comment-content p{
+            line-height: 20px;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment .comment-content .more{
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 14px;
+            height: 16px;
+            z-index: 2;
+            background: url('/img/xia.png') center center no-repeat #fff;
+        }
+        .swiper-container-Two .swiper-slide .m-product .bd .m-comment:hover .comment-content{
+            max-height: 270px;
+            cursor: pointer;
+        }
+        .swiper-container-Two{
+            position: static!important;
+        }
+        .m-indexSideBar.fixed{
+            position: fixed;
+            top: 62px!important;
+        }
+        .m-indexSideBar{
+            width: 110px;
+            height: auto;
+            border: 1px solid #E2DED6;
+            left: 50%;
+            margin-left: -680px;
+            z-index: 98;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            position: absolute;
+            display: block;
+            opacity: 1;
+            will-change: transform;
+            transform: translateZ(0);
+            top: 445px;
+        }
+        .m-indexSideBar .item{
+            width: 108px;
+            height: 36px;
+            padding: 1px 11px 0;
+            text-align: left;
+            position: relative;
+            display: table;
+            cursor: pointer;
+        }
+        .m-indexSideBar .item.active{
+            color: #BB3343;
+            font-weight: bold;
+        }
+        .m-indexSideBar .item:hover{
+            color: #BB3343;
+            font-weight: bold;
+        }
+        .m-indexSideBar .item.firstItem{
+            font-size: 16px;
+            color: #BB3343;
+            text-align: center;
+            line-height: 38px;
+            height: 38px;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            font-weight: 700;
+            cursor: default;
+            padding: 0;
+            background: url('/img/firstItem.png') no-repeat;
+        }
+        .m-indexSideBar .firstItem:after, .m-indexSideBar .firstItem:before {
+            content: '';
+            display: block;
+            width: 8px;
+            border-bottom: 2px solid #BB3343;
+            position: absolute;
+            bottom: 18px;
+            left: 85px;
+            z-index: 1;
+        }
+        .m-indexSideBar .firstItem:before {
+            left: 15px;
+        }
+        .m-indexSideBar .item .sideIcon {
+            position: absolute;
+            top: 2px;
+            left: 12px;
+            width: 30px;
+            height: 30px;
+            vertical-align: top;
+        }
+        .m-indexSideBar .item .name {
+            vertical-align: middle;
+            display: table-cell;
+            line-height: 14px;
+            font-size: 12px;
+            padding-left: 36px;
+        }
+        .rightBar{
+            width: 72px;
+            height: 200px;
+            position: absolute;
+            top: 445px;
+            right: 0;
+            background: red;
+            font-size: 12px;
+        }
+        .rightBar.fixed{
+            position: fixed;
+            top: 62px!important;
+        }
+        .rightBar .j-yx-fixedtoolDownloadlink{
+            display: block;
+            width: 72px;
+            height: 140px;
+            padding-top: 0;
+            /* height: 82px; */
+            color: #666;
+            text-align: center;
+            line-height: 1;
+            cursor: pointer;
+            /* padding-top: 14px; */
+            position: relative;
+            background: #fff;
+        }
+        .rightBar .j-yx-fixedtoolDownloadlink .qrCode{
+            width: 72px;
+            height: 72px;
+            background: #ccc;
+        }
+        .rightBar .j-yx-fixedtoolDownloadlink .yx-fixedtool-downText1{
+            line-height: 17px;
+            color: #666;
+        }
+        .rightBar .j-yx-fixedtoolDownloadlink .yx-fixedtool-downText2{
+            line-height: 17px;
+            color: #BC3B3B;
+        }
+        .rightBar .j-yx-fixedtoolDownloadlink:after {
+            display: block;
+            left: 6px;
+            bottom: 0;
+            width: 60px;
+            content: '';
+            border-bottom: 1px solid #eaeaea;
+            position: absolute;
+        }
+        .rightBar .j-yx-fixedtoolCustomerService{
+            display: block;
+            width: 72px;
+            height: 82px;
+            background-color: #fff;
+            color: #666;
+            text-align: center;
+            line-height: 1;
+            cursor: pointer;
+            padding-top: 14px;
+            position: relative;
+        }
+        .rightBar .j-yx-fixedtoolCustomerService:hover{
+            color: #b4a078;
+        }
+        .rightBar .j-yx-fixedtoolCustomerService:hover .icon-yxfixedtool-customerService{
+            background-position: 0 -46px;
+        }
+        .icon-yxfixedtool-customerService {
+            height: 31px;
+            width: 32px;
+            background: url('/img/xh_right_bar.png');
+            background-position: 0 -128px;
+        }
+        .rightBar .j-yx-fixedtoolGoTop{
+            bottom: 0;
+            position: relative;
+            background-color: #fff;
+            color: #666;
+            text-align: center;
+            line-height: 1;
+            cursor: pointer;
+            padding-top: 14px;
+            display: none;
+        }
+        .yx-cp-icon-yxfixedtool{
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            font-size: 12px;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+        .icon-yxfixedtool-goTop{
+            height: 15px;
+            width: 24px;
+            background: url('/img/xh_right_bar.png');
+            background-position: 0 -299px;
+        }
+        .rightBar .j-yx-fixedtoolGoTop .yx-fixedtoolText{
+            line-height: 20px;
+            font-size: 14px;
+            margin: 8px auto 0;
+            position: relative;
+        }
+        .rightBar .j-yx-fixedtoolGoTop::before{
+            display: block;
+            left: 6px;
+            top: 0;
+            width: 60px;
+            content: '';
+            border-bottom: 1px solid #eaeaea;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-    <div id="HomeApp">
-        <div style="height: 80px;"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bb3c06a430689ba2357dd7d1fbfa6bab.jpg?w=5120&amp;h=240" style="width: 100%; height: 80px;"></div>
-        <div id="total-container"></div>
-        <div id="leftnav-container"></div>
-        <div id="site-nav"> </div>
-          <div class="headsearch"></div>
-          <div id="banner-con">
-            <div class="main-swiper-content">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="http://img.alicdn.com/tps/i4/https://img.alicdn.com/imgextra/i4/6000000001815/O1CN01eqQ8Zz1PHJVcJy7kN_!!6000000001815-0-octopus.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="https://img.alicdn.com/tps/i4/https://img.alicdn.com/imgextra/i3/6000000003527/O1CN01VJG3aA1bvPZt94Pon_!!6000000003527-0-octopus.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="http://img.alicdn.com/tfs/TB1_1OLxQL0gK0jSZFtXXXQCXXa-1130-500.jpg_q100.jpg_.webp" alt=""></div>
-                        
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
-                </div>
+    <div class="wrap">
+        <div class="headWrap"></div>
+        <div class="centerWrap">
+            <div class="home_banner">
+                <a href="javascript:;"></a>
             </div>
-            <div class="main-content">
-              <div class="CategoryType-content">
-                <div id="category-type">
-                    <header>
-                        <span>商品分类</span>
-                    </header>
-                    <div class="category-body">
-                        <ul class="category-nav">
-                            <li><a href="#">男装/运动户外</a>
-                            <div class="category-main">
-                            <div class="category-item">
-                                <div class="category-item-content">
-                                  <div class="category-item-rows" >
-                                      <div class="category-item-left">
-                                          <b>男装</b>
-                                          <span>></span>
+            <div class="m-container">
+                <div class="products g-row">
+                    <div class="m-commonHeader clearfix">
+                        <div class="f-left lh1">
+                            <a href="javascript:;">
+                                <h3 class="name">新品首发</h3>
+                            </a>
+                            <small class="frontName f-fz14">为你寻觅世间好物</small>
+                        </div>
+                        <div class="f-right lh1">
+                            <a class="moreItems" href="javascript:;">
+                                更多新品 >
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bd slickWidth">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul class="itemList myProduct">
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="itemList myProduct">
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="itemList myProduct">
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 如果需要导航按钮 -->
+                            <div class="swiper-button-prev">
+                                <i class="left_icon"></i>
+                            </div>
+                            <div class="swiper-button-next">
+                                <i class="right_icon"></i>
+                            </div>
+                        </div>
+                        <!-- <ul class="itemList myProduct"> -->
+                            <!-- <li class="product_item">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <img src="/img/tp_1.1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            满139减20
+                                        </span>
+                                    </div>
+                                    <h4 class="name">
+                                        <a href="javascript:;">
+                                            煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                        </a>
+                                    </h4>
+                                    <p class="price">
+                                        <span class="retailPrice">
+                                            ￥35
+                                        </span>
+                                    </p>
+                                </div>
+                            </li> -->
+                        <!-- </ul> -->
+                    </div>
+                </div>
+                <!-- 人气推荐 -->
+                <div class="m-indexPopularItem">
+                    <div class="g-row">
+                        <div class="m-commonHeader clearfix">
+                            <div class="f-left lh1">
+                                <a href="javascript:;">
+                                    <h3 class="name">人气推荐</h3>
+                                </a>
+                                <div class="m-commonTab tabList">
+                                    <div class="innerWrap clearfix">
+                                        <p class="itemTab active">
+                                            <a href="javascript:;">编辑推荐</a>
+                                        </p>
+                                        <p class="itemTab">
+                                            <a href="javascript:;">热销总榜</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f-right lh1">
+                                <a href="" class="moreItems f-fz14">更多推荐 ></a>
+                            </div>
+                        </div>
+                        <div class="showContainer clearfix">
+                            <div class="left-popular m-product">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="imgs">
+                                            <img src="/img/home1_1.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag">满139减20</span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">
+                                            谷风一木4层印花手帕纸 12包/条
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="price">
+                                    <span class="retailPrice">￥5.9</span>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem down">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem down">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="m-product popularItem m-popularItem down">
+                                <div class="hd">
+                                    <a href="javascript:;">
+                                        <div class="width:100%;height:100%;">
+                                            <img src="https://yanxuan-item.nosdn.127.net/0736325df88942d67a31b5bd5bb2a502.png" alt="" class="img white img-lazyload j-lazyload img-lazyloaded">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="m-itemTag ">
+                                            4件8折
+                                        </span>
+                                    </div>
+                                    <p class="name">
+                                        <a href="javascript:;">无添加蔗糖，苏打饼干 360克</a>
+                                    </p>
+                                    <p class="price">
+                                        <span class="retailPrice">￥12.8</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-saleCenter">
+                    <div class="g-row">
+                        <div class="m-commonHeader clearfix">
+                            <div class="f-left lh1">
+                                <a href="javascritp:;">
+                                    <h3 class="name">福利社</h3>
+                                </a>
+                            </div>
+                            <div class="f-right lh1">
+                                <a href="javascript:;" class="moreItems f-fz14">查看全部福利 ></a>
+                            </div>
+                        </div>
+                        <div class="saleCenterList clearfix">
+                            <div class="m-indexCarousel f-fl">
+                                <div class="swiper-container swiper-container-min">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                          <img src="/img/home_banner_child1.jpg" width="100%" height="100%" alt="">
                                       </div>
-                                      <div class="category-item-right">
-                                          <span><a href="page/list/list.html" target="blank">男装</a></span>
-                                          <span class="heightlight">男装</span>
-                                          <span>当季新品</span>
-                                          <span class="heightlight">商城同款</span>
-                                          <span>男装</span>
-                                          <span>男装</span>
-                                          <span>男装</span>
-                                          <span>男装</span>
-                                          
+                                      <div class="swiper-slide">
+                                        <img src="/img/home_banner_child2.jpg" width="100%" height="100%" alt="">
                                       </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-prev-child"></div>
+                                    <div class="swiper-button-next-child"></div>
                                   </div>
-                                  <div class="category-item-rows" >
-                                    <div class="category-item-left">
-                                        <b>运动户外</b>
-                                        <span>></span>
+                            </div>
+                            <div class="moduleList f-fl">
+                                <div class="module module-0">
+                                    <div class="moduleHd clearfix">
+                                        <div class="lt f-fl">今日特价</div>
+                                        <div class="rt f-fr">
+                                            <a href="javascript:;">
+                                                <span>查看全部></span>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="category-item-right">
-                                        <span><a href="page/list/list.html" target="blank">男装</a></span>
-                                        <span class="heightlight">男装</span>
-                                        <span>男装</span>
-                                        <span>男装</span>
-                                        <span>男装</span>
-                                        <span>男装</span>
-                                        <span>男装</span>
-                                        <span>男装</span>
+                                    <div class="moduleBd clearfix">
+                                        <div class="item f-fl clearfix">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="https://yanxuan-item.nosdn.127.net/3c201fe2257a7b3b8951e66bf3b1430f.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name">
+                                                    <a href="javascript:;">
+                                                        击退色素 光感密集焕亮精华液 50ml
+                                                    </a>
+                                                </div>
+                                                <div class="limitPrice">
+                                                    <span>限时价 &nbsp;</span>
+                                                    <span class="yen">¥</span>
+                                                    <span>&nbsp;</span>
+                                                    <span class="num">159</span>
+                                                </div>
+                                                <div class="w-button btn">
+                                                    <a href="javascript">立即抢购</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item f-fl clearfix">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="https://yanxuan-item.nosdn.127.net/3c201fe2257a7b3b8951e66bf3b1430f.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name">
+                                                    <a href="javascript:;">
+                                                        击退色素 光感密集焕亮精华液 50ml
+                                                    </a>
+                                                </div>
+                                                <div class="limitPrice">
+                                                    <span>限时价 &nbsp;</span>
+                                                    <span class="yen">¥</span>
+                                                    <span>&nbsp;</span>
+                                                    <span class="num">159</span>
+                                                </div>
+                                                <div class="w-button btn">
+                                                    <a href="javascript">立即抢购</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item f-fl clearfix">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="https://yanxuan-item.nosdn.127.net/3c201fe2257a7b3b8951e66bf3b1430f.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name">
+                                                    <a href="javascript:;">
+                                                        击退色素 光感密集焕亮精华液 50ml
+                                                    </a>
+                                                </div>
+                                                <div class="limitPrice">
+                                                    <span>限时价 &nbsp;</span>
+                                                    <span class="yen">¥</span>
+                                                    <span>&nbsp;</span>
+                                                    <span class="num">159</span>
+                                                </div>
+                                                <div class="w-button btn">
+                                                    <a href="javascript">立即抢购</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item f-fl clearfix">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="https://yanxuan-item.nosdn.127.net/3c201fe2257a7b3b8951e66bf3b1430f.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name">
+                                                    <a href="javascript:;">
+                                                        击退色素 光感密集焕亮精华液 50ml
+                                                    </a>
+                                                </div>
+                                                <div class="limitPrice">
+                                                    <span>限时价 &nbsp;</span>
+                                                    <span class="yen">¥</span>
+                                                    <span>&nbsp;</span>
+                                                    <span class="num">159</span>
+                                                </div>
+                                                <div class="w-button btn">
+                                                    <a href="javascript">立即抢购</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="module module-1">
+                                    <div class="moduleHd clearfix">
+                                        <div class="lt f-fl">
+                                            量贩囤货
+                                        </div>
+                                        <div class="rt f-fr">
+                                            <a href="javascript:;">
+                                                <span>全部 ></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="moduleBd clearfix">
+                                        <div class="item f-fl">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="/img/home1_2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name f-text-overflow">
+                                                    <a href="javascript:;">三味演义冻干方便面 12盒</a>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="limitPrice">￥79</span>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <i class="w-icon-cart cart-salecart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="item f-fl">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="/img/home1_2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name f-text-overflow">
+                                                    <a href="javascript:;">三味演义冻干方便面 12盒</a>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="limitPrice">￥79</span>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <i class="w-icon-cart cart-salecart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module module-1">
+                                    <div class="moduleHd clearfix">
+                                        <div class="lt f-fl">
+                                            今日买赠
+                                        </div>
+                                        <div class="rt f-fr">
+                                            <a href="javascript:;">
+                                                <span>全部 ></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="moduleBd clearfix">
+                                        <div class="item f-fl">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="/img/home1_2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name f-text-overflow">
+                                                    <a href="javascript:;">三味演义冻干方便面 12盒</a>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="limitPrice">￥79</span>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <i class="w-icon-cart cart-salecart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="item f-fl">
+                                            <div class="hd f-fl">
+                                                <a href="javascript:;">
+                                                    <img src="/img/home1_2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="bd f-fl">
+                                                <div class="name f-text-overflow">
+                                                    <a href="javascript:;">三味演义冻干方便面 12盒</a>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="limitPrice">￥79</span>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <i class="w-icon-cart cart-salecart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                            </li>
-                            <li><a href="#">男装</a>
-                                <div class="category-main">
-                                <div class="category-item">
-                                    <div class="category-item-content">
-                                      <div class="category-item-rows" >
-                                          <div class="category-item-left">
-                                              <b>男装</b>
-                                              <span>></span>
-                                          </div>
-                                          <div class="category-item-right">
-                                              <span>男装</span>
-                                              <span class="heightlight">男装</span>
-                                              <span>男装</span>
-                                              <span>男装</span>
-                                              <span>男装</span>
-                                              <span>男装</span>
-                                              <span>男装</span>
-                                              <span>男装</span>
-                                          </div>
-                                      </div>
-                                      <div class="category-item-rows" >
-                                        <div class="category-item-left">
-                                            <b>男装</b>
-                                            <span>></span>
-                                        </div>
-                                        <div class="category-item-right">
-                                            <span>男装</span>
-                                            <span class="heightlight">男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                        </div>
-                                    </div>
-                                    <div class="category-item-rows" >
-                                        <div class="category-item-left">
-                                            <b>男装</b>
-                                            <span>></span>
-                                        </div>
-                                        <div class="category-item-right">
-                                            <span>男装</span>
-                                            <span class="heightlight">男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                            <span>男装</span>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                                </li>
-                                <li><a href="#">男装</a>
-                                    <div class="category-main">
-                                    <div class="category-item">
-                                        <div class="category-item-content">
-                                          <div class="category-item-rows" >
-                                              <div class="category-item-left">
-                                                  <b>男装</b>
-                                                  <span>></span>
-                                              </div>
-                                              <div class="category-item-right">
-                                                  <span>男装</span>
-                                                  <span class="heightlight">男装</span>
-                                                  <span>男装</span>
-                                                  <span>男装</span>
-                                                  <span>男装</span>
-                                                  <span>男装</span>
-                                                  <span>男装</span>
-                                                  <span>男装</span>
-                                              </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    </li>
-                        </ul>
-                        
                     </div>
                 </div>
-              </div>
-              <div class="main-nav-content">
-                <a href="">会员</a>
-                <a href="">医药馆</a>
-                <a href="">护肤馆</a>
-                <a href="">保健馆</a>
-              </div>
-            </div>
-          </div>
-          <div class="main-content">
-            <div id="modulelist">
-                <ul class="modulelist">
-                    <li>
-                        <a href="./page/list/list.html" target="_blank">
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
+    
+                <div class="m-indexCates">
+                    <div class="g-row">
+                        <div class="m-indexCate">
+                            <div class="m-commonHeader clearfix">
+                                <div class="f-left lh1">
+                                    <a href="javascript:;">
+                                        <span class="name">居家生活</span>
+                                    </a>
+                                </div>
+                                <div class="f-right lh1">
+                                    <div class="subCateList">
+                                        <span>
+                                            <a href="javascript:;" class="item">
+                                                好物精选
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+                                            <a href="javascript:;" class="item">
+                                                疫情防控
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+                                            <a href="javascript:;" class="item">
+                                                收纳好物
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+    
+                                            <a href="javascript:;" class="item">
+                                                北欧原木
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+                                            <a href="javascript:;" class="item">
+                                                家庭医疗
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+                                            <a href="javascript:;" class="item">
+                                                餐厨爆款清单
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <b class="spilt">
+                                                /
+                                            </b>
+                                            <a href="javascript:;" class="item">
+                                                厨房电器
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <a class="moreItems f-fz14" href="javascript:;">查看更多 ></a>
+                                </div>
+                            </div>
+                            <div class="banner"></div>
+                            <div class="bd_cont">
+                                <ul class="itemList clearfix">
+                                    <li class="product_item">
+                                        <div class="hd">
+                                            <a href="javascript:;">
+                                                <img src="/img/tp_1.1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="bd">
+                                            <div class="prdtTags">
+                                                <span class="m-itemTag ">
+                                                    满139减20
+                                                </span>
+                                            </div>
+                                            <h4 class="name">
+                                                <a href="javascript:;">
+                                                    煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                                </a>
+                                            </h4>
+                                            <p class="price">
+                                                <span class="retailPrice">
+                                                    ￥35
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="product_item">
+                                        <div class="hd">
+                                            <a href="javascript:;">
+                                                <img src="/img/tp_1.1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="bd">
+                                            <div class="prdtTags">
+                                                <span class="m-itemTag ">
+                                                    满139减20
+                                                </span>
+                                            </div>
+                                            <h4 class="name">
+                                                <a href="javascript:;">
+                                                    煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                                </a>
+                                            </h4>
+                                            <p class="price">
+                                                <span class="retailPrice">
+                                                    ￥35
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="product_item">
+                                        <div class="hd">
+                                            <a href="javascript:;">
+                                                <img src="/img/tp_1.1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="bd">
+                                            <div class="prdtTags">
+                                                <span class="m-itemTag ">
+                                                    满139减20
+                                                </span>
+                                            </div>
+                                            <h4 class="name">
+                                                <a href="javascript:;">
+                                                    煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                                </a>
+                                            </h4>
+                                            <p class="price">
+                                                <span class="retailPrice">
+                                                    ￥35
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="product_item">
+                                        <div class="hd">
+                                            <a href="javascript:;">
+                                                <img src="/img/tp_1.1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="bd">
+                                            <div class="prdtTags">
+                                                <span class="m-itemTag ">
+                                                    满139减20
+                                                </span>
+                                            </div>
+                                            <h4 class="name">
+                                                <a href="javascript:;">
+                                                    煎炸前吸水煎炸后吸油 食品接触厨房纸
+                                                </a>
+                                            </h4>
+                                            <p class="price">
+                                                <span class="retailPrice">
+                                                    ￥35
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        </a>
+                    </div>
+                </div>
+    
+                <div class="m-expert g-row">
+                    <div class="m-commonHeader clearfix">
+                        <div class="f-left lh1">
+                            <a href="javascript:;">
+                                <span class="name">甄选家</span>
+                            </a>
+                            <small class="frontName f-fz14">我们在寻找，对生活有态度的你</small>
+                        </div>
+                        <div class="f-right lh1"></div>
+                    </div>
+                    <div class="bd">
+                        <div class="expertContent clearfix">
+                            <a href="javascript:;" class="expert first large">
+                                <div style="width:100%;height:100%;">
+                                    <img class="img img-lazyload j-lazyload img-lazyloaded" src="https://yanxuan.nosdn.127.net/b21b20f34d5007f961c182273a5d429f.jpg">
+                                </div>
+                            </a>
+                            <a href="javascript:;" class="expert small">
+                                <div style="width:100%;height:100%;">
+                                    <img class="img img-lazyload j-lazyload img-lazyloaded" src="https://yanxuan.nosdn.127.net/b21b20f34d5007f961c182273a5d429f.jpg">
+                                </div>
+                            </a>
+                            <a href="javascript:;" class="expert small last">
+                                <div style="width:100%;height:100%;">
+                                    <img class="img img-lazyload j-lazyload img-lazyloaded" src="https://yanxuan.nosdn.127.net/b21b20f34d5007f961c182273a5d429f.jpg">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+    
+                <div class="m-indexComment indexComment">
+                    <div class="g-row">
+                        <div class="m-commonHeader clearfix">
+                            <div class="f-left lh1">
+                                <h3 class="name">
+                                    大家都在说
+                                </h3>
+                                <small class="frontName f-fz14">生活，没有统一标准</small>
+                            </div>
+                            <div class="f-right lh1">
+                                <a href="javascript:;" class="moreItems f-fz14"></a>
+                            </div>
+                        </div>
+                        <div class="m-bd">
+                            <div class="js-CommentSlick">
+                                <div class="swiper-container swiper-container-Two swiper-container-horizontal swiper-container-free-mode">
+                                    <div class="swiper-wrapper">
+                                        <!-- <div class="swiper-slide">
+                                            <div class="m-product">
+                                                <div class="hd">
+                                                    <img src="/img/home_1.3.png" alt="">
+                                                </div>
+                                                <div class="bd bd_comment">
+                                                    <div class="m-comment">
+                                                        <div class="bd-child _top clearfix">
+                                                            <div class="frontname">
+                                                                <span class="date">2021-04-01 12:26</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bd-child _middle">
+                                                            <span class="pname">煎炸蒸煮 日式双耳多用锅 小煎锅寿喜烧</span>
+                                                            <span class="price">
+                                                                ￥149
+                                                            </span>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <p data-content="寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用型选手~简即繁，外形设计较日式，更加偏向于制作寿喜烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，所以还没收到的时候以为会很重，结果超轻！包装精简，女生也能美美使用~拿到锅的第一件事情必然是开锅~开锅不繁琐，效益享万年～底部也用心地印上了胖选独有的logo~熠熠生辉~严选控一本满足！锅体受热很快，较普通锑锅相比受热更加均匀，几乎同等的水能优先烧开，媲美小巧的雪平锅，但容量规格又秒杀雪平锅~锅盖两个出气的设计很好地避免了凑上去观看内部蒸煮情况时被蒸汽误伤的情形，对了！贴心地设计了两个隔热小把手套，我宣布~这多功能锅，现在就是我宝贝里面第一心头好！！！">
+                                                                寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用
+                                                                型选手~简即繁，外形设计较日式，更加偏向于制作寿喜
+                                                                烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，
+                                                                所以还没收到的时候以为会很重
+                                                            </p>
+                                                            <s class="more" style="display: block;"></s>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="swiper-button-prev">
+                                        <i class="left_icon"></i>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <i class="right_icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <ul class="m-indexSideBar">
+                    <li class="item firstItem">
+                        热销榜
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item active">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            全站
+                            <br>
+                            热销榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item2.png" alt="" class="sideIcon">
+                        <span class="name">
+                            居家
+                            <br>
+                            生活榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item3.png" alt="" class="sideIcon">
+                        <span class="name">
+                            服饰
+                            <br>
+                            鞋包榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            美食
+                            <br>
+                            酒水榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            数码
+                            <br>
+                            家电榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            个护
+                            <br>
+                            清洁榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            运动
+                            <br>
+                            旅行榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            母婴
+                            <br>
+                            亲子榜
+                        </span>
                     </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                           <div class="show-content">
-                            <img src="http://img.alicdn.com/i2/2/TB1oZGMPXXXXXayXFXXSutbFXXX.jpg_100x150q100.jpg_.webp">
-                           </div>
-                           <div class="mask-content">
-                               <span class="name">名称</span>
-                               <div class="interbtn">
-                                   点击进入
-                               </div>
-                           </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="newlist">
-                            <span>换一批</span>
-                        </div>
+                    <li class="item">
+                        <img src="/img/home_item1.png" alt="" class="sideIcon">
+                        <span class="name">
+                            全球
+                            <br>
+                            特色榜
+                        </span>
                     </li>
                 </ul>
-             </div>
-            <div class="homelist-template1">
-                <div class="homelist1" >
-                    <div class="homelist-item-content">
-                    <div class="homelist-title">
-                        <span class="leftborder"></span>
-                        <span id="a3">美丽人生 FASHION & BEAUTY</span>
-                    </div>
-                    <div class="homelist-body">
-                        <div class="homelist-body-left">
-                            <div class="banner-img">
-                                <img src="https://img.alicdn.com/tfs/TB1fQ1VeMoQMeJjy0FpXXcTxpXa-235-301.png" alt="" />
-                            </div>
-                            <div class="banner-detail">
-                                <div class="left-title-wrap">
-                                    <span class="left-title">焕新换型</span>
-                                </div>
-                                <div class="right-title-wrap">
-                                    <div class="right-title-absolute">
-                                        <span class="right-title" data-spm-anchor-id="875.7931836/B.2017077.i0.50184265Xbai0c">时尚女装</span>
-                                        <span class="right-title">优雅而知性</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="homelist-body-right">
-                            <ul>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <a href="page/detail/index.html" target="_blank">
-                                            <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                        </a>  
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="homelist-template1">
-                <div class="homelist1" >
-                    <div class="homelist-item-content">
-                    <div class="homelist-title">
-                        <span class="leftborder"></span>
-                        <span id="a1">美丽人生 FASHION & BEAUTY</span>
-                    </div>
-                    <div class="homelist-body">
-                        <div class="homelist-body-left">
-                            <div class="banner-img">
-                                <img src="https://img.alicdn.com/tfs/TB1fQ1VeMoQMeJjy0FpXXcTxpXa-235-301.png" alt="" />
-                            </div>
-                            <div class="banner-detail">
-                                <div class="left-title-wrap">
-                                    <span class="left-title">焕新换型</span>
-                                </div>
-                                <div class="right-title-wrap">
-                                    <div class="right-title-absolute">
-                                        <span class="right-title" data-spm-anchor-id="875.7931836/B.2017077.i0.50184265Xbai0c">时尚女装</span>
-                                        <span class="right-title">优雅而知性</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="homelist-body-right">
-                            <ul>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="homelist-template1">
-                <div class="homelist1" >
-                    <div class="homelist-item-content">
-                    <div class="homelist-title">
-                        <span class="leftborder"></span>
-                        <span id="a2">美丽人生 FASHION & BEAUTY</span>
-                    </div>
-                    <div class="homelist-body">
-                        <div class="homelist-body-left">
-                            <div class="banner-img">
-                                <img src="https://img.alicdn.com/tfs/TB1fQ1VeMoQMeJjy0FpXXcTxpXa-235-301.png" alt="" />
-                            </div>
-                            <div class="banner-detail">
-                                <div class="left-title-wrap">
-                                    <span class="left-title">焕新换型</span>
-                                </div>
-                                <div class="right-title-wrap">
-                                    <div class="right-title-absolute">
-                                        <span class="right-title" data-spm-anchor-id="875.7931836/B.2017077.i0.50184265Xbai0c">时尚女装</span>
-                                        <span class="right-title">优雅而知性</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="homelist-body-right">
-                            <ul>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                                <li class="homelist-item">
-                                    <div class="homelist-item-img">
-                                        <img src="https://gw.alicdn.com/bao/uploaded/i1/1964144719/O1CN01hu0vx71kjLgwRCoNZ_!!0-item_pic.jpg" alt="" />
-                                    </div>
-                                    <div class="homelist-item-title">自然堂乳液水润保湿柔肤乳补水保湿乳液正品纯粹滋润乳液专柜成品</div>
-                                    <div class="homelist-item-price">￥ 27</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div id="cainixihuan"></div>
-            
-          </div>
-          <div id="pageFooter"></div>
-      </div>
-      <script src="js/module/jq/jq.min.js"></script>
-      <script src="components/module/totalcontainersearch.js"></script>
-      <script src="https://3.swiper.com.cn//dist/js/swiper.min.js"></script>
-      <script src="./js/layout/footer.js"></script>
-      <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            autoplay: 3000
-        });
-        </script>
+                <div class="rightBar">
+                    <div class="box">
+                        <div class="j-yx-fixedtoolDownloadlink">
+                            <div class="qrCode">
 
+                            </div>
+                            <div class="yx-fixedtool-downText1">扫码领</div>
+                            <div class="yx-fixedtool-downText2">APP大额</div>
+                            <div class="yx-fixedtool-downText2">新人红包</div>
+                        </div>
+                        <div class="j-yx-fixedtoolCustomerService">
+                            <i class="yx-cp-icon-yxfixedtool icon-yxfixedtool-customerService"></i>
+                            <div class="yx-fixedtoolText">在线客服</div>
+                        </div>
+                        <div class="j-yx-fixedtoolGoTop">
+                            <i class="yx-cp-icon-yxfixedtool icon-yxfixedtool-goTop"></i>
+                            <p class="yx-fixedtoolText">回顶部</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
 </body>
+<script src="/js/module/jq/jq.min.js"></script>
+<script src="/components/module/totalcontainersearch.js"></script>
+<script src="/static/plugin/js/swiper-3.4.2.min.js"></script>
+<script src="/js/layout/footer.js"></script>
+<script>
+    var mySwiper1 = new Swiper('.swiper-container-min', {
+        autoplay: 5000,//可选选项，自动滑动
+        pagination : '.swiper-pagination',
+        nextButton: '.swiper-button-next-child',
+        prevButton: '.swiper-button-prev-child'
+        
+    })
+    $('.swiper-container-min').hover(function(){
+        $('.swiper-container-min .swiper-button-prev-child').show();
+        $('.swiper-container-min .swiper-button-next-child').show();
+    },function(){
+        $('.swiper-container-min .swiper-button-prev-child').hide();
+        $('.swiper-container-min .swiper-button-next-child').hide();
+    })
+    var mySwiper = new Swiper ('.swiper-container', {
+        paginationClickable: true,
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    })    
+    swiperTemp();
+    
+    var swiper = new Swiper('.swiper-container-Two', {
+        autoplay:3000,
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        // spaceBetween: 30,
+        freeMode: true,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+    });
+    $('.swiper-container').hover(function(){
+        swiper.stopAutoplay();
+    },function(){
+        swiper.startAutoplay();
+    })
+    function swiperTemp(){
+        let str = '';
+        for(let i = 0; i < 8; i++){
+            // str += `
+            //     <div class="swiper-slide">
+            //         <div class="m-product">
+            //             <div class="hd">
+            //                 <img src="/img/home_1.3.png" alt="">
+            //             </div>
+            //             <div class="bd bd_comment">
+            //                 <div class="m-comment">
+            //                     <div class="bd-child _top clearfix">
+            //                         <div class="frontname">
+            //                             <span class="date">2021-04-01 12:26</span>
+            //                         </div>
+            //                     </div>
+            //                     <div class="bd-child _middle">
+            //                         <span class="pname">煎炸蒸煮 日式双耳多用锅 小煎锅寿喜烧</span>
+            //                         <span class="price">
+            //                             ￥149
+            //                         </span>
+            //                     </div>
+            //                     <div class="comment-content">
+            //                         <p data-content="寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用型选手~简即繁，外形设计较日式，更加偏向于制作寿喜烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，所以还没收到的时候以为会很重，结果超轻！包装精简，女生也能美美使用~拿到锅的第一件事情必然是开锅~开锅不繁琐，效益享万年～底部也用心地印上了胖选独有的logo~熠熠生辉~严选控一本满足！锅体受热很快，较普通锑锅相比受热更加均匀，几乎同等的水能优先烧开，媲美小巧的雪平锅，但容量规格又秒杀雪平锅~锅盖两个出气的设计很好地避免了凑上去观看内部蒸煮情况时被蒸汽误伤的情形，对了！贴心地设计了两个隔热小把手套，我宣布~这多功能锅，现在就是我宝贝里面第一心头好！！！">
+            //                             寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用
+            //                             型选手~简即繁，外形设计较日式，更加偏向于制作寿喜
+            //                             烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，
+            //                             所以还没收到的时候以为会很重
+            //                         </p>
+            //                         <s class="more" style="display: block;"></s>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //     </div>
+            // `
+            str += '<div class="swiper-slide">'+
+'                    <div class="m-product">'+
+'                        <div class="hd">'+
+'                            <img src="/img/home_1.3.jpg" alt="">'+
+'                        </div>'+
+'                        <div class="bd bd_comment">'+
+'                            <div class="m-comment">'+
+'                                <div class="bd-child _top clearfix">'+
+'                                    <div class="frontname">'+
+'                                        <span class="date">2021-04-01 12:26</span>'+
+'                                    </div>'+
+'                                </div>'+
+'                                <div class="bd-child _middle">'+
+'                                    <span class="pname">煎炸蒸煮 日式双耳多用锅 小煎锅寿喜烧</span>'+
+'                                    <span class="price">'+
+'                                        ￥149'+
+'                                    </span>'+
+'                                </div>'+
+'                                <div class="comment-content">'+
+'                                    <p data-content="寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用型选手~简即繁，外形设计较日式，更加偏向于制作寿喜烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，所以还没收到的时候以为会很重，结果超轻！包装精简，女生也能美美使用~拿到锅的第一件事情必然是开锅~开锅不繁琐，效益享万年～底部也用心地印上了胖选独有的logo~熠熠生辉~严选控一本满足！锅体受热很快，较普通锑锅相比受热更加均匀，几乎同等的水能优先烧开，媲美小巧的雪平锅，但容量规格又秒杀雪平锅~锅盖两个出气的设计很好地避免了凑上去观看内部蒸煮情况时被蒸汽误伤的情形，对了！贴心地设计了两个隔热小把手套，我宣布~这多功能锅，现在就是我宝贝里面第一心头好！！！">'+
+'                                        寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用'+
+'                                        型选手~简即繁，外形设计较日式，更加偏向于制作寿喜'+
+'                                        烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，'+
+'                                        所以还没收到的时候以为会很重'+
+'                                    </p>'+
+'                                    <s class="more" style="display: block;"></s>'+
+'                                </div>'+
+'                            </div>'+
+'                        </div>'+
+'                    </div>'+
+'                </div>';
+        }
+        $('.js-CommentSlick .swiper-wrapper').append(str);
+    }
+    $('.js-CommentSlick .swiper-slide .m-product .bd .m-comment').hover(function(){
+       let content =  $(this).find('.comment-content p').attr('data-content');
+       console.log(content);
+       $(this).find('.comment-content p').html(content);
+       $(this).find('.comment-content .more').hide();
+    },function(){
+        let str = '寿喜锅、煲仔砂陶碗以及石锅多项功能于一身的多用型选手~简即繁，外形设计较日式，更加偏向于制作寿喜烧那种菜肴的铸铁锅多一点，再加上六层压铸技术，所以还没收到的时候以为会很重'
+        $(this).find('.comment-content p').html(str);
+       $(this).find('.comment-content .more').show();
+    })
+    $(function(){
+        let str = '';
+        for(let i = 0; i < 4; i++){
+            // str += `
+            //     <li class="product_item">
+            //         <div class="hd">
+            //             <a href="javascript:;">
+            //                 <img src="/img/tp_1.1.png" alt="">
+            //             </a>
+            //         </div>
+            //         <div class="bd">
+            //             <div class="prdtTags">
+            //                 <span class="m-itemTag ">
+            //                     满139减20
+            //                 </span>
+            //             </div>
+            //             <h4 class="name">
+            //                 <a href="javascript:;">
+            //                     煎炸前吸水煎炸后吸油 食品接触厨房纸
+            //                 </a>
+            //             </h4>
+            //             <p class="price">
+            //                 <span class="retailPrice">
+            //                     ￥35
+            //                 </span>
+            //             </p>
+            //         </div>
+            //     </li>
+            // `
+            str += '<li class="product_item">'+
+'                    <div class="hd">'+
+'                        <a href="/page/detail/index.html">'+
+'                            <img src="/img/tp_1.1.png" alt="">'+
+'                        </a>'+
+'                    </div>'+
+'                    <div class="bd">'+
+'                        <div class="prdtTags">'+
+'                            <span class="m-itemTag ">'+
+'                                满139减20'+
+'                            </span>'+
+'                        </div>'+
+'                        <h4 class="name">'+
+'                            <a href="/page/detail/index.html">'+
+'                                煎炸前吸水煎炸后吸油 食品接触厨房纸'+ (i+1) +
+'                            </a>'+
+'                        </h4>'+
+'                        <p class="price">'+
+'                            <span class="retailPrice">'+
+'                                ￥35'+
+'                            </span>'+
+'                        </p>'+
+'                    </div>'+
+'                </li>';
+        }
+        $('.myProduct').append(str);
+    })
+
+    $(window).scroll(function(e) {
+        // console.log($(document).scrollTop(),'------')
+        let top = $(document).scrollTop();
+        if(top>=500){
+            $('.m-indexSideBar').addClass('fixed');
+            $('.rightBar').addClass('fixed');
+            $('.rightBar .j-yx-fixedtoolGoTop').show();
+        }else {
+            $('.m-indexSideBar').removeClass('fixed');
+            $('.rightBar').removeClass('fixed');
+            $('.rightBar .j-yx-fixedtoolGoTop').hide();
+        }
+    })
+    $('.rightBar .j-yx-fixedtoolGoTop').click(function(){
+        var timer = null;
+        timer = setInterval(function () {
+            var toTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(toTop == 0){
+                clearInterval(timer);
+            }else {
+                // 设置滚动速度
+                var speed = Math.ceil(toTop/5);
+                // 页面向上滚动
+                // $(document).scrollTop() = $(document).body.scrollTop() = toTop - speed;
+                document.documentElement.scrollTop=document.body.scrollTop=toTop-speed;
+            }
+        },50)
+    })
+</script>
 </html>

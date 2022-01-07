@@ -813,7 +813,7 @@ let str = '<div class="j-YXComponentTop">'+
 '                                            <span>￥33.90</span>'+
 '                                        </div>'+
 '                                        <div class="yx-cp-goToCart">'+
-'                                            <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="javascript:;" target="_blank">去购物车结算</a>'+
+'                                            <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="/page/cart/index.html" target="_blank">去购物车结算</a>'+
 '                                        </div>'+
 '                                    </div>'+
 '                                </div>'+
@@ -968,7 +968,7 @@ let str = '<div class="j-YXComponentTop">'+
 '</div>'+
 '<div class="yx-cp-m-funcTab-fixed">'+
 '    <div class="head-center">'+
-'        <a class="yx-cp-tabLogo-fixed yx-cp-funcTab-hide" href="javascript:;" title="网易严选" target="_blank">'+
+'        <a class="yx-cp-tabLogo-fixed yx-cp-funcTab-hide" href="/" title="网易严选" target="_blank">'+
 '            <i class="yx-cp-icon-yxtop icon-yxtop-miniLogo" data-reactid=".0.1.0.1.0"></i>'+
 '        </a>'+
 '        <div class="yx-cp-m-tabNav clearfix">'+
@@ -1156,7 +1156,7 @@ let str = '<div class="j-YXComponentTop">'+
 '                                <span>￥33.90</span>'+
 '                            </div>'+
 '                            <div class="yx-cp-goToCart">'+
-'                                <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="javascript:;" target="_blank">去购物车结算</a>'+
+'                                <a class="yx-cp-btn yx-w-button yx-w-button-primary" href="/page/cart/index.html" target="_blank">去购物车结算</a>'+
 '                            </div>'+
 '                        </div>'+
 '                    </div>'+
